@@ -8,9 +8,15 @@ function App() {
   return (
     <div className="">
       <Header />
-      <SideBar />
-      <MainContent />
-      <Footer />
+      <div className="h-screen p-2 sm:px-4 lg:px-6 flex gap-3 ">
+        <div className="hidden md:block w-[35%]">
+          <SideBar />
+        </div>
+        <div className="w-full ">
+          <MainContent />
+        </div>
+      </div>
+      {/* <Footer /> */}
     </div>
   );
 }

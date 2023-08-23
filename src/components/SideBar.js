@@ -1,7 +1,7 @@
 import React from "react";
 
 const SideBar = () => {
-  return <div className="bg-slate-300">SideBar</div>;
+  return <div className="">SideBar</div>;
 };
 
 export default SideBar;

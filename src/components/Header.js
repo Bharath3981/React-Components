@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Header = () => {
+  const [showSidebar, setShowSidebar] = useState(false);
+
   return (
     <div className="min-h-full">
       <nav className="shadow-md border-b-1">
@@ -45,6 +47,7 @@ const Header = () => {
               {/* <!-- Mobile menu button --> */}
               <button
                 type="button"
+                onClick={() => setShowSidebar((show) => !show)}
                 className="relative inline-flex items-center justify-center rounded-md  p-2 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                 aria-controls="mobile-menu"
                 aria-expanded="false"
@@ -87,6 +90,27 @@ const Header = () => {
         </div>
 
         {/* <!-- Mobile menu, show/hide based on menu state. --> */}
+        <div
+          className={
+            "absolute md:hidden h-screen transition w-[75%] " +
+            (showSidebar ? "left-0" : "right-full")
+          }
+        >
+          <aside
+            id="default-sidebar"
+            className={
+              "z-40 h-screen transition-transform relative " +
+              (showSidebar ? "-translate-x" : "-translate-x-full")
+            }
+            aria-label="Sidebar"
+          >
+            <div className="h-screen px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+              <ul className="md:flex  ml-auto mr-8 items-center">
+                <li>test</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
       </nav>
     </div>
   );
