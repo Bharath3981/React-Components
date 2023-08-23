@@ -8,8 +8,8 @@ function App() {
   return (
     <div className="">
       <Header />
-      <div className="h-screen p-2 sm:px-4 lg:px-6 flex gap-3 ">
-        <div className="hidden md:block w-[35%]">
+      <div className="h-screen p-2 sm:px-4 lg:px-6 flex gap-3  w-full">
+        <div className="hidden md:block w-[20%]">
           <SideBar />
         </div>
         <div className="w-full ">
