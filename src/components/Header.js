@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { CiHome, CiSettings, CiPhone } from "react-icons/ci";
+import { TbComponents } from "react-icons/tb";
 
 const Header = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -8,7 +10,7 @@ const Header = () => {
       <nav className="shadow-md border-b-1">
         <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-6">
           <div className="flex items-center justify-between">
-            <div className="flex items-center">
+            <div className="flex items-center h-16">
               <div className="flex-shrink-0">
                 <img
                   className="h-8 w-8"
@@ -20,28 +22,22 @@ const Header = () => {
             </div>
             <div className="hidden md:block">
               <div className="ml-4 h-16 items-end flex md:ml-6">
-                {/* <button
-                  type="button"
-                  className="relative rounded-full  p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                >
-                  <span className="absolute -inset-1.5"></span>
-                  <span className="sr-only">View notifications</span>
-                  <svg
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
-                    />
-                  </svg>
-                </button> */}
-                <a className="main-menu active">Home</a>
+                <a className="main-menu ">
+                  <CiHome />
+                  &nbsp; <span>Home</span>
+                </a>
+                <a className="main-menu active">
+                  <TbComponents />
+                  &nbsp;<span>Components</span>
+                </a>
+                <a className="main-menu">
+                  <CiSettings />
+                  &nbsp;<span>Settings</span>
+                </a>
+                <a className="main-menu">
+                  <CiPhone />
+                  &nbsp;<span>Contact Us</span>
+                </a>
               </div>
             </div>
             <div className="-mr-2 flex md:hidden">

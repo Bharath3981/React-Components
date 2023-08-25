@@ -2,10 +2,13 @@ body {
   @apply bg-[#fbf9f8];
 }
 .jet {
+  .header {
+    @apply bg-white;
+  }
   .main-menu {
-    @apply p-1 border-b-[3px] border-b-transparent font-semibold;
+    @apply flex justify-between items-baseline p-1 border-b-[3px] border-b-transparent font-semibold text-gray-500 hover:text-gray-700 cursor-pointer px-2;
   }
   .main-menu.active {
-    @apply p-1 cursor-pointer border-b-[3px] border-b-[--jet-selected];
+    @apply border-b-[--jet-selected] text-gray-700;
   }
 }
