@@ -1,0 +1,14 @@
+body {
+  @apply bg-white;
+}
+.amazon {
+  .header {
+    @apply bg-[#232f3e] text-white;
+  }
+  .main-menu {
+    @apply p-1 border-b-[3px] border-b-transparent text-[--amazon-selected];
+  }
+  .main-menu.active {
+    @apply p-1 cursor-pointer border-b-[3px] border-b-[--amazon-selected];
+  }
+}

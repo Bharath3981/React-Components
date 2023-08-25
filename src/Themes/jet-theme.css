@@ -1,0 +1,11 @@
+body {
+  @apply bg-[#fbf9f8];
+}
+.jet {
+  .main-menu {
+    @apply p-1 border-b-[3px] border-b-transparent font-semibold;
+  }
+  .main-menu.active {
+    @apply p-1 cursor-pointer border-b-[3px] border-b-[--jet-selected];
+  }
+}

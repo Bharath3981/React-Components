@@ -39,7 +39,7 @@ const NavItem = ({ close, menuDetails, navIcon }) => {
         <div
           style={{ height }}
           id={"subMenu" + id}
-          className="relative transition-all ease-in duration-300 overflow-hidden "
+          className="border-l-2 relative transition-effect overflow-hidden "
         >
           <div ref={ref}>
             {subMenus.map((subMenu, index) => (
