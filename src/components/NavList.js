@@ -6,6 +6,7 @@ const NavList = () => {
   const navMenu = {
     id: "table-menu",
     name: "Table",
+
     subMenus: [
       {
         name: "Basic table",
@@ -24,6 +25,7 @@ const NavList = () => {
   const listNavMenu = {
     id: "list-menu",
     name: "List",
+    expand: true,
     subMenus: [
       {
         name: "Basic list",

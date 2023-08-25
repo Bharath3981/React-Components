@@ -1,16 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { VscChevronDown } from "react-icons/vsc";
 
-const NavItem = ({ menuDetails, navIcon }) => {
-  const [expandedMenu, setExpandedMenu] = useState(false);
-  const { id, name, subMenus } = menuDetails;
+const NavItem = ({ close, menuDetails, navIcon }) => {
+  const { id, name, subMenus, expand = false } = menuDetails;
+  const [expandedMenu, setExpandedMenu] = useState(expand);
+  const [height, setHeight] = useState(0);
+
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (expandedMenu) {
+      setHeight(ref.current?.getBoundingClientRect().height);
+    } else {
+      setHeight(0);
+    }
+  }, [expandedMenu]);
   return (
     <>
       <div>
-        <button
+        <a
           id={id}
           onClick={(e) => setExpandedMenu((expand) => !expand)}
-          className="flex items-center w-full px-2 py-1 bg-transparent relative text-center place-content-between"
+          className="flex cursor-pointer items-center w-full px-2 py-1 bg-transparent relative text-center place-content-between"
         >
           <span className="flex items-center">
             <span className="pr-2 inline-block">{navIcon}</span>
@@ -24,21 +35,22 @@ const NavItem = ({ menuDetails, navIcon }) => {
           >
             <VscChevronDown />
           </span>
-        </button>
+        </a>
         <div
-          className={
-            "relative transition-all ease-in duration-300 overflow-hidden " +
-            (expandedMenu ? "h-32" : "h-0")
-          }
+          style={{ height }}
+          id={"subMenu" + id}
+          className="relative transition-all ease-in duration-300 overflow-hidden "
         >
-          {subMenus.map((subMenu, index) => (
-            <a
-              key={index}
-              className="pl-8 block bg-transparent px-2 py-1 w-full"
-            >
-              {subMenu.name}
-            </a>
-          ))}
+          <div ref={ref}>
+            {subMenus.map((subMenu, index) => (
+              <a
+                key={index}
+                className="pl-8 block bg-transparent px-2 py-1 w-full"
+              >
+                {subMenu.name}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </>
