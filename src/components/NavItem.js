@@ -21,7 +21,7 @@ const NavItem = ({ close, menuDetails, navIcon }) => {
         <a
           id={id}
           onClick={(e) => setExpandedMenu((expand) => !expand)}
-          className="flex cursor-pointer items-center w-full px-2 py-1 bg-transparent relative text-center place-content-between"
+          className="nav-menu"
         >
           <span className="flex items-center">
             <span className="pr-2 inline-block">{navIcon}</span>
@@ -39,14 +39,11 @@ const NavItem = ({ close, menuDetails, navIcon }) => {
         <div
           style={{ height }}
           id={"subMenu" + id}
-          className="border-l-2 relative transition-effect overflow-hidden "
+          className="relative transition-effect overflow-hidden "
         >
           <div ref={ref}>
             {subMenus.map((subMenu, index) => (
-              <a
-                key={index}
-                className="pl-8 block bg-transparent px-2 py-1 w-full"
-              >
+              <a key={index} className="nav-sub-menu">
                 {subMenu.name}
               </a>
             ))}

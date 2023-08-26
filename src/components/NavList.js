@@ -39,7 +39,7 @@ const NavList = () => {
     ],
   };
   return (
-    <div className="py-2 active">
+    <div className="py-2 active side-bar">
       <NavItem menuDetails={listNavMenu} navIcon={<CiViewList />} />
       <NavItem menuDetails={navMenu} navIcon={<CiViewTable />} />
     </div>

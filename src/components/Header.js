@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { CiHome, CiSettings, CiPhone } from "react-icons/ci";
 import { TbComponents } from "react-icons/tb";
+import NavList from "./NavList";
 
 const Header = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -8,7 +9,7 @@ const Header = () => {
   return (
     <header className="header min-h-full">
       <nav className="shadow-md border-b-1">
-        <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-6">
+        <div className="mx-auto max-w-7xl px-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center h-16">
               <div className="flex-shrink-0">
@@ -102,9 +103,7 @@ const Header = () => {
             aria-label="Sidebar"
           >
             <div className="h-screen px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
-              <ul className="md:flex  ml-auto mr-8 items-center">
-                <li>test</li>
-              </ul>
+              <NavList />
             </div>
           </aside>
         </div>

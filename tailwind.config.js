@@ -6,6 +6,9 @@ module.exports = {
       colors: {
         "jet-active": "#0E7297",
       },
+      transitionProperty: {
+        height: "height",
+      },
     },
   },
   plugins: [],
