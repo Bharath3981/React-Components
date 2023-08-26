@@ -11,4 +11,16 @@ body {
   .main-menu.active {
     @apply border-b-[--amazon-selected];
   }
+  .side-bar {
+    @apply bg-[#3a3631] text-[#b0afad] font-semibold;
+    .nav-menu {
+      @apply flex hover:text-white hover:bg-[#413d3b] cursor-pointer items-center w-full px-2 py-1 bg-transparent relative text-center place-content-between;
+    }
+    .nav-sub-menu {
+      @apply pl-8 hover:text-white hover:bg-[#413d3b] cursor-pointer block bg-transparent px-2 py-1 w-full;
+    }
+  }
+  .offcanvas {
+    @apply bg-[#3a3631];
+  }
 }

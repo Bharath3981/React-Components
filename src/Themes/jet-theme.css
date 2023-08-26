@@ -20,4 +20,7 @@ body {
       @apply pl-8 hover:text-white hover:bg-[#413d3b] cursor-pointer block bg-transparent px-2 py-1 w-full;
     }
   }
+  .offcanvas {
+    @apply bg-[#3a3631];
+  }
 }

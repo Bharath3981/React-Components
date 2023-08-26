@@ -13,6 +13,6 @@
   }
 
   .transition-effect {
-    @apply transition-height ease-in duration-300;
+    @apply transition-all ease-in duration-300;
   }
 }

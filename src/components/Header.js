@@ -90,19 +90,16 @@ const Header = () => {
         {/* <!-- Mobile menu, show/hide based on menu state. --> */}
         <div
           className={
-            "absolute md:hidden h-screen transition-effect w-[75%] " +
-            (showSidebar ? "left-0" : "right-full")
+            "offcanvas absolute md:hidden h-screen transition-effect w-[75%] " +
+            (showSidebar ? "-translate-x" : "-translate-x-full")
           }
         >
           <aside
             id="default-sidebar"
-            className={
-              "z-40 h-screen transition-effect relative " +
-              (showSidebar ? "-translate-x" : "-translate-x-full")
-            }
+            className={"z-40 h-screen transition-effect relative "}
             aria-label="Sidebar"
           >
-            <div className="h-screen px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+            <div className="h-screen px-3 py-4 overflow-y-auto dark:bg-gray-800">
               <NavList />
             </div>
           </aside>
