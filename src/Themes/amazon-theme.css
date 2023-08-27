@@ -4,6 +4,32 @@ body {
 .amazon {
   .header {
     @apply bg-[#232f3e] text-white;
+    .toogle-button {
+      @apply z-10  relative inline-flex items-center justify-center rounded-md  mx-4 h-8 w-8 text-gray-400 hover:text-gray-500;
+      .icon-bar {
+        @apply w-5 bg-white block h-[2px] rounded-sm my-1 absolute;
+      }
+      .top-bar {
+        @apply rotate-0 origin-top;
+      }
+      .middle-bar {
+        @apply opacity-100 my-4;
+      }
+      .bottom-bar {
+        @apply rotate-0 origin-bottom;
+      }
+    }
+    .toogle-button.expanded {
+      .top-bar {
+        @apply rotate-45 origin-top;
+      }
+      .middle-bar {
+        @apply opacity-0;
+      }
+      .bottom-bar {
+        @apply -rotate-45 origin-bottom;
+      }
+    }
   }
   .main-menu {
     @apply flex justify-between items-baseline p-1 border-b-[3px] border-b-transparent font-semibold text-[--amazon-selected] cursor-pointer px-2;
@@ -12,15 +38,18 @@ body {
     @apply border-b-[--amazon-selected];
   }
   .side-bar {
-    @apply bg-[#3a3631] text-[#b0afad] font-semibold;
+    @apply bg-white text-black;
     .nav-menu {
-      @apply flex hover:text-white hover:bg-[#413d3b] cursor-pointer items-center w-full px-2 py-1 bg-transparent relative text-center place-content-between;
+      @apply flex hover:bg-slate-100 cursor-pointer items-center w-full px-2 py-1 bg-transparent relative text-center place-content-between;
     }
     .nav-sub-menu {
-      @apply pl-8 hover:text-white hover:bg-[#413d3b] cursor-pointer block bg-transparent px-2 py-1 w-full;
+      @apply pl-8 hover:bg-slate-100 cursor-pointer block bg-transparent px-2 py-1 w-full;
     }
   }
   .offcanvas {
-    @apply bg-[#3a3631];
+    @apply bg-white z-10;
+  }
+  .backdrop-filter {
+    @apply absolute w-full h-screen top-0 opacity-70 bg-black;
   }
 }
