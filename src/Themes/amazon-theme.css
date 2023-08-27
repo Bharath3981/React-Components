@@ -3,31 +3,31 @@ body {
 }
 .amazon {
   .header {
-    @apply bg-[#232f3e] text-white;
+    @apply bg-[#232f3e] text-white z-20 relative;
     .toogle-button {
-      @apply z-10  relative inline-flex items-center justify-center rounded-md  mx-4 h-8 w-8 text-gray-400 hover:text-gray-500;
+      @apply z-10 relative flex rounded-md flex-col items-center justify-center mx-4 h-8 w-8 text-gray-400 hover:text-gray-500;
       .icon-bar {
-        @apply w-5 bg-white block h-[2px] rounded-sm my-1 absolute;
+        @apply w-5 bg-white block h-[2px] rounded-sm my-[2px] mx-0;
       }
       .top-bar {
-        @apply rotate-0 origin-top;
+        @apply rotate-0 origin-[9%_0%];
       }
       .middle-bar {
-        @apply opacity-100 my-4;
+        @apply opacity-100;
       }
       .bottom-bar {
-        @apply rotate-0 origin-bottom;
+        @apply rotate-0 origin-[5%_90%];
       }
     }
     .toogle-button.expanded {
       .top-bar {
-        @apply rotate-45 origin-top;
+        @apply rotate-45;
       }
       .middle-bar {
         @apply opacity-0;
       }
       .bottom-bar {
-        @apply -rotate-45 origin-bottom;
+        @apply -rotate-45;
       }
     }
   }

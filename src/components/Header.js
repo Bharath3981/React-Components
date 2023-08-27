@@ -51,9 +51,8 @@ const Header = () => {
                   onClick={() => setShowSidebar((show) => !show)}
                   className={"toogle-button " + (showSidebar ? "expanded" : "")}
                 >
-                  tes
                   <span className="icon-bar transition-effect top-bar"></span>
-                  <span className="icon-bar opacity-0 middle-bar"></span>
+                  <span className="icon-bar transition-effect middle-bar"></span>
                   <span className="icon-bar transition-effect bottom-bar"></span>
                 </button>
               </div>

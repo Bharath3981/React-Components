@@ -6,7 +6,7 @@ import SideBar from "./components/SideBar";
 
 function App() {
   return (
-    <div className="amazon">
+    <div className="jet">
       <Header />
       <div className="h-screen  flex  w-full">
         <div className="side-bar p-1 hidden md:block w-[30%]">
