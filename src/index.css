@@ -15,4 +15,8 @@
   .transition-effect {
     @apply transition-all ease-in duration-300;
   }
+
+  .backdrop-filter {
+    @apply absolute w-full h-screen opacity-50 bg-black;
+  }
 }

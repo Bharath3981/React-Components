@@ -76,14 +76,15 @@ const Header = () => {
               </div>
             </aside>
           </div>
+          <div
+            className={
+              "transition-effect " +
+              (showSidebar ? "backdrop-filter" : "absolute h-screen w-0")
+            }
+            onClick={() => setShowSidebar((show) => !show)}
+          ></div>
         </nav>
       </header>
-      {showSidebar && (
-        <div
-          className="backdrop-filter"
-          onClick={() => setShowSidebar((show) => !show)}
-        ></div>
-      )}
     </>
   );
 };

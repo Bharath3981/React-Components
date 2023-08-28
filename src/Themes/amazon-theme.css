@@ -49,7 +49,4 @@ body {
   .offcanvas {
     @apply bg-white z-10;
   }
-  .backdrop-filter {
-    @apply absolute w-full h-screen top-0 opacity-70 bg-black;
-  }
 }

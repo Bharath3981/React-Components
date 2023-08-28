@@ -3,7 +3,33 @@ body {
 }
 .flipkart {
   .header {
-    @apply bg-[#2874f0] text-white;
+    @apply bg-[#2874f0] text-white  z-20 relative;
+    .toogle-button {
+      @apply z-10 relative flex rounded-md flex-col items-center justify-center mx-4 h-8 w-8 text-gray-400 hover:text-gray-500;
+      .icon-bar {
+        @apply w-5 bg-white block h-[2px] rounded-sm my-[2px] mx-0;
+      }
+      .top-bar {
+        @apply rotate-0 origin-[9%_0%];
+      }
+      .middle-bar {
+        @apply opacity-100;
+      }
+      .bottom-bar {
+        @apply rotate-0 origin-[5%_90%];
+      }
+    }
+    .toogle-button.expanded {
+      .top-bar {
+        @apply rotate-45;
+      }
+      .middle-bar {
+        @apply opacity-0;
+      }
+      .bottom-bar {
+        @apply -rotate-45;
+      }
+    }
   }
   .main-menu {
     @apply flex justify-between items-baseline p-1 border-b-[3px] border-b-transparent font-semibold text-white cursor-pointer px-2;
@@ -11,7 +37,16 @@ body {
   .main-menu.active {
     @apply border-b-white;
   }
-  .backdrop-filter {
-    @apply absolute w-full h-screen top-0 opacity-70 bg-black;
+  .side-bar {
+    @apply bg-white text-black;
+    .nav-menu {
+      @apply flex hover:bg-slate-100 cursor-pointer items-center w-full px-2 py-1 bg-transparent relative text-center place-content-between;
+    }
+    .nav-sub-menu {
+      @apply pl-8 hover:bg-slate-100 cursor-pointer block bg-transparent px-2 py-1 w-full;
+    }
+  }
+  .offcanvas {
+    @apply bg-white z-10;
   }
 }
