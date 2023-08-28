@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 
-import { VscChevronDown } from "react-icons/vsc";
 import NavList from "./NavList";
 
 const SideBar = () => {

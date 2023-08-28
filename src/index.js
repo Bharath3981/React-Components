@@ -4,50 +4,13 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Home from "./components/Home";
-import Components from "./components/Components";
-import Settings from "./components/Settings";
-import AboutUs from "./components/AboutUs";
-import BasicList from "./React-components/List/BasicList";
-import FilteredList from "./React-components/List/FilteredList";
-import TemplateList from "./React-components/List/TemplateList";
+import routes from "./data/Routes";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/components",
-        element: <Components />,
-        children: [
-          {
-            path: "/components/",
-            element: <BasicList />,
-          },
-          {
-            path: "/components/filteredList",
-            element: <FilteredList />,
-          },
-          {
-            path: "/components/templateList",
-            element: <TemplateList />,
-          },
-        ],
-      },
-      {
-        path: "/settings",
-        element: <Settings />,
-      },
-      {
-        path: "/aboutUs",
-        element: <AboutUs />,
-      },
-    ],
+    children: routes,
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));

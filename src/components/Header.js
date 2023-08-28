@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { CiHome, CiSettings, CiPhone } from "react-icons/ci";
 import { TbComponents } from "react-icons/tb";
 import NavList from "./NavList";
+import routes from "../data/Routes";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -26,22 +28,18 @@ const Header = () => {
               </div>
               <div className="hidden md:block">
                 <div className="ml-4 h-16 items-end flex md:ml-6">
-                  <a className="main-menu ">
-                    <CiHome />
-                    &nbsp; <span>Home</span>
-                  </a>
-                  <a className="main-menu active">
-                    <TbComponents />
-                    &nbsp;<span>Components</span>
-                  </a>
-                  <a className="main-menu">
-                    <CiSettings />
-                    &nbsp;<span>Settings</span>
-                  </a>
-                  <a className="main-menu">
-                    <CiPhone />
-                    &nbsp;<span>Contact Us</span>
-                  </a>
+                  {routes.map((menu) => (
+                    <NavLink
+                      to={menu.path}
+                      key={menu.id}
+                      className={
+                        "main-menu " +
+                        ((isActive) => (isActive ? "active" : ""))
+                      }
+                    >
+                      {menu.icon} &nbsp; <span>{menu.label}</span>
+                    </NavLink>
+                  ))}
                 </div>
               </div>
               <div className="-mr-2 flex md:hidden">
