@@ -1,10 +1,19 @@
 import React from "react";
 import NavItem from "./NavItem";
 import { CiViewTable, CiViewList } from "react-icons/ci";
+import { componentChildRoutes } from "../data/Routes";
 
 const NavList = () => {
+  console.log(componentChildRoutes);
+  let resultObj = {};
+  // componentChildRoutes.forEach((menu) => {
+  //   if (resultObj[menu._type]) {
+  //     resultObj[menu._type].push(menu);
+  //   } else {
+  //     resultObj[menu._type] = [menu];
+  //   }
+  // });
   const navMenu = {
-    id: "table-menu",
     name: "Table",
 
     subMenus: [
@@ -23,7 +32,6 @@ const NavList = () => {
     ],
   };
   const listNavMenu = {
-    id: "list-menu",
     name: "List",
     expand: true,
     subMenus: [
@@ -40,8 +48,11 @@ const NavList = () => {
   };
   return (
     <div className="py-2 active side-bar">
-      <NavItem menuDetails={listNavMenu} navIcon={<CiViewList />} />
-      <NavItem menuDetails={navMenu} navIcon={<CiViewTable />} />
+      {Object.keys(componentChildRoutes).map((key) => {
+        return <NavItem key={key} menuDetails={componentChildRoutes[key]} />;
+      })}
+
+      {/* <NavItem menuDetails={navMenu} navIcon={<CiViewTable />} /> */}
     </div>
   );
 };

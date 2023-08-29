@@ -1,5 +1,5 @@
 import { Suspense, lazy } from "react";
-import { CiHome, CiSettings } from "react-icons/ci";
+import { CiHome, CiSettings, CiViewList, CiViewTable } from "react-icons/ci";
 import { TbComponents } from "react-icons/tb";
 import { RiContactsLine } from "react-icons/ri";
 
@@ -16,45 +16,74 @@ const TemplateList = lazy(() =>
 );
 const BasicList = lazy(() => import("../React-components/List/BasicList"));
 const BasicTable = lazy(() => import("../React-components/Table/BasicTable"));
-export const componentChildRoutes = [
-  {
-    path: "/components/",
-    element: (
-      <Suspense fallback="Loading...">
-        <BasicList />
-      </Suspense>
-    ),
+export const componentChildRoutes = {
+  listComponents: {
+    label: "List Components",
+    expand: true,
+    menuId: "listComponents",
+    icon: <CiViewList />,
+    subMenus: [
+      {
+        _id: "componentsMenu-1",
+        _label: "Basic List",
+        _type: "List Component",
+        path: "/components/",
+        element: (
+          <Suspense fallback="Loading...">
+            <BasicList />
+          </Suspense>
+        ),
+      },
+      {
+        _id: "componentsMenu-2",
+        _label: "Filtered List",
+        _type: "List Component",
+        path: "/components/filteredList",
+        element: (
+          <Suspense fallback="Loading...">
+            <FilteredList />
+          </Suspense>
+        ),
+      },
+      {
+        _id: "componentsMenu-3",
+        _label: "Template List",
+        _type: "List Component",
+        path: "/components/templateList",
+        element: (
+          <Suspense fallback="Loading...">
+            <TemplateList />
+          </Suspense>
+        ),
+      },
+    ],
   },
-  {
-    path: "/components/filteredList",
-    element: (
-      <Suspense fallback="Loading...">
-        <FilteredList />
-      </Suspense>
-    ),
+
+  tableComponents: {
+    label: "Table Components",
+    expand: false,
+    menuId: "tableComponents",
+    icon: <CiViewTable />,
+    subMenus: [
+      {
+        _id: "componentsMenu-4",
+        _label: "Basic table",
+        _type: "Table Component",
+        path: "/components/basicTable",
+        element: (
+          <Suspense fallback="Loading...">
+            <BasicTable />
+          </Suspense>
+        ),
+      },
+    ],
   },
-  {
-    path: "/components/templateList",
-    element: (
-      <Suspense fallback="Loading...">
-        <TemplateList />
-      </Suspense>
-    ),
-  },
-  {
-    path: "/components/basicTable",
-    element: (
-      <Suspense fallback="Loading...">
-        <BasicTable />
-      </Suspense>
-    ),
-  },
-];
+};
 const routes = [
   {
-    id: "menu-1",
-    label: "Home",
-    icon: <CiHome />,
+    _id: "menu-1",
+    _label: "Home",
+    _icon: <CiHome />,
     path: "/",
     element: (
       <Suspense fallback="Loading...">
@@ -63,21 +92,24 @@ const routes = [
     ),
   },
   {
-    id: "menu-2",
-    label: "Components",
-    icon: <TbComponents />,
+    _id: "menu-2",
+    _label: "Components",
+    _icon: <TbComponents />,
     path: "/components",
     element: (
       <Suspense fallback="Loading...">
         <Components />
       </Suspense>
     ),
-    children: componentChildRoutes,
+    children: [
+      ...componentChildRoutes.listComponents.subMenus,
+      ...componentChildRoutes.tableComponents.subMenus,
+    ],
   },
   {
-    id: "menu-3",
-    label: "Settings",
-    icon: <CiSettings />,
+    _id: "menu-3",
+    _label: "Settings",
+    _icon: <CiSettings />,
     path: "/settings",
     element: (
       <Suspense fallback="Loading...">
@@ -86,9 +118,9 @@ const routes = [
     ),
   },
   {
-    id: "menu-4",
-    label: "About me",
-    icon: <RiContactsLine />,
+    _id: "menu-4",
+    _label: "About Me",
+    _icon: <RiContactsLine />,
     path: "/aboutUs",
     element: (
       <Suspense fallback="Loading...">

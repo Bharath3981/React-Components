@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import { VscChevronDown } from "react-icons/vsc";
+import { NavLink } from "react-router-dom";
 
-const NavItem = ({ close, menuDetails, navIcon }) => {
-  const { id, name, subMenus, expand = false } = menuDetails;
+const NavItem = ({ close, menuDetails }) => {
+  console.log(menuDetails);
+  const { menuId, label, subMenus, icon, expand = false } = menuDetails;
   const [expandedMenu, setExpandedMenu] = useState(expand);
   const [height, setHeight] = useState(0);
 
@@ -19,13 +21,12 @@ const NavItem = ({ close, menuDetails, navIcon }) => {
     <>
       <div>
         <a
-          id={id}
           onClick={(e) => setExpandedMenu((expand) => !expand)}
           className="nav-menu"
         >
           <span className="flex items-center">
-            <span className="pr-2 inline-block">{navIcon}</span>
-            <span className="">{name}</span>
+            <span className="pr-2 inline-block">{icon}</span>
+            <span className="">{label}</span>
           </span>
           <span
             className={
@@ -38,14 +39,18 @@ const NavItem = ({ close, menuDetails, navIcon }) => {
         </a>
         <div
           style={{ height }}
-          id={"subMenu" + id}
+          id={"subMenu" + menuId}
           className="relative transition-effect overflow-hidden "
         >
           <div ref={ref}>
             {subMenus.map((subMenu, index) => (
-              <a key={index} className="nav-sub-menu">
-                {subMenu.name}
-              </a>
+              <NavLink
+                to={subMenu.path}
+                key={subMenu._id}
+                className="nav-sub-menu"
+              >
+                {subMenu._label}
+              </NavLink>
             ))}
           </div>
         </div>

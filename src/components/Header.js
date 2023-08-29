@@ -31,13 +31,13 @@ const Header = () => {
                   {routes.map((menu) => (
                     <NavLink
                       to={menu.path}
-                      key={menu.id}
+                      key={menu._id}
                       className={
                         "main-menu " +
                         ((isActive) => (isActive ? "active" : ""))
                       }
                     >
-                      {menu.icon} &nbsp; <span>{menu.label}</span>
+                      {menu._icon} &nbsp; <span>{menu._label}</span>
                     </NavLink>
                   ))}
                 </div>
@@ -58,29 +58,31 @@ const Header = () => {
           </div>
 
           {/* <!-- Mobile menu, show/hide based on menu state. --> */}
-          <div
-            className={
-              "offcanvas absolute md:hidden h-screen transition-effect w-[75%] " +
-              (showSidebar ? "-translate-x" : "-translate-x-full")
-            }
-          >
-            <aside
-              id="default-sidebar"
-              className={"z-40 h-screen transition-effect relative "}
-              aria-label="Sidebar"
+          <div className="block md:hidden">
+            <div
+              className={
+                "offcanvas absolute md:hidden h-screen transition-effect w-[75%] " +
+                (showSidebar ? "-translate-x" : "-translate-x-full")
+              }
             >
-              <div className="h-screen px-3 py-4 overflow-y-auto dark:bg-gray-800">
-                <NavList />
-              </div>
-            </aside>
+              <aside
+                id="default-sidebar"
+                className={"z-40 h-screen transition-effect relative "}
+                aria-label="Sidebar"
+              >
+                <div className="h-screen px-3 py-4 overflow-y-auto dark:bg-gray-800">
+                  <NavList />
+                </div>
+              </aside>
+            </div>
+            <div
+              className={
+                "transition-effect " +
+                (showSidebar ? "backdrop-filter" : "absolute h-screen w-0")
+              }
+              onClick={() => setShowSidebar((show) => !show)}
+            ></div>
           </div>
-          <div
-            className={
-              "transition-effect " +
-              (showSidebar ? "backdrop-filter" : "absolute h-screen w-0")
-            }
-            onClick={() => setShowSidebar((show) => !show)}
-          ></div>
         </nav>
       </header>
     </>
