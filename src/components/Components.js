@@ -1,6 +1,5 @@
 import React from "react";
 import SideBar from "./SideBar";
-import MainContent from "./MainContent";
 import { Outlet } from "react-router-dom";
 
 const Components = () => {

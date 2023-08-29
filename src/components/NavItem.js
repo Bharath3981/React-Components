@@ -2,8 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { VscChevronDown } from "react-icons/vsc";
 import { NavLink } from "react-router-dom";
 
-const NavItem = ({ close, menuDetails }) => {
-  console.log(menuDetails);
+const NavItem = ({ menuDetails }) => {
   const { menuId, label, subMenus, icon, expand = false } = menuDetails;
   const [expandedMenu, setExpandedMenu] = useState(expand);
   const [height, setHeight] = useState(0);
@@ -20,7 +19,7 @@ const NavItem = ({ close, menuDetails }) => {
   return (
     <>
       <div>
-        <a
+        <button
           onClick={(e) => setExpandedMenu((expand) => !expand)}
           className="nav-menu"
         >
@@ -36,7 +35,7 @@ const NavItem = ({ close, menuDetails }) => {
           >
             <VscChevronDown />
           </span>
-        </a>
+        </button>
         <div
           style={{ height }}
           id={"subMenu" + menuId}

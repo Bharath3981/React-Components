@@ -16,6 +16,9 @@ const TemplateList = lazy(() =>
 );
 const BasicList = lazy(() => import("../React-components/List/BasicList"));
 const BasicTable = lazy(() => import("../React-components/Table/BasicTable"));
+const SortableTable = lazy(() =>
+  import("../React-components/Table/SortableTable")
+);
 export const componentChildRoutes = {
   listComponents: {
     label: "List Components",
@@ -73,6 +76,17 @@ export const componentChildRoutes = {
         element: (
           <Suspense fallback="Loading...">
             <BasicTable />
+          </Suspense>
+        ),
+      },
+      {
+        _id: "componentsMenu-5",
+        _label: "Sortable table",
+        _type: "Table Component",
+        path: "/components/sortableTable",
+        element: (
+          <Suspense fallback="Loading...">
+            <SortableTable />
           </Suspense>
         ),
       },

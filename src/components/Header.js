@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { CiHome, CiSettings, CiPhone } from "react-icons/ci";
-import { TbComponents } from "react-icons/tb";
 import NavList from "./NavList";
 import routes from "../data/Routes";
 import { NavLink } from "react-router-dom";
@@ -18,7 +16,7 @@ const Header = () => {
                 <div className="flex-shrink-0">
                   <img
                     className="h-8 w-8"
-                    src="React-components.png"
+                    src="/React-components.png"
                     alt="Your Company"
                   />
                 </div>

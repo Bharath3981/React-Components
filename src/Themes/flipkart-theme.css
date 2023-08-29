@@ -40,10 +40,10 @@ body {
   .side-bar {
     @apply bg-white text-black;
     .nav-menu {
-      @apply flex hover:bg-slate-100 cursor-pointer items-center w-full px-2 py-1 bg-transparent relative text-center place-content-between;
+      @apply flex hover:bg-slate-100 hover:text-[#2874f0]  cursor-pointer items-center w-full px-2 py-1 bg-transparent relative text-center place-content-between;
     }
     .nav-sub-menu {
-      @apply pl-8 hover:bg-slate-100 cursor-pointer block bg-transparent px-2 py-1 w-full;
+      @apply pl-8 hover:bg-slate-100 hover:text-[#2874f0] cursor-pointer block bg-transparent px-2 py-1 w-full;
     }
   }
   .offcanvas {
