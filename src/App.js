@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 
 function App() {
+  console.log("APP.JS COMPONENT RENDERED");
   return (
     <div className="jet">
       <Header />

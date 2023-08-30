@@ -3,7 +3,7 @@ import NavItem from "./NavItem";
 import { componentChildRoutes } from "../data/Routes";
 
 const NavList = () => {
-  console.log(componentChildRoutes);
+  console.log("NAVLIST.JS COMPONENT RENDERED");
   return (
     <div className="py-2 active side-bar">
       {Object.keys(componentChildRoutes).map((key) => {

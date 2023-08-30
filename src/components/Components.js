@@ -3,6 +3,7 @@ import SideBar from "./SideBar";
 import { Outlet } from "react-router-dom";
 
 const Components = () => {
+  console.log("COMPONENTS.JS COMPONENT RENDERED");
   return (
     <>
       <div className="side-bar p-1 hidden md:block w-[30%]">

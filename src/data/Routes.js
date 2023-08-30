@@ -1,6 +1,6 @@
 import { Suspense, lazy } from "react";
 import { CiHome, CiSettings, CiViewList, CiViewTable } from "react-icons/ci";
-import { TbComponents } from "react-icons/tb";
+import { PiShapesThin } from "react-icons/pi";
 import { RiContactsLine } from "react-icons/ri";
 
 const Home = lazy(() => import("../components/Home"));
@@ -108,7 +108,7 @@ const routes = [
   {
     _id: "menu-2",
     _label: "Components",
-    _icon: <TbComponents />,
+    _icon: <PiShapesThin />,
     path: "/components",
     element: (
       <Suspense fallback="Loading...">

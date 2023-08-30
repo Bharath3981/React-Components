@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import routes from "./data/Routes";
 
+console.log("INDEX.JS COMPONENT RENDERED");
 const router = createBrowserRouter([
   {
     path: "/",

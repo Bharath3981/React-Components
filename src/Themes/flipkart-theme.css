@@ -37,6 +37,12 @@ body {
   .main-menu.active {
     @apply border-b-white;
   }
+  .bottom-menu {
+    @apply border-t-[3px] border-transparent py-3 rounded-sm text-gray-600;
+  }
+  .bottom-menu.active {
+    @apply border-t-[3px] border-[--flipkart-selected] text-[--flipkart-selected] py-3 rounded-sm;
+  }
   .side-bar {
     @apply bg-white text-black;
     .nav-menu {

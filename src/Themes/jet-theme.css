@@ -37,6 +37,12 @@ body {
   .main-menu.active {
     @apply border-b-[--jet-selected] text-gray-700;
   }
+  .bottom-menu {
+    @apply border-t-[3px] border-transparent py-1 rounded-sm;
+  }
+  .bottom-menu.active {
+    @apply border-t-[3px] border-[--jet-selected] text-[--jet-selected] py-3 rounded-sm;
+  }
   .side-bar {
     @apply bg-[#3a3631] text-[#b0afad] font-semibold;
     .nav-menu {

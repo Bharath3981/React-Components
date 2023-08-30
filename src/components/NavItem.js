@@ -3,6 +3,7 @@ import { VscChevronDown } from "react-icons/vsc";
 import { NavLink } from "react-router-dom";
 
 const NavItem = ({ menuDetails }) => {
+  console.log("NAVITEM.JS COMPONENT RENDERED");
   const { menuId, label, subMenus, icon, expand = false } = menuDetails;
   const [expandedMenu, setExpandedMenu] = useState(expand);
   const [height, setHeight] = useState(0);
