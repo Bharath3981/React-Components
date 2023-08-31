@@ -55,4 +55,7 @@ body {
   .offcanvas {
     @apply bg-[#3a3631]  z-10;
   }
+  .radio-button {
+    @apply text-[--jet-selected] accent-current h-4 w-4;
+  }
 }

@@ -6,11 +6,13 @@ const Components = () => {
   console.log("COMPONENTS.JS COMPONENT RENDERED");
   return (
     <>
-      <div className="side-bar p-1 hidden md:block w-[30%]">
-        <SideBar />
-      </div>
-      <div className="w-full ">
-        <Outlet />
+      <div className="flex h-screen w-full">
+        <div className="side-bar p-1 hidden md:block w-[30%]">
+          <SideBar />
+        </div>
+        <div className="w-full ">
+          <Outlet />
+        </div>
       </div>
     </>
   );

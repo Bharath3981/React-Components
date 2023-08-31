@@ -1,1 +1,0 @@
-import{j as t}from"./index-2733de91.js";import e from"./FilteredList-f81014ea.js";const n=()=>t.jsxs("div",{className:"app",children:[t.jsx(e,{title:"Section 1",children:t.jsx("p",{children:"This is the content of section 1."})}),t.jsx(e,{title:"Section 2",children:t.jsx("p",{children:"This is the content of section 2."})})]});export{n as default};

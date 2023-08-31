@@ -1,1 +1,0 @@
-import{j as s,N as e,O as o}from"./index-2733de91.js";const l=()=>(console.log("SIDEBAR.JS COMPONENT RENDERED"),s.jsx(e,{})),r=()=>(console.log("COMPONENTS.JS COMPONENT RENDERED"),s.jsxs(s.Fragment,{children:[s.jsx("div",{className:"side-bar p-1 hidden md:block w-[30%]",children:s.jsx(l,{})}),s.jsx("div",{className:"w-full ",children:s.jsx(o,{})})]}));export{r as default};
