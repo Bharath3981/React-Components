@@ -1,8 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@import url("./Themes/amazon-theme.css");
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 @import url("./Themes/jet-theme.css");
+@import url("./Themes/amazon-theme.css");
 @import url("./Themes/flipkart-theme.css");
 
 @layer base {
@@ -18,5 +18,11 @@
 
   .backdrop-filter {
     @apply absolute w-full h-screen opacity-50 bg-black;
+  }
+  .content-layout {
+    @apply py-1 md:py-2 px-2 md:px-4;
+  }
+  .panel {
+    @apply bg-white border-[#e3e3e2] border rounded-md;
   }
 }

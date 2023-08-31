@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import NavList from "./NavList";
 import routes from "../data/Routes";
-import { NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import MainMenu from "./MainMenu";
 
 const Header = () => {
@@ -11,7 +11,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="header min-h-full">
+      <header className="header">
         <nav className="shadow-md border-b-1">
           <div className="mx-auto max-w-7xl px-2 md:px-4">
             <div className="flex items-center justify-between">
