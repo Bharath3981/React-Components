@@ -1,15 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {
-      colors: {
-        "jet-active": "#0E7297",
-      },
-      transitionProperty: {
-        height: "height",
-      },
-    },
+    extend: {},
   },
   plugins: [],
 };

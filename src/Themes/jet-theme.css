@@ -3,7 +3,7 @@ body {
 }
 .jet {
   .header {
-    @apply bg-white  z-20 relative;
+    @apply bg-white  z-20 relative min-h-full;
     .toogle-button {
       @apply z-10 relative flex rounded-md flex-col items-center justify-center mx-4 h-8 w-8;
       .icon-bar {
