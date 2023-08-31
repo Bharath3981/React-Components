@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import NavList from "./NavList";
 import routes from "../data/Routes";
-import { NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import MainMenu from "./MainMenu";
 
 const Header = () => {
