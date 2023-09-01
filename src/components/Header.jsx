@@ -11,7 +11,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="header">
+      <header className="header sticky top-0">
         <nav className="shadow-md border-b-1">
           <div className="mx-auto max-w-7xl px-2 md:px-4">
             <div className="flex items-center justify-between">
@@ -76,11 +76,6 @@ const Header = () => {
               ></div>
             </div>
           )}
-          <div className="block md:hidden fixed bottom-0 bg-white shadow-lg w-full ">
-            <div className="px-2 flex justify-around items-center h-10">
-              <MainMenu mainMenu={routes} defaultClassName="bottom-menu " />
-            </div>
-          </div>
         </nav>
       </header>
     </>

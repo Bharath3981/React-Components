@@ -8,6 +8,9 @@
     --amazon-selected: #e47911;
     --flipkart-selected: #2874f0;
   }
+  body {
+    @apply overflow-hidden;
+  }
 
   .transition-effect {
     @apply transition-all ease-in duration-300;
@@ -17,9 +20,30 @@
     @apply absolute w-full h-screen opacity-50 bg-black;
   }
   .content-layout {
-    @apply py-1 md:py-2 px-2 md:px-4;
+    @apply py-1 md:py-2 px-2;
   }
   .panel {
-    @apply bg-white border-[#e3e3e2] border rounded-md;
+    @apply bg-white border-[#e3e3e2] border rounded-md overflow-auto;
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 5px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: lightgray;
+    border-radius: 5px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: gray;
   }
 }

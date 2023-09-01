@@ -12,7 +12,7 @@ const MainMenu = ({ mainMenu, defaultClassName = "main-menu " }) => {
             defaultClassName + ((isActive) => (isActive ? "active" : ""))
           }
         >
-          {menu._icon}
+          <span className="">{menu._icon}</span>
           <span className="pl-1 hidden md:block">{menu._label}</span>
         </NavLink>
       ))}

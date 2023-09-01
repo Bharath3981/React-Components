@@ -38,10 +38,13 @@ body {
     @apply border-b-white;
   }
   .bottom-menu {
-    @apply border-t-[3px] border-transparent py-3 rounded-sm text-gray-600;
+    @apply border-t-[3px] border-transparent py-2 rounded-sm text-gray-600;
+    svg {
+      @apply h-6 w-6;
+    }
   }
   .bottom-menu.active {
-    @apply border-t-[3px] border-[--flipkart-selected] text-[--flipkart-selected] py-3 rounded-sm;
+    @apply border-t-[3px] border-[--flipkart-selected] text-[--flipkart-selected] py-2 rounded-sm;
   }
   .side-bar {
     @apply bg-white text-black;
