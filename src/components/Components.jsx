@@ -10,8 +10,12 @@ const Components = () => {
         <div className="side-bar p-1 hidden md:block w-[30%]">
           <SideBar />
         </div>
-        <div className="w-full ">
-          <Outlet />
+        <div className="w-full">
+          <div className="content-layout w-full h-full">
+            <div className="panel h-full">
+              <Outlet />
+            </div>
+          </div>
         </div>
       </div>
     </>

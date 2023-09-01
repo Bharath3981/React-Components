@@ -1,9 +1,6 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import url("./Themes/jet-theme.css");
-@import url("./Themes/amazon-theme.css");
-@import url("./Themes/flipkart-theme.css");
 
 @layer base {
   :root {
