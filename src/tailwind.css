@@ -9,7 +9,7 @@
     --flipkart-selected: #2874f0;
   }
   body {
-    @apply overflow-hidden;
+    @apply overflow-hidden bg-[#fbf9f8];
   }
 
   .transition-effect {
