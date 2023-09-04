@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import { useState } from "react";
 import ThemeContext from "./context/ThemeContext";
 import routes from "./data/Routes";
@@ -27,7 +28,11 @@ function App() {
           <div className="w-full">
             <Outlet />
           </div>
-          {/* <Footer /> */}
+          {document.body.offsetWidth >= 768 && (
+            <div className="block fixed bottom-0 w-full bg-white shadow-lg border text-center  h-8">
+              <Footer />
+            </div>
+          )}
         </div>
         <div className="block md:hidden fixed mt-6 bottom-0 bg-white shadow-lg w-full border">
           <div className="px-2 flex justify-around items-center h-10">
