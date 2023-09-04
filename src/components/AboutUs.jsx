@@ -8,9 +8,37 @@ const AboutUs = () => {
         <div className="w-full">
           <div className="grid gap-3 grid-cols-2 grid-rows-3">
             <div className="panel col-span-full">
-              <div className="p-3">
-                <div>Header</div>
-                <div>body</div>
+              <div className="relative h-28 p-4  mb-20">
+                <div className="absolute w-full h-full top-0 left-0 will-change-transform backfacevisibility overflow-hidden bg-cover bg-center bg-no-repeat z-0 bg-[url('https://prium.github.io/falcon/v3.14.0/assets/img/generic/4.jpg')]"></div>
+                <div className="absolute bottom-0 h-40 w-40 translate-y-1/2 inline-block">
+                  <img
+                    className="w-full h-full rounded-full p-1 block bg-white border border-spacing-1"
+                    width={200}
+                    src="https://prium.github.io/falcon/v3.14.0/assets/img/team/2.jpg"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div className="p-4">
+                <div className="inline-block w-full md:w-3/4">
+                  <div className="text-2xl font-medium">
+                    BAISETTY BHARATH KUMAR
+                  </div>
+                  <div className="text-lg font-normal">
+                    Senior Software Engineer at IBM
+                  </div>
+                  <div className="text-xl font-thin text-gray-500">
+                    Hyderabad, India
+                  </div>
+                </div>
+                <div className="inline-block w-full md:w-1/4">
+                  <div className="text-lg font-normal">
+                    Senior Software Engin
+                  </div>
+                  <div className="text-lg font-normal">
+                    Senior Software Engin
+                  </div>
+                </div>
               </div>
             </div>
             <div className="panel">main Card</div>

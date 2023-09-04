@@ -2,7 +2,12 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      backfacevisibility: {
+        "-webkit-backface-visibility": "hidden",
+        "backface-visibility": "hidden",
+      },
+    },
   },
   plugins: [],
 };
