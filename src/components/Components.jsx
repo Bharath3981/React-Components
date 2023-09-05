@@ -6,7 +6,7 @@ const Components = () => {
   console.log("COMPONENTS.JS COMPONENT RENDERED");
   return (
     <>
-      <div className="flex w-full h-full overflow-auto">
+      <div className="flex w-full  h-screen overflow-auto">
         <div className="side-bar p-1 h-screen overflow-y-scroll hidden md:block w-[30%]">
           <SideBar />
         </div>
