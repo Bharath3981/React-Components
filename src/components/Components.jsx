@@ -10,7 +10,7 @@ const Components = () => {
         <div className="side-bar p-1 h-screen overflow-y-scroll hidden md:block w-[30%]">
           <SideBar />
         </div>
-        <div className="w-full h-[calc(100vh_-_96px)]  overflow-auto">
+        <div className="w-full h-[calc(100vh_-_108px)] md:h-[calc(100vh_-_96px)]  overflow-auto">
           <div className="content-layout w-full">
             <div className="panel h-auto">
               <Outlet />
