@@ -16,7 +16,7 @@ const AboutUs = () => {
                     className="w-full h-full object-cover overflow-hidden rounded-full p-1 block bg-white border border-spacing-1"
                     width={600}
                     height={600}
-                    src="src/assets/profile2.png"
+                    src="profile2.png"
                     alt=""
                   />
                 </div>
