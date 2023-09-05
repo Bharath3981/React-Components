@@ -3,15 +3,19 @@ import NavList from "./NavList";
 import routes from "../data/Routes";
 import { useLocation } from "react-router-dom";
 import MainMenu from "./MainMenu";
+import resolveConfig from "tailwindcss/resolveConfig";
+import tailwindConfig from "../../tailwind.config";
 
 const Header = () => {
   console.log("HEADER.JS COMPONENT RENDERED");
+  const fullConfig = resolveConfig(tailwindConfig);
+  console.log("Tailwind config: ", fullConfig);
   let location = useLocation();
   const [showSidebar, setShowSidebar] = useState(false);
 
   return (
     <>
-      <header className="header">
+      <header className="header sticky top-0">
         <nav className="shadow-md border-b-1">
           <div className="mx-auto max-w-7xl px-2 md:px-4">
             <div className="flex items-center justify-between">
@@ -48,39 +52,37 @@ const Header = () => {
           </div>
 
           {/* <!-- Mobile menu, show/hide based on menu state. --> */}
-          {location.pathname.includes("components") && (
-            <div className="block md:hidden">
-              <div
-                className={
-                  "offcanvas absolute md:hidden h-screen transition-effect w-[75%] " +
-                  (showSidebar ? "-translate-x" : "-translate-x-full")
-                }
-              >
-                <aside
-                  id="default-sidebar"
-                  className={"z-40 h-screen transition-effect relative "}
-                  aria-label="Sidebar"
+          {document.body.offsetWidth < 768 &&
+            location.pathname.includes("components") && (
+              <div className="block md:hidden">
+                <div
+                  className={
+                    "offcanvas absolute md:hidden h-screen transition-effect w-[75%] " +
+                    (showSidebar ? "-translate-x" : "-translate-x-full")
+                  }
                 >
-                  <div className="h-screen px-3 py-4 overflow-y-auto dark:bg-gray-800">
-                    {console.log("NAVLIST.JS => HEADER.JS COMPONENT RENDERED")}
-                    <NavList />
-                  </div>
-                </aside>
+                  <aside
+                    id="default-sidebar"
+                    className={"z-40 h-screen transition-effect relative "}
+                    aria-label="Sidebar"
+                  >
+                    <div className="h-screen px-3 py-4 overflow-y-auto dark:bg-gray-800">
+                      {console.log(
+                        "NAVLIST.JS => HEADER.JS COMPONENT RENDERED"
+                      )}
+                      <NavList />
+                    </div>
+                  </aside>
+                </div>
+                <div
+                  className={
+                    "transition-effect " +
+                    (showSidebar ? "backdrop-filter" : "absolute h-screen w-0")
+                  }
+                  onClick={() => setShowSidebar((show) => !show)}
+                ></div>
               </div>
-              <div
-                className={
-                  "transition-effect " +
-                  (showSidebar ? "backdrop-filter" : "absolute h-screen w-0")
-                }
-                onClick={() => setShowSidebar((show) => !show)}
-              ></div>
-            </div>
-          )}
-          <div className="block md:hidden fixed bottom-0 bg-white shadow-lg w-full ">
-            <div className="px-2 flex justify-around items-center h-10">
-              <MainMenu mainMenu={routes} defaultClassName="bottom-menu " />
-            </div>
-          </div>
+            )}
         </nav>
       </header>
     </>
