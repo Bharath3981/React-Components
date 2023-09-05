@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="header sticky top-0">
+      <header id="app-header" className="header sticky top-0">
         <nav className="shadow-md border-b-1">
           <div className="mx-auto max-w-7xl px-2 md:px-4">
             <div className="flex items-center justify-between">

@@ -4,7 +4,7 @@ import { CiMail } from "react-icons/ci";
 const AboutUs = () => {
   console.log("ABOUTUS.JS COMPONENT RENDERED");
   return (
-    <div className="h-screen overflow-auto">
+    <div className="h-[calc(100vh_-_100px)]  overflow-auto">
       <div className="content-layout mx-auto max-w-7xl w-full h-full px-2  md:px-4">
         <div className="w-full">
           <div className="grid gap-3 grid-cols-2 grid-rows-3">

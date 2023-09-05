@@ -27,16 +27,20 @@ function App() {
         <div className="w-full">
           <Outlet />
         </div>
-        {document.body.offsetWidth >= 768 && (
-          <div className="block fixed bottom-0 w-full bg-white shadow-lg border text-center  h-8">
-            <Footer />
-          </div>
-        )}
+
         <div className="block md:hidden fixed mt-6 bottom-0 bg-white shadow-lg w-full border">
           <div className="px-2 flex justify-around items-center h-10">
             <MainMenu mainMenu={routes} defaultClassName="bottom-menu " />
           </div>
         </div>
+        {document.body.offsetWidth >= 768 && (
+          <div
+            id="app-footer"
+            className="block fixed bottom-0 w-full bg-white shadow-lg border text-center  h-8"
+          >
+            <Footer />
+          </div>
+        )}
       </div>
     </ThemeContext.Provider>
   );

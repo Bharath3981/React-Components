@@ -6,11 +6,11 @@ const Components = () => {
   console.log("COMPONENTS.JS COMPONENT RENDERED");
   return (
     <>
-      <div className="flex w-full  h-screen overflow-auto">
+      <div className="flex w-full  h-full overflow-auto">
         <div className="side-bar p-1 h-screen overflow-y-scroll hidden md:block w-[30%]">
           <SideBar />
         </div>
-        <div className="w-full  overflow-auto pb-24 md:pb-13">
+        <div className="w-full h-[calc(100vh_-_96px)]  overflow-auto">
           <div className="content-layout w-full">
             <div className="panel h-auto">
               <Outlet />
