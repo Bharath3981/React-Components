@@ -62,7 +62,7 @@ const AboutUs = () => {
                 depth of knowledge and expertise in using my technical skills in
                 programming, computer science, software development, and mobile
                 app development to developing solutions to help organizations
-                increase productivity, and accelerate business performance.
+                increase productivity, and accelerate business performance. Ges
               </div>
             </div>
             <div className="panel">mian card</div>
