@@ -1,7 +1,7 @@
 import React from "react";
 
 const Experiance = () => {
-  function calcDate(date1, date2) {
+  function calcDate(date1: Date, date2: Date) {
     var diff = Math.floor(date1.getTime() - date2.getTime());
     var day = 1000 * 60 * 60 * 24;
 
@@ -36,7 +36,7 @@ const Experiance = () => {
               <a href="https://inviter.com/">Inviter</a>
             </p>
             <p className="text-sm">May 2014 - May 2016 • 2 yrs 0 mos</p>
-            <p class="text-sm">Hyderabad, INDIA</p>
+            <p className="text-sm">Hyderabad, INDIA</p>
             <hr className="my-3" />
           </div>
         </div>
@@ -57,7 +57,7 @@ const Experiance = () => {
               <a href="https://www.oracle.com/">Oracle</a>
             </p>
             <p className="text-sm">June 2016 - June 2023 • 7 yrs 1 mos</p>
-            <p class="text-sm mb-2">Hyderaad, INDIA</p>
+            <p className="text-sm mb-2">Hyderaad, INDIA</p>
             <hr className="my-3" />
           </div>
         </div>

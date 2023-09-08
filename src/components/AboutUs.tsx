@@ -1,5 +1,3 @@
-import React from "react";
-import { CiMail } from "react-icons/ci";
 import Experiance from "./AboutUsComp/Experiance";
 import Introduction from "./AboutUsComp/Introduction";
 import ProfileCard from "./AboutUsComp/ProfileCard";
