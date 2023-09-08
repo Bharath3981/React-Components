@@ -1,8 +1,6 @@
-import React from "react";
-
 const Introduction = () => {
   return (
-    <div className="panel col-span-full md:col-start-1 md:col-end-3 h-auto">
+    <div className="panel col-span-full md:col-start-1 md:col-end-3">
       <div className="w-full font-semibold text-xl p-3 bg-slate-100">Intro</div>
       <div className="p-3 text-justify">
         Dedicated, passionate, and accomplished Full Stack Developer with 9+

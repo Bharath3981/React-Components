@@ -36,7 +36,7 @@ function App() {
         {document.body.offsetWidth >= 768 && (
           <div
             id="app-footer"
-            className="block fixed bottom-0 w-full bg-white shadow-lg border text-center  h-8"
+            className="block w-full bg-white shadow-lg border text-center  h-8"
           >
             <Footer />
           </div>

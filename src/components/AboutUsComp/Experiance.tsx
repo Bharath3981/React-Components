@@ -1,5 +1,3 @@
-import React from "react";
-
 const Experiance = () => {
   function calcDate(date1: Date, date2: Date) {
     var diff = Math.floor(date1.getTime() - date2.getTime());
@@ -16,7 +14,7 @@ const Experiance = () => {
     return message;
   }
   return (
-    <div className="panel col-span-full md:col-start-3 md:col-end-4">
+    <div className="panel col-span-full">
       <div className="w-full font-semibold text-xl p-3 bg-slate-100">
         Experience
       </div>
