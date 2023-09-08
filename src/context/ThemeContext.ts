@@ -1,5 +1,5 @@
 import { createContext } from "react";
 
-const ThemeContext = createContext("jet");
+const ThemeContext: any = createContext("jet");
 
 export default ThemeContext;

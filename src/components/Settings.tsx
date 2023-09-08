@@ -1,9 +1,11 @@
-import React from "react";
 import { useContext } from "react";
 import ThemeContext from "../context/ThemeContext";
 
 const Settings = () => {
-  const [theme, setTheme] = useContext(ThemeContext);
+  const [theme, setTheme]: any = useContext(ThemeContext);
+  const setThemeValue = (value: string) => {
+    setTheme(value);
+  };
   console.log("SETTINGS.JS COMPONENT RENDERED");
   return (
     <>
@@ -20,7 +22,9 @@ const Settings = () => {
                     name="theme"
                     value="jet"
                     checked={theme === "jet"}
-                    onChange={(e) => setTheme(e.target.value)}
+                    onChange={(e: React.FormEvent<HTMLInputElement>) =>
+                      setThemeValue((e.target as any).value)
+                    }
                     className="radio-button"
                   />
                   <label
