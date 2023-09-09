@@ -1,4 +1,5 @@
 import React from "react";
+import SocialLinks from "./SocialLinks";
 
 const ProfileCard = () => {
   return (
@@ -22,9 +23,6 @@ const ProfileCard = () => {
           <div className="text-xl font-thin text-gray-500">
             Hyderabad, India
           </div>
-        </div>
-        <hr className="pb-5 md:hidden" />
-        <div className="inline-block md:col-start-3 md:col-end-4 col-span-full">
           <div className="text-gray-400">Email address</div>
           <a
             href="mailto:bharath.baisetty@gmail.com"
@@ -37,6 +35,8 @@ const ProfileCard = () => {
             +91 9391431530
           </div>
         </div>
+        <hr className="pb-5 md:hidden" />
+        <SocialLinks />
       </div>
     </div>
   );

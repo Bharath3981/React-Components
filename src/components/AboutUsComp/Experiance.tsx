@@ -78,7 +78,7 @@ const Experiance = () => {
             <p className="text-sm">
               June 2023 - Present • {calcDate(new Date(), new Date(2023, 6))}
             </p>
-            <p class="text-sm mb-2">Hyderaad, INDIA</p>
+            <p className="text-sm mb-2">Hyderaad, INDIA</p>
           </div>
         </div>
       </div>
