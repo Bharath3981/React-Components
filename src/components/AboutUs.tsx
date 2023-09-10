@@ -21,7 +21,7 @@ const AboutUs = () => {
                 <div className="panel">main Card</div>
               </div>
             </div>
-            <div className="inline-block w-full md:w-[33%]">
+            <div className="inline-block w-full md:w-[34%]">
               <div className="grid gap-3 grid-cols-1 ml-0 md:ml-3">
                 <Experiance />
                 <div className="panel">main Card1</div>
