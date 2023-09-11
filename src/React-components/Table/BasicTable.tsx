@@ -1,5 +1,3 @@
-import React from "react";
-
 const BasicTable = () => {
   return <div>BasicTable</div>;
 };

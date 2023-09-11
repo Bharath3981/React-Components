@@ -8,18 +8,18 @@ const Components = lazy(() => import("../components/Components"));
 const Settings = lazy(() => import("../components/Settings"));
 const AboutUs = lazy(() => import("../components/AboutUs"));
 
-const FilteredList = lazy(() =>
-  import("../React-components/List/FilteredList")
+const FilteredList = lazy(
+  () => import("../React-components/List/FilteredList")
 );
-const TemplateList = lazy(() =>
-  import("../React-components/List/TemplateList")
+const TemplateList = lazy(
+  () => import("../React-components/List/TemplateList")
 );
 const BasicList = lazy(() => import("../React-components/List/BasicList"));
 const BasicTable = lazy(() => import("../React-components/Table/BasicTable"));
-const SortableTable = lazy(() =>
-  import("../React-components/Table/SortableTable")
+const SortableTable = lazy(
+  () => import("../React-components/Table/SortableTable")
 );
-export const componentChildRoutes = {
+export const componentChildRoutes: any = {
   listComponents: {
     label: "List Components",
     expand: true,

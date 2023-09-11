@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { baseURL } from "../../Services/Services";
 
 interface hilightObj {
   key: number;
@@ -11,11 +12,9 @@ interface IntroductionObj {
 
 const Introduction = () => {
   const [Introduction, setIntroduction] = useState<IntroductionObj>();
-  console.log(Introduction);
+  console.log(baseURL);
   const fetchIntroduction = async () => {
-    const req = await fetch(
-      "https://cdn.jsdelivr.net/gh/Bharath3981/React-Components-CDN@latest/Aboutus/Inroduction.json"
-    );
+    const req = await fetch(`${baseURL}Aboutus/Inroduction.json`);
     const res = await req.json();
     setIntroduction(res);
   };

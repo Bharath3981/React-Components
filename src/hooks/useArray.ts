@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-const useArray = (initialArray) => {
+const useArray = (initialArray: Array<any>) => {
   const [array, setArray] = useState(initialArray);
 
-  const addItem = (item) => {
+  const addItem = (item: any) => {
     setArray((prevArray) => [...prevArray, item]);
   };
 
-  const updateItem = (index, newItem) => {
+  const updateItem = (index: number, newItem: any) => {
     setArray((prevArray) => {
       const newArray = [...prevArray];
       newArray[index] = newItem;
@@ -15,7 +15,7 @@ const useArray = (initialArray) => {
     });
   };
 
-  const removeItem = (index) => {
+  const removeItem = (index: number) => {
     setArray((prevArray) => {
       const newArray = [...prevArray];
       newArray.splice(index, 1);

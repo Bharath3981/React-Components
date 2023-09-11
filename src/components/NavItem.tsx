@@ -1,18 +1,35 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { VscChevronDown } from "react-icons/vsc";
 import { NavLink } from "react-router-dom";
 
-const NavItem = ({ menuDetails }) => {
+interface childRouteMenuType {
+  _id: string;
+  _label: string;
+  _type: string;
+  path: string;
+  element: JSX.Element;
+}
+interface childRouteType {
+  label: string;
+  expand: boolean;
+  menuId: string;
+  icon: JSX.Element;
+  subMenus: Array<childRouteMenuType>;
+}
+interface NavItemProps {
+  menuDetails: childRouteType;
+}
+const NavItem = ({ menuDetails }: NavItemProps) => {
   console.log("NAVITEM.JS COMPONENT RENDERED");
   const { menuId, label, subMenus, icon, expand = false } = menuDetails;
-  const [expandedMenu, setExpandedMenu] = useState(expand);
-  const [height, setHeight] = useState(0);
+  const [expandedMenu, setExpandedMenu] = useState<boolean>(expand);
+  const [height, setHeight] = useState<number>(0);
 
-  const ref = useRef(null);
+  const ref = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (expandedMenu) {
-      setHeight(ref.current?.getBoundingClientRect().height);
+      setHeight(ref.current?.getBoundingClientRect().height || 0);
     } else {
       setHeight(0);
     }
@@ -21,7 +38,7 @@ const NavItem = ({ menuDetails }) => {
     <>
       <div>
         <button
-          onClick={(e) => setExpandedMenu((expand) => !expand)}
+          onClick={() => setExpandedMenu((expand) => !expand)}
           className="nav-menu"
         >
           <span className="flex items-center">
@@ -43,7 +60,7 @@ const NavItem = ({ menuDetails }) => {
           className="relative transition-effect overflow-hidden "
         >
           <div ref={ref}>
-            {subMenus.map((subMenu, index) => (
+            {subMenus.map((subMenu) => (
               <NavLink
                 to={subMenu.path}
                 key={subMenu._id}

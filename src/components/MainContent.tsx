@@ -1,11 +1,8 @@
-import React from "react";
-import Collapsible from "../React-components/Collapsible";
-
 const MainContent = () => {
   return (
     <div className="py-2 h-screen border-2 rounded-md">
       <div className="App container">
-        <Collapsible
+        {/* <Collapsible
           close
           title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
         >
@@ -18,7 +15,7 @@ const MainContent = () => {
           sagittis nisl rhoncus mattis. Enim nulla aliquet porttitor lacus. Arcu
           odio ut sem nulla pharetra diam sit amet. Gravida rutrum quisque non
           tellus orci ac auctor augue
-        </Collapsible>
+        </Collapsible> */}
       </div>
     </div>
   );

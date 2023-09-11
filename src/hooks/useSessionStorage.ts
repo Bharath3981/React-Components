@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const useSessionStorage = (key: string, initialValue: string) => {
   // Get the initial value from sessionStorage if it exists

@@ -1,15 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import NavList from "./NavList";
 import routes from "../data/Routes";
 import { useLocation } from "react-router-dom";
 import MainMenu from "./MainMenu";
-import resolveConfig from "tailwindcss/resolveConfig";
-import tailwindConfig from "../../tailwind.config";
 
 const Header = () => {
   console.log("HEADER.JS COMPONENT RENDERED");
-  const fullConfig = resolveConfig(tailwindConfig);
-  console.log("Tailwind config: ", fullConfig);
   let location = useLocation();
   const [showSidebar, setShowSidebar] = useState(false);
 
@@ -33,7 +29,7 @@ const Header = () => {
               </div>
               <div className="hidden md:block">
                 <div className="ml-4 h-16 items-end flex md:ml-6">
-                  <MainMenu mainMenu={routes} className="main-menu " />
+                  <MainMenu mainMenu={routes} defaultClassName="main-menu " />
                 </div>
               </div>
               <div className="-mr-2 flex md:hidden">
@@ -67,9 +63,6 @@ const Header = () => {
                     aria-label="Sidebar"
                   >
                     <div className="h-screen px-3 py-4 overflow-y-auto dark:bg-gray-800">
-                      {console.log(
-                        "NAVLIST.JS => HEADER.JS COMPONENT RENDERED"
-                      )}
                       <NavList />
                     </div>
                   </aside>
