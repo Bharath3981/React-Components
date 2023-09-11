@@ -32,18 +32,22 @@ const Header = () => {
                   <MainMenu mainMenu={routes} defaultClassName="main-menu " />
                 </div>
               </div>
-              <div className="-mr-2 flex md:hidden">
-                {/* <!-- Mobile menu button --> */}
-                <button
-                  type="button"
-                  onClick={() => setShowSidebar((show) => !show)}
-                  className={"toogle-button " + (showSidebar ? "expanded" : "")}
-                >
-                  <span className="icon-bar transition-effect top-bar"></span>
-                  <span className="icon-bar transition-effect middle-bar"></span>
-                  <span className="icon-bar transition-effect bottom-bar"></span>
-                </button>
-              </div>
+              {location.pathname.includes("components") && (
+                <div className="-mr-2 flex md:hidden">
+                  {/* <!-- Mobile menu button --> */}
+                  <button
+                    type="button"
+                    onClick={() => setShowSidebar((show) => !show)}
+                    className={
+                      "toogle-button " + (showSidebar ? "expanded" : "")
+                    }
+                  >
+                    <span className="icon-bar transition-effect top-bar"></span>
+                    <span className="icon-bar transition-effect middle-bar"></span>
+                    <span className="icon-bar transition-effect bottom-bar"></span>
+                  </button>
+                </div>
+              )}
             </div>
           </div>
 
@@ -62,7 +66,7 @@ const Header = () => {
                     className={"z-40 h-screen transition-effect relative "}
                     aria-label="Sidebar"
                   >
-                    <div className="h-screen px-3 py-4 overflow-y-auto dark:bg-gray-800">
+                    <div className="h-screen px-3 py-4 overflow-y-auto">
                       <NavList />
                     </div>
                   </aside>

@@ -27,7 +27,7 @@ const Introduction = () => {
       {Introduction && (
         <div className="p-3 text-justify">
           {Introduction.inroduction}
-          <ul>
+          <ul className="list-disc pl-4">
             {Introduction.highlights.map((point: any) => (
               <li key={point.key}>{point.descripton}</li>
             ))}

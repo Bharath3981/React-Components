@@ -11,7 +11,7 @@ const Components = () => {
         </div>
         <div className="w-full h-[calc(100vh_-_108px)] md:h-[calc(100vh_-_66px)]  overflow-auto">
           <div className="content-layout w-full">
-            <div className="panel h-auto">
+            <div className="panel h-auto p-3">
               <Outlet />
             </div>
           </div>
