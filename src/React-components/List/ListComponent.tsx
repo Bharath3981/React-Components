@@ -3,7 +3,7 @@ type Props = {
 };
 
 const ListComponent = ({ children }: Props) => {
-  return <div> {console.log(children)}</div>;
+  return <div> {children}</div>;
 };
 
 export default ListComponent;
