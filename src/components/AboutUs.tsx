@@ -10,7 +10,7 @@ const AboutUs = () => {
       <iframe id="ifmcontentstoprint" className="h-0 w-0 absolute"></iframe>
       <div
         id="profileSection"
-        className="h-[calc(100vh_-_64px)]  overflow-auto"
+        className="h-[calc(100vh_-_95px)]  overflow-auto"
       >
         <div className="content-layout mx-auto max-w-7xl w-full h-full px-2  md:px-4">
           <div className="w-full">

@@ -10,4 +10,9 @@ if (import.meta.env.DEV) {
     "https://cdn.jsdelivr.net/gh/Bharath3981/React-Components-CDN@latest/";
 }
 
+export const fetchData = async (url: string) => {
+  const req = await fetch(baseURL + url);
+  return await req.json();
+};
+
 //export { baseURL };
