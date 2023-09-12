@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 const BasicList = () => {
   const [list, setList] = useState<Array<Object>>([]);
-  let showListComponent = false;
   const getBasicList = async () => {
     return fetchData("RCData/RCList/BasicList.json");
   };
