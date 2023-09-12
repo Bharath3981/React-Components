@@ -9,7 +9,7 @@ const BasicList = () => {
       <span>This demo shows as list</span>
       <div className="p-3 my-2 border">
         <ListComponent>
-          <span>Test</span>
+          <template render={(value: any) => <span>{value}</span>}></template>
         </ListComponent>
       </div>
     </div>
