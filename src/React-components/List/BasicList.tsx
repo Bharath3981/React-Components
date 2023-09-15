@@ -11,7 +11,7 @@ const BasicList = () => {
   useEffect(() => {
     getBasicList().then((listData) => {
       setList(listData);
-      console.log("Test", listData);
+      console.log(listData);
     });
   }, []);
   return (
