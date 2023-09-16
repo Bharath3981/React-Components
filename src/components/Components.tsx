@@ -2,7 +2,7 @@ import SideBar from "./SideBar";
 import { Outlet } from "react-router-dom";
 
 const Components = () => {
-  console.log("COMPONENTS.JS COMPONENT RENDERED");
+  console.log("COMPONENTS.JS COMPONENT RENDERED 12");
   return (
     <>
       <div className="flex w-full  h-full overflow-auto">
