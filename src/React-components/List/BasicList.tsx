@@ -7,6 +7,9 @@ const BasicList = () => {
   const getBasicList = async () => {
     return fetchData("RCData/RCList/BasicList.json");
   };
+  const options = {
+    gridlines: true,
+  };
 
   useEffect(() => {
     getBasicList().then((listData) => {
@@ -22,7 +25,7 @@ const BasicList = () => {
       <span>This demo shows as list</span>
       <div className="p-3 my-2 border">
         {list.length && (
-          <RcList data={list}>
+          <RcList data={list} options={options}>
             <template
               render={(row: any) => (
                 <div className="flex p-2">

@@ -4,12 +4,17 @@ declare module "react" {
     render?: any;
   }
 }
+type RcListOptions = {
+  gridlines?: boolean;
+};
 type Props = {
   children: JSX.Element;
   data: Array<Object>;
+  options: RcListOptions;
 };
 
-const RcList = ({ children, data }: Props) => {
+const RcList = ({ children, data, options }: Props) => {
+  const { gridlines = false } = options;
   return (
     <>
       {data.map((listItem: any, index: number) => {
@@ -17,7 +22,7 @@ const RcList = ({ children, data }: Props) => {
         return (
           <div key={listItem.id}>
             <div> {children.props.render(listItem)}</div>
-            <hr />
+            {gridlines && <hr />}
           </div>
         );
       })}
