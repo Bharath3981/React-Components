@@ -8,7 +8,7 @@ const BasicList = () => {
     return fetchData("RCData/RCList/BasicList.json");
   };
   const options = {
-    gridlines: true,
+    gridlines: false,
   };
 
   useEffect(() => {
