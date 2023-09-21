@@ -59,6 +59,10 @@
     @apply text-[#d16b08] accent-current h-4 w-4;
   }
 
+  /* list row default style */
+  .list-row {
+    @apply border-transparent border-y-[1px];
+  }
   /* Row hover */
   .row-hover {
     @apply hover:bg-gray-200;

@@ -1,20 +1,16 @@
 import RcList, { RcListOptions } from "./RcList";
-import { baseURL, fetchData } from "../../Services/Services";
+import { baseURL } from "../../Services/Services";
 import { useEffect, useState } from "react";
 import { useFetchBasicListQuery } from "./list-api-slice";
 
 const BasicList = () => {
   //const [list, setList] = useState<Array<Object>>([]);
-  const getBasicList = async () => {
-    return fetchData("RCData/RCList/BasicList.json");
-  };
   const options: RcListOptions = {
     gridlines: true,
-    selectionMode: "single",
-    selected: [3],
+    selectionMode: "multiple",
+    selected: [9],
   };
   const { data = [], isFetching } = useFetchBasicListQuery();
-  console.log(data, isFetching);
 
   return (
     <div>

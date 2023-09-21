@@ -7,6 +7,15 @@ const useArray = (initialArray: Array<any>) => {
     setArray((prevArray) => [...prevArray, item]);
   };
 
+  const addUniqueItem = (item: any) => {
+    if (array.some((value: any) => value === item)) {
+      let index = array.findIndex((value: any) => value === item);
+      removeItem(index);
+    } else {
+      addItem(item);
+    }
+  };
+
   const updateItem = (index: number, newItem: any) => {
     setArray((prevArray) => {
       const newArray = [...prevArray];
@@ -30,6 +39,7 @@ const useArray = (initialArray: Array<any>) => {
   return {
     array,
     addItem,
+    addUniqueItem,
     updateItem,
     removeItem,
     clearArray,
