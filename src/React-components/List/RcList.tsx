@@ -4,8 +4,11 @@ declare module "react" {
     render?: any;
   }
 }
-type RcListOptions = {
+
+export type RcListOptions = {
   gridlines?: boolean;
+  selectionMode?: "single" | "multiple" | undefined;
+  selected?: Array<string | number>;
 };
 type Props = {
   children: JSX.Element;
@@ -14,14 +17,30 @@ type Props = {
 };
 
 const RcList = ({ children, data, options }: Props) => {
-  const { gridlines = false } = options;
+  const {
+    gridlines = false,
+    selectionMode = undefined,
+    selected = [],
+  } = options;
+  const getSelectedClass = (index: number | string) => {
+    let rowSelectedClass = "";
+    if (selectionMode === "single" || selectionMode === "multiple") {
+      if (selected.find((item) => item === index)) {
+        rowSelectedClass = " row-selected ";
+      }
+    }
+    return rowSelectedClass;
+  };
   return (
     <>
       {data.map((listItem: any, index: number) => {
         let obj = { ...listItem };
         obj.key = index;
         return (
-          <div className="row-hover row-selected" key={listItem.id}>
+          <div
+            className={`row-hover ${getSelectedClass(index)}`}
+            key={listItem.id}
+          >
             <div> {children.props.render(obj)}</div>
             {gridlines && <hr />}
           </div>
