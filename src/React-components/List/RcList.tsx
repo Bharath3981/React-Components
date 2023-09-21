@@ -18,10 +18,11 @@ const RcList = ({ children, data, options }: Props) => {
   return (
     <>
       {data.map((listItem: any, index: number) => {
-        listItem.key = index;
+        let obj = { ...listItem };
+        obj.key = index;
         return (
-          <div key={listItem.id}>
-            <div> {children.props.render(listItem)}</div>
+          <div className="row-hover row-selected" key={listItem.id}>
+            <div> {children.props.render(obj)}</div>
             {gridlines && <hr />}
           </div>
         );

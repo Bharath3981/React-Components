@@ -1,22 +1,19 @@
 import RcList from "./RcList";
-import { fetchData } from "../../Services/Services";
+import { baseURL, fetchData } from "../../Services/Services";
 import { useEffect, useState } from "react";
+import { useFetchBasicListQuery } from "./list-api-slice";
 
 const BasicList = () => {
-  const [list, setList] = useState<Array<Object>>([]);
+  //const [list, setList] = useState<Array<Object>>([]);
   const getBasicList = async () => {
     return fetchData("RCData/RCList/BasicList.json");
   };
   const options = {
-    gridlines: false,
+    gridlines: true,
   };
+  const { data = [], isFetching } = useFetchBasicListQuery();
+  console.log(data, isFetching);
 
-  useEffect(() => {
-    getBasicList().then((listData) => {
-      setList(listData);
-      console.log(listData);
-    });
-  }, []);
   return (
     <div>
       <div className="text-2xl font-semibold">List Component</div>
@@ -24,14 +21,14 @@ const BasicList = () => {
       <span>A list view displays data items as a list or a grid.</span>
       <span>This demo shows as list</span>
       <div className="p-3 my-2 border">
-        {list.length && (
-          <RcList data={list} options={options}>
+        {
+          <RcList data={data} options={options}>
             <template
               render={(row: any) => (
                 <div className="flex p-2">
                   <div>
                     <img
-                      src="user.png"
+                      src={baseURL + "RCData/RCList/" + row.image}
                       alt="company logo"
                       className="h-11 w-11 border rounded-md"
                     />
@@ -46,7 +43,7 @@ const BasicList = () => {
               )}
             ></template>
           </RcList>
-        )}
+        }
       </div>
     </div>
   );

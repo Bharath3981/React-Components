@@ -3,6 +3,8 @@ import "./tailwind.css";
 import App from "./App";
 import { RouterProvider, createHashRouter } from "react-router-dom";
 import routes from "./data/Routes";
+import { Provider } from "react-redux";
+import { RcStore } from "./Store/RcStore";
 
 console.log("INDEX.JS COMPONENT RENDERED");
 const router = createHashRouter([
@@ -18,7 +20,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   // <React.StrictMode>
-  <RouterProvider router={router}></RouterProvider>
-
+  <Provider store={RcStore}>
+    <RouterProvider router={router}></RouterProvider>
+  </Provider>
   // </React.StrictMode>
 );

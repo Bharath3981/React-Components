@@ -58,4 +58,13 @@
   .radio-button {
     @apply text-[--flipkart-selected] accent-current h-4 w-4;
   }
+
+  /* Row hover */
+  .row-hover {
+    @apply hover:bg-gray-200;
+  }
+  /* Row Selected */
+  .row-selected {
+    @apply bg-[#dae5f7] border-[--flipkart-selected] border-y-[1px];
+  }
 }
