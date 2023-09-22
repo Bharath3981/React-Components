@@ -49,7 +49,10 @@
       @apply flex hover:bg-slate-100 cursor-pointer items-center w-full px-2 py-1 bg-transparent relative text-center place-content-between;
     }
     .nav-sub-menu {
-      @apply pl-8 hover:bg-slate-100 cursor-pointer block bg-transparent px-2 py-1 w-full;
+      @apply border-l-[3px] border-transparent pl-8 hover:bg-slate-100 cursor-pointer block bg-transparent px-2 py-1 w-full;
+    }
+    .nav-sub-menu.active {
+      @apply border-l-[3px] border-[--amazon-selected] bg-[--amazon-selected-light];
     }
   }
   .offcanvas {
@@ -69,6 +72,6 @@
   }
   /* Row Selected */
   .row-selected {
-    @apply bg-[#e7d8ca] border-[--amazon-selected] mb-[-1px] border-y-[1px];
+    @apply bg-[--amazon-selected-light] border-[--amazon-selected] mb-[-1px] border-y-[1px];
   }
 }

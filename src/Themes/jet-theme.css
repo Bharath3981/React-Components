@@ -52,7 +52,10 @@ body {
       @apply flex hover:text-white hover:bg-[#413d3b] cursor-pointer items-center w-full px-2 py-1 bg-transparent relative text-center place-content-between;
     }
     .nav-sub-menu {
-      @apply pl-8 hover:text-white hover:bg-[#413d3b] cursor-pointer block bg-transparent px-2 py-1 w-full;
+      @apply border-l-[3px] border-transparent pl-8 hover:bg-[#494641] cursor-pointer block bg-transparent px-2 py-1 w-full;
+    }
+    .nav-sub-menu.active {
+      @apply border-l-[3px] border-[#f0cc71] bg-[#524e4a];
     }
   }
   .offcanvas {
@@ -60,18 +63,5 @@ body {
   }
   .radio-button {
     @apply text-[--jet-selected] accent-current h-4 w-4;
-  }
-
-  /* list row default style */
-  .list-row {
-    @apply border-transparent border-y-[1px] mb-[-1px];
-  }
-  /* Row hover */
-  .row-hover {
-    @apply hover:bg-gray-200;
-  }
-  /* Row Selected */
-  .row-selected {
-    @apply bg-[#e4f1f7] border-[--jet-selected] border-t-[1px] mb-[-1px] last:border-b-[1px];
   }
 }

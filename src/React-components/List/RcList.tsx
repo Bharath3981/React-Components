@@ -1,4 +1,5 @@
 import useArray from "../../hooks/useArray";
+import "./List.css";
 
 declare module "react" {
   interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
@@ -28,7 +29,7 @@ const RcList = ({ children, data, options }: Props) => {
     gridlines = false,
     selectionMode = undefined,
     selected = [],
-    onSelected,
+    onSelected = function () {},
   } = options;
   const { array, addUniqueItem, updateItem, clearArray } = useArray(selected);
 
@@ -44,7 +45,7 @@ const RcList = ({ children, data, options }: Props) => {
 
   const attachHandler = (
     e: React.MouseEvent<HTMLElement>,
-    item: number | string,
+    index: number | string,
     listItem: any
   ) => {
     if (
@@ -52,13 +53,15 @@ const RcList = ({ children, data, options }: Props) => {
       !e.ctrlKey
     ) {
       clearArray();
-      updateItem(0, item);
+      updateItem(0, index);
+      let currentSelection = [...array];
+      currentSelection = [index];
+      onSelected(e, listItem, currentSelection);
     } else if (selectionMode === "multiple" && e.ctrlKey) {
-      addUniqueItem(item);
-    }
-    /* Call onSelected event */
-    if (onSelected) {
-      onSelected(e, listItem, array);
+      addUniqueItem(index);
+      let currentSelection = [...array];
+      currentSelection.push(index);
+      onSelected(e, listItem, currentSelection);
     }
   };
   return (
