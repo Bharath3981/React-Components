@@ -3,7 +3,6 @@ import { baseURL } from "../../Services/Services";
 import { useFetchBasicListQuery } from "./list-api-slice";
 
 const ListSingleSelection = () => {
-  //const [list, setList] = useState<Array<Object>>([]);
   const options: RcListOptions = {
     gridlines: true,
     selectionMode: "single",
@@ -14,9 +13,12 @@ const ListSingleSelection = () => {
   return (
     <div>
       <div className="text-2xl font-semibold">List Component</div>
-      <div className="text-gray-400 text-sm">RcList</div>
+      <div className="text-gray-400 text-sm">RcList Single selection</div>
       <span>A list view displays data items as a list or a grid.</span>
-      <span>This demo shows as list</span>
+      <span>
+        This demo shows as list with single selection enabled and how to access
+        information about the selected row.
+      </span>
       <div className="p-3 my-2 border">
         {
           <RcList data={data} options={options}>

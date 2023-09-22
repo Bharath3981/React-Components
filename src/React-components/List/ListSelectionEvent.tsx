@@ -1,12 +1,23 @@
 import RcList, { RcListOptions } from "./RcList";
 import { baseURL } from "../../Services/Services";
 import { useFetchBasicListQuery } from "./list-api-slice";
+import { useState } from "react";
 
-const ListMultipleSelection = () => {
+const ListSelectionEvent = () => {
+  const [selectedRows, setSelectedRows] = useState<Array<string | number>>([]);
+  const onSelected = (
+    event: React.MouseEvent<HTMLElement>,
+    row: any,
+    selectedRows: Array<number | string>
+  ) => {
+    setSelectedRows([...selectedRows]);
+    console.log(event, row, selectedRows);
+  };
   const options: RcListOptions = {
     gridlines: true,
     selectionMode: "multiple",
-    selected: [0],
+    selected: [],
+    onSelected: onSelected,
   };
   const { data = [] } = useFetchBasicListQuery();
 
@@ -20,6 +31,7 @@ const ListMultipleSelection = () => {
         access information about the selected row.
       </span>
       <div className="p-3 my-2 border">
+        <div>Selected rows: {JSON.stringify(selectedRows)}</div>
         {
           <RcList data={data} options={options}>
             <template
@@ -48,4 +60,4 @@ const ListMultipleSelection = () => {
   );
 };
 
-export default ListMultipleSelection;
+export default ListSelectionEvent;

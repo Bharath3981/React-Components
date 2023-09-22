@@ -3,29 +3,15 @@ import { baseURL } from "../../Services/Services";
 import { useFetchBasicListQuery } from "./list-api-slice";
 
 const ListMultipleSelection = () => {
-  //const [list, setList] = useState<Array<Object>>([]);
-  const onSelected = (
-    event: React.MouseEvent<HTMLElement>,
-    row: any,
-    selectedRows: Array<number | string>
-  ) => {
-    console.log(row, selectedRows);
-  };
-
-  const options: RcListOptions = {
-    gridlines: true,
-    selectionMode: "multiple",
-    selected: [1],
-    onSelected: onSelected,
-  };
+  const options: RcListOptions = {};
   const { data = [] } = useFetchBasicListQuery();
 
   return (
     <div>
       <div className="text-2xl font-semibold">List Component</div>
-      <div className="text-gray-400 text-sm">RcList</div>
+      <div className="text-gray-400 text-sm">RcList Basic list</div>
       <span>A list view displays data items as a list or a grid.</span>
-      <span>This demo shows as list</span>
+      <span>This demo shows as basic list</span>
       <div className="p-3 my-2 border">
         {
           <RcList data={data} options={options}>

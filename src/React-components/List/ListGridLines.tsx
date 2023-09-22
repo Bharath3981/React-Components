@@ -2,22 +2,22 @@ import RcList, { RcListOptions } from "./RcList";
 import { baseURL } from "../../Services/Services";
 import { useFetchBasicListQuery } from "./list-api-slice";
 
-const ListMultipleSelection = () => {
+const ListGridLines = () => {
+  //const [list, setList] = useState<Array<Object>>([]);
+
   const options: RcListOptions = {
     gridlines: true,
-    selectionMode: "multiple",
-    selected: [0],
   };
   const { data = [] } = useFetchBasicListQuery();
 
   return (
     <div>
       <div className="text-2xl font-semibold">List Component</div>
-      <div className="text-gray-400 text-sm">RcList multiple selection</div>
+      <div className="text-gray-400 text-sm">RcList Gridlines</div>
       <span>A list view displays data items as a list or a grid.</span>
       <span>
-        This demo shows as list with multiple selection enabled and how to
-        access information about the selected row.
+        This demo shows how to show gridlines in List. By default gridlines are
+        hidden.
       </span>
       <div className="p-3 my-2 border">
         {
@@ -48,4 +48,4 @@ const ListMultipleSelection = () => {
   );
 };
 
-export default ListMultipleSelection;
+export default ListGridLines;

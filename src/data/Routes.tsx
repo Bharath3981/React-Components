@@ -14,6 +14,12 @@ const ListSingleSelection = lazy(
 const ListMultipleSelection = lazy(
   () => import("../React-components/List/ListMultipleSelection")
 );
+const ListGridLines = lazy(
+  () => import("../React-components/List/ListGridLines")
+);
+const ListSelectionEvent = lazy(
+  () => import("../React-components/List/ListSelectionEvent")
+);
 const BasicList = lazy(() => import("../React-components/List/BasicList"));
 const BasicTable = lazy(() => import("../React-components/Table/BasicTable"));
 const SortableTable = lazy(
@@ -39,6 +45,17 @@ export const componentChildRoutes: any = {
       },
       {
         _id: "componentsMenu-2",
+        _label: "Grid Lines",
+        _type: "List Component",
+        path: "/components/ListGridLines",
+        element: (
+          <Suspense fallback="Loading...">
+            <ListGridLines />
+          </Suspense>
+        ),
+      },
+      {
+        _id: "componentsMenu-3",
         _label: "Single Selection",
         _type: "List Component",
         path: "/components/ListSingleSelection",
@@ -49,13 +66,24 @@ export const componentChildRoutes: any = {
         ),
       },
       {
-        _id: "componentsMenu-3",
+        _id: "componentsMenu-4",
         _label: "Multiple Selection",
         _type: "List Component",
         path: "/components/ListMultipleSelection",
         element: (
           <Suspense fallback="Loading...">
             <ListMultipleSelection />
+          </Suspense>
+        ),
+      },
+      {
+        _id: "componentsMenu-5",
+        _label: "Selection Event",
+        _type: "List Component",
+        path: "/components/ListSelectionEvent",
+        element: (
+          <Suspense fallback="Loading...">
+            <ListSelectionEvent />
           </Suspense>
         ),
       },
