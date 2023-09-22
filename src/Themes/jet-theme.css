@@ -64,7 +64,7 @@ body {
 
   /* list row default style */
   .list-row {
-    @apply border-transparent border-y-[1px];
+    @apply border-transparent border-y-[1px] mb-[-1px];
   }
   /* Row hover */
   .row-hover {
@@ -72,6 +72,6 @@ body {
   }
   /* Row Selected */
   .row-selected {
-    @apply bg-[#e4f1f7] border-[--jet-selected] border-t-[1px] last:border-b-[1px];
+    @apply bg-[#e4f1f7] border-[--jet-selected] border-t-[1px] mb-[-1px] last:border-b-[1px];
   }
 }

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import useArray from "../../hooks/useArray";
 
 declare module "react" {
@@ -12,6 +11,11 @@ export type RcListOptions = {
   gridlines?: boolean;
   selectionMode?: "single" | "multiple" | undefined;
   selected?: Array<string | number>;
+  onSelected?: (
+    event: React.MouseEvent<HTMLElement>,
+    row: any,
+    selectedRows: Array<number | string>
+  ) => void;
 };
 type Props = {
   children: JSX.Element;
@@ -20,13 +24,14 @@ type Props = {
 };
 
 const RcList = ({ children, data, options }: Props) => {
-  const {
+  let {
     gridlines = false,
     selectionMode = undefined,
     selected = [],
+    onSelected,
   } = options;
   const { array, addUniqueItem, updateItem, clearArray } = useArray(selected);
-  console.log(array);
+
   const getSelectedClass = (index: number | string) => {
     let rowSelectedClass = "";
     if (selectionMode === "single" || selectionMode === "multiple") {
@@ -39,7 +44,8 @@ const RcList = ({ children, data, options }: Props) => {
 
   const attachHandler = (
     e: React.MouseEvent<HTMLElement>,
-    item: number | string
+    item: number | string,
+    listItem: any
   ) => {
     if (
       (selectionMode === "single" || selectionMode === "multiple") &&
@@ -50,6 +56,10 @@ const RcList = ({ children, data, options }: Props) => {
     } else if (selectionMode === "multiple" && e.ctrlKey) {
       addUniqueItem(item);
     }
+    /* Call onSelected event */
+    if (onSelected) {
+      onSelected(e, listItem, array);
+    }
   };
   return (
     <>
@@ -59,7 +69,7 @@ const RcList = ({ children, data, options }: Props) => {
         return (
           <div
             onClick={(e: React.MouseEvent<HTMLElement>) =>
-              attachHandler(e, index)
+              attachHandler(e, index, listItem)
             }
             className={`list-row row-hover ${getSelectedClass(index)}`}
             key={listItem.id}

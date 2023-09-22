@@ -61,7 +61,7 @@
 
   /* list row default style */
   .list-row {
-    @apply border-transparent border-y-[1px];
+    @apply border-transparent border-y-[1px] mb-[-1px];
   }
   /* Row hover */
   .row-hover {
@@ -69,6 +69,6 @@
   }
   /* Row Selected */
   .row-selected {
-    @apply bg-[#e7d8ca] border-[--amazon-selected] border-y-[1px];
+    @apply bg-[#e7d8ca] border-[--amazon-selected] mb-[-1px] border-y-[1px];
   }
 }

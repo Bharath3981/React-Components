@@ -4,19 +4,10 @@ import { useFetchBasicListQuery } from "./list-api-slice";
 
 const ListMultipleSelection = () => {
   //const [list, setList] = useState<Array<Object>>([]);
-  const onSelected = (
-    event: React.MouseEvent<HTMLElement>,
-    row: any,
-    selectedRows: Array<number | string>
-  ) => {
-    console.log(row, selectedRows);
-  };
-
   const options: RcListOptions = {
     gridlines: true,
     selectionMode: "multiple",
-    selected: [1],
-    onSelected: onSelected,
+    selected: [0],
   };
   const { data = [] } = useFetchBasicListQuery();
 

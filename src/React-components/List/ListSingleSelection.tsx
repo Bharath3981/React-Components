@@ -2,21 +2,12 @@ import RcList, { RcListOptions } from "./RcList";
 import { baseURL } from "../../Services/Services";
 import { useFetchBasicListQuery } from "./list-api-slice";
 
-const ListMultipleSelection = () => {
+const ListSingleSelection = () => {
   //const [list, setList] = useState<Array<Object>>([]);
-  const onSelected = (
-    event: React.MouseEvent<HTMLElement>,
-    row: any,
-    selectedRows: Array<number | string>
-  ) => {
-    console.log(row, selectedRows);
-  };
-
   const options: RcListOptions = {
     gridlines: true,
-    selectionMode: "multiple",
-    selected: [1],
-    onSelected: onSelected,
+    selectionMode: "single",
+    selected: [0],
   };
   const { data = [] } = useFetchBasicListQuery();
 
@@ -55,4 +46,4 @@ const ListMultipleSelection = () => {
   );
 };
 
-export default ListMultipleSelection;
+export default ListSingleSelection;

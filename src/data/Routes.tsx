@@ -8,11 +8,11 @@ const Components = lazy(() => import("../components/Components"));
 const Settings = lazy(() => import("../components/Settings"));
 const AboutUs = lazy(() => import("../components/AboutUs"));
 
-const FilteredList = lazy(
-  () => import("../React-components/List/FilteredList")
+const ListSingleSelection = lazy(
+  () => import("../React-components/List/ListSingleSelection")
 );
-const TemplateList = lazy(
-  () => import("../React-components/List/TemplateList")
+const ListMultipleSelection = lazy(
+  () => import("../React-components/List/ListMultipleSelection")
 );
 const BasicList = lazy(() => import("../React-components/List/BasicList"));
 const BasicTable = lazy(() => import("../React-components/Table/BasicTable"));
@@ -39,23 +39,23 @@ export const componentChildRoutes: any = {
       },
       {
         _id: "componentsMenu-2",
-        _label: "Filtered List",
+        _label: "Single Selection",
         _type: "List Component",
-        path: "/components/filteredList",
+        path: "/components/ListSingleSelection",
         element: (
           <Suspense fallback="Loading...">
-            <FilteredList />
+            <ListSingleSelection />
           </Suspense>
         ),
       },
       {
         _id: "componentsMenu-3",
-        _label: "Template List",
+        _label: "Multiple Selection",
         _type: "List Component",
-        path: "/components/templateList",
+        path: "/components/ListMultipleSelection",
         element: (
           <Suspense fallback="Loading...">
-            <TemplateList />
+            <ListMultipleSelection />
           </Suspense>
         ),
       },
