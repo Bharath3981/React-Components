@@ -1,13 +1,25 @@
+import { componentPageType } from "../data/Routes";
 import SideBar from "./SideBar";
 import { Outlet } from "react-router-dom";
 
+type Props = {
+  pages: Array<componentPageType>;
+};
 const Components = () => {
   console.log("COMPONENTS.JS COMPONENT RENDERED 12");
   return (
     <>
+      <Outlet />
+    </>
+  );
+};
+
+export const Component = ({ pages }: Props) => {
+  return (
+    <>
       <div className="flex w-full  h-full overflow-auto">
         <div className="side-bar p-1 h-screen overflow-y-scroll hidden md:block w-[30%]">
-          <SideBar />
+          <SideBar pages={pages} />
         </div>
         <div className="w-full h-[calc(100vh_-_108px)] md:h-[calc(100vh_-_66px)]  overflow-auto">
           <div className="content-layout w-full">

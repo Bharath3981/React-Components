@@ -1,8 +1,8 @@
 import { useState } from "react";
-import NavList from "./NavList";
 import routes from "../data/Routes";
 import { useLocation } from "react-router-dom";
 import MainMenu from "./MainMenu";
+import SideBar from "./SideBar";
 
 const Header = () => {
   console.log("HEADER.JS COMPONENT RENDERED");
@@ -67,7 +67,7 @@ const Header = () => {
                     aria-label="Sidebar"
                   >
                     <div className="h-screen px-3 py-4 overflow-y-auto">
-                      <NavList />
+                      <SideBar pages={[]} />
                     </div>
                   </aside>
                 </div>
