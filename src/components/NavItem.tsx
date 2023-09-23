@@ -64,8 +64,7 @@ const NavItem = ({ menuDetails }: NavItemProps) => {
               <NavLink
                 to={subMenu.path}
                 key={subMenu._id}
-                className={`nav-sub-menu ${(isActive: boolean) =>
-                  isActive ? "active" : ""}`}
+                className={`nav-sub-menu`}
               >
                 {subMenu._label}
               </NavLink>

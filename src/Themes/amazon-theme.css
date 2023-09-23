@@ -61,17 +61,4 @@
   .radio-button {
     @apply text-[#d16b08] accent-current h-4 w-4;
   }
-
-  /* list row default style */
-  .list-row {
-    @apply border-transparent border-y-[1px] mb-[-1px];
-  }
-  /* Row hover */
-  .row-hover {
-    @apply hover:bg-gray-200;
-  }
-  /* Row Selected */
-  .row-selected {
-    @apply bg-[--amazon-selected-light] border-[--amazon-selected] mb-[-1px] border-y-[1px];
-  }
 }

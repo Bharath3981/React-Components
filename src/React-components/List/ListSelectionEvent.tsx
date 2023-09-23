@@ -30,7 +30,7 @@ const ListSelectionEvent = () => {
         This demo shows as list with multiple selection enabled and how to
         access information about the selected row.
       </span>
-      <div className="p-3 my-2 border">
+      <div className="p-3 my-2 border h-96 overflow-auto">
         <div>Selected rows: {JSON.stringify(selectedRows)}</div>
         {
           <RcList data={data} options={options}>

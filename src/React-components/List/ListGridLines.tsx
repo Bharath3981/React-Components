@@ -19,7 +19,7 @@ const ListGridLines = () => {
         This demo shows how to show gridlines in List. By default gridlines are
         hidden.
       </span>
-      <div className="p-3 my-2 border">
+      <div className="p-3 my-2 border h-96 overflow-auto">
         {
           <RcList data={data} options={options}>
             <template
