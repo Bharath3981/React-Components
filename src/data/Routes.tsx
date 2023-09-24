@@ -29,7 +29,7 @@ const SortableTable = lazy(
   () => import("../React-components/Table/SortableTable")
 );
 
-type componentPageType = {
+export type componentPageType = {
   _id: string;
   _label: string;
   path: string;
@@ -95,7 +95,7 @@ export const tableComponentPages: any = [
   {
     _id: "tableComponent-1",
     _label: "Basic table",
-    path: "/components/table/",
+    path: "/components/table",
     element: (
       <Suspense fallback="Loading...">
         <BasicTable />
@@ -130,7 +130,7 @@ const routes = [
     _id: "menu-2",
     _label: "Components",
     _icon: <PiShapesThin />,
-    path: "/components/",
+    path: "/components",
     element: (
       <Suspense fallback="Loading...">
         <Components />
@@ -147,7 +147,7 @@ const routes = [
         children: listComponentPages,
       },
       {
-        path: "/components/table/",
+        path: "/components/table",
         element: (
           <Suspense fallback="Loading...">
             <TableContent />

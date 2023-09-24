@@ -9,7 +9,7 @@ const Header = () => {
   console.log("HEADER.JS COMPONENT RENDERED");
   let location = useLocation();
   const [showSidebar, setShowSidebar] = useState<boolean>(false);
-  const [componentPages] = useContext<componentPagesType>(
+  const [componentPages] = useContext<Array<componentPagesType>>(
     ComponentPagesContext
   );
   return (
