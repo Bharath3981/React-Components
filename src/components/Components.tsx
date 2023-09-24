@@ -1,9 +1,9 @@
-import { componentPageType } from "../data/Routes";
+import { componentPagesType } from "../data/Routes";
 import SideBar from "./SideBar";
 import { Outlet } from "react-router-dom";
 
 type Props = {
-  pages: Array<componentPageType>;
+  pages: componentPagesType;
 };
 const Components = () => {
   console.log("COMPONENTS.JS COMPONENT RENDERED 12");

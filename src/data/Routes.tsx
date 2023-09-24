@@ -29,14 +29,16 @@ const SortableTable = lazy(
   () => import("../React-components/Table/SortableTable")
 );
 
-export type componentPageType = {
+type componentPageType = {
   _id: string;
   _label: string;
   path: string;
   element: JSX.Element;
 };
 
-export const listComponentPages: Array<componentPageType> = [
+export type componentPagesType = Array<componentPageType>;
+
+export const listComponentPages: componentPagesType = [
   {
     _id: "componentsMenu-1",
     _label: "Basic List",

@@ -1,14 +1,17 @@
-import { useState } from "react";
-import routes from "../data/Routes";
+import { useState, useContext } from "react";
+import routes, { componentPagesType } from "../data/Routes";
 import { useLocation } from "react-router-dom";
 import MainMenu from "./MainMenu";
 import SideBar from "./SideBar";
+import ComponentPagesContext from "../context/ComponentPagesContext";
 
 const Header = () => {
   console.log("HEADER.JS COMPONENT RENDERED");
   let location = useLocation();
-  const [showSidebar, setShowSidebar] = useState(false);
-
+  const [showSidebar, setShowSidebar] = useState<boolean>(false);
+  const [componentPages] = useContext<componentPagesType>(
+    ComponentPagesContext
+  );
   return (
     <>
       <header id="app-header" className="header sticky top-0">
@@ -66,8 +69,8 @@ const Header = () => {
                     className={"z-40 h-screen transition-effect relative "}
                     aria-label="Sidebar"
                   >
-                    <div className="h-screen px-3 py-4 overflow-y-auto">
-                      <SideBar pages={[]} />
+                    <div className="side-bar h-screen px-3 py-4 overflow-y-auto">
+                      <SideBar pages={componentPages} />
                     </div>
                   </aside>
                 </div>

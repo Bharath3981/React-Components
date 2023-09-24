@@ -1,11 +1,11 @@
 import { NavLink } from "react-router-dom";
-import { componentPageType } from "../data/Routes";
+import { componentPagesType } from "../data/Routes";
 
 type Props = {
-  pages: Array<componentPageType>;
+  pages: componentPagesType;
 };
 const SideBar = ({ pages }: Props) => {
-  console.log("SIDEBAR.JS COMPONENT RENDERED");
+  console.log("SIDEBAR.JS COMPONENT RENDERED: ", pages);
   return (
     <>
       <div

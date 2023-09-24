@@ -1,14 +1,18 @@
 import { Outlet } from "react-router-dom";
+import { useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ThemeContext from "./context/ThemeContext";
-import routes from "./data/Routes";
+import routes, { componentPagesType, listComponentPages } from "./data/Routes";
 import MainMenu from "./components/MainMenu";
 import useSessionStorage from "./hooks/useSessionStorage";
+import ComponentPagesContext from "./context/ComponentPagesContext";
 
 function App() {
   console.log("APP.JS COMPONENT RENDERED");
   const [theme, setTheme] = useSessionStorage("theme", "jet");
+  const [componentPages, setComponentPages] =
+    useState<componentPagesType>(listComponentPages);
   if (theme === "jet") {
     import("./Themes/jet-theme.css");
   }
@@ -22,11 +26,15 @@ function App() {
   return (
     <ThemeContext.Provider value={[theme, setTheme]}>
       <div className={theme + " overflow-hidden"}>
-        <Header />
-        <div className="w-full">
-          <Outlet />
-        </div>
+        <ComponentPagesContext.Provider
+          value={[componentPages, setComponentPages]}
+        >
+          <Header />
 
+          <div className="w-full">
+            <Outlet />
+          </div>
+        </ComponentPagesContext.Provider>
         <div className="block md:hidden fixed mt-6 bottom-0 bg-white shadow-lg w-full border">
           <div className="px-2 flex justify-around items-center h-10">
             <MainMenu mainMenu={routes} defaultClassName="bottom-menu " />
