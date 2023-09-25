@@ -130,7 +130,7 @@ const routes = [
     _id: "menu-2",
     _label: "Components",
     _icon: <PiShapesThin />,
-    path: "/components",
+    path: "/components/",
     element: (
       <Suspense fallback="Loading...">
         <Components />
