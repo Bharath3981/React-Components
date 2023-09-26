@@ -3,7 +3,7 @@ import { CiHome, CiSettings } from "react-icons/ci";
 import { PiShapesThin } from "react-icons/pi";
 import { RiContactsLine } from "react-icons/ri";
 
-const Home = lazy(() => import("../components/Home"));
+const Home = lazy(() => import("../components/Home/Home"));
 const Components = lazy(() => import("../components/Components"));
 const Settings = lazy(() => import("../components/Settings"));
 const AboutUs = lazy(() => import("../components/AboutUs"));
@@ -114,6 +114,31 @@ export const tableComponentPages: any = [
   },
 ];
 
+export const componentsChildren: any = [
+  {
+    path: "/components/",
+    _id: "component-list",
+    _icon: <CiHome />,
+    element: (
+      <Suspense fallback="Loading...">
+        <ListContent />
+      </Suspense>
+    ),
+    children: listComponentPages,
+  },
+  {
+    path: "/components/table",
+    _id: "component-table",
+    _icon: <CiHome />,
+    element: (
+      <Suspense fallback="Loading...">
+        <TableContent />
+      </Suspense>
+    ),
+    children: tableComponentPages,
+  },
+];
+
 const routes = [
   {
     _id: "menu-1",
@@ -136,26 +161,7 @@ const routes = [
         <Components />
       </Suspense>
     ),
-    children: [
-      {
-        path: "/components/",
-        element: (
-          <Suspense fallback="Loading...">
-            <ListContent />
-          </Suspense>
-        ),
-        children: listComponentPages,
-      },
-      {
-        path: "/components/table",
-        element: (
-          <Suspense fallback="Loading...">
-            <TableContent />
-          </Suspense>
-        ),
-        children: tableComponentPages,
-      },
-    ],
+    children: componentsChildren,
   },
   {
     _id: "menu-3",

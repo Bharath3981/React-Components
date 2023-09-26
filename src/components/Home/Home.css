@@ -1,0 +1,20 @@
+.jet {
+  .components-strip {
+    @apply bg-[--jet-selected] text-white font-black text-xl px-5;
+  }
+}
+
+.amazon {
+  .components-strip {
+    @apply bg-[--amazon-selected] text-white font-black text-xl px-5;
+  }
+  .component-tile {
+    @apply border border-gray-400 rounded-sm;
+  }
+}
+
+.flipkart {
+  .components-strip {
+    @apply bg-[--flipkart-selected] text-white font-black text-xl px-5;
+  }
+}
