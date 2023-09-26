@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { baseURL } from "../../Services/Services";
+import { baseURL } from "../Services/Services";
 
 export interface listItemType {
   id: string;
@@ -20,8 +20,13 @@ export const apiSlice = createApi({
           return "RCData/RCList/BasicList.json";
         },
       }),
+      fetchBasicTableData: builder.query<any[], number | void>({
+        query() {
+          return "RCData/RCTable/BasicTable.json";
+        },
+      }),
     };
   },
 });
 
-export const { useFetchBasicListQuery } = apiSlice;
+export const { useFetchBasicListQuery, useFetchBasicTableDataQuery } = apiSlice;

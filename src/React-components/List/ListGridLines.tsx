@@ -1,6 +1,6 @@
 import RcList, { RcListOptions } from "./RcList";
 import { baseURL } from "../../Services/Services";
-import { useFetchBasicListQuery } from "./list-api-slice";
+import { useFetchBasicListQuery } from "../../Slices/Api-slice";
 
 const ListGridLines = () => {
   //const [list, setList] = useState<Array<Object>>([]);
