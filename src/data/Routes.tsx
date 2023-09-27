@@ -120,6 +120,7 @@ export const componentsChildren: any = [
     path: "/components/",
     _id: "component-list",
     _icon: <PiListBulletsThin />,
+    _label: "List",
     element: (
       <Suspense fallback="Loading...">
         <ListContent />
@@ -131,6 +132,7 @@ export const componentsChildren: any = [
     path: "/components/table",
     _id: "component-table",
     _icon: <PiTableThin />,
+    _label: "Table",
     element: (
       <Suspense fallback="Loading...">
         <TableContent />
@@ -156,7 +158,7 @@ const routes = [
     _id: "menu-2",
     _label: "Components",
     _icon: <PiShapesThin />,
-    path: "/components/",
+    path: "components",
     element: (
       <Suspense fallback="Loading...">
         <Components />

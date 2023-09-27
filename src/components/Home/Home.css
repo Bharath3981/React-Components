@@ -2,20 +2,11 @@
   .components-strip {
     @apply bg-[--jet-selected] text-white font-black text-xl px-5;
   }
-  .component-tile {
-    @apply border border-gray-500 rounded-md w-36 h-44 text-center p-4;
-    svg {
-      @apply text-8xl;
-    }
-  }
 }
 
 .amazon {
   .components-strip {
     @apply bg-[--amazon-selected] text-white font-black text-xl px-5;
-  }
-  .component-tile {
-    @apply border border-gray-400 rounded-sm;
   }
 }
 

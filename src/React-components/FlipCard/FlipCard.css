@@ -1,0 +1,33 @@
+.flip-card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+
+  .face {
+    transition: all 0.8s ease;
+    position: absolute;
+    border: 1px solid;
+    border-color: lightgray;
+    top: 0;
+    left: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(black, 0.15);
+    background: white;
+    svg {
+      font-size: 6rem;
+      line-height: 1;
+    }
+  }
+  .back-face {
+    transform: rotateY(180deg);
+  }
+}
+.flip-card:hover .front-face {
+  transform: rotateY(-180deg);
+}
+.flip-card:hover .back-face {
+  transform: rotateY(0);
+}

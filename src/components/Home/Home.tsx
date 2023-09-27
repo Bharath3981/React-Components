@@ -1,6 +1,10 @@
 import { NavLink } from "react-router-dom";
 import { componentsChildren } from "../../data/Routes";
 import "./Home.css";
+import FlipCard, {
+  FrontFace,
+  BackFace,
+} from "../../React-components/FlipCard/FlipCard";
 const Home = () => {
   console.log("HOME.JS COMPONENT RENDERED");
   return (
@@ -11,12 +15,24 @@ const Home = () => {
             <div className="components-strip">React Components</div>
             <div className="flex justify-normal gap-5 p-5 ">
               {componentsChildren.map((component: any) => (
-                <NavLink to={component.path}>
-                  <div className="component-tile" key={component.id}>
-                    <div className="inline-block font-black">
-                      {component._icon}
-                    </div>
-                  </div>
+                <NavLink key={component._id} to={component.path}>
+                  <FlipCard classes="h-36 w-32 ">
+                    <>
+                      <FrontFace classes="h-36 w-32 text-center">
+                        <>
+                          <div className="inline-block font-black">
+                            {component._icon}
+                          </div>
+                          <div className="font-medium text-left px-2">
+                            {component._label}
+                          </div>
+                        </>
+                      </FrontFace>
+                      <BackFace classes="h-36 w-32">
+                        <div>Back Face</div>
+                      </BackFace>
+                    </>
+                  </FlipCard>
                 </NavLink>
               ))}
             </div>
