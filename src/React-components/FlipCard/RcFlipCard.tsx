@@ -3,7 +3,7 @@ type FlipCardProps = {
   children: JSX.Element;
   classes?: string;
 };
-const FlipCard = ({ children, classes }: FlipCardProps) => {
+const RcFlipCard = ({ children, classes }: FlipCardProps) => {
   return <div className={`flip-card ${classes}`}>{children}</div>;
 };
 type FaceProps = {
@@ -22,4 +22,4 @@ export const BackFace = ({ children, classes }: FaceProps) => {
   return <div className={`face back-face ${classes}`}>{children}</div>;
 };
 
-export default FlipCard;
+export default RcFlipCard;

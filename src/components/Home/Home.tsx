@@ -4,7 +4,7 @@ import "./Home.css";
 import FlipCard, {
   FrontFace,
   BackFace,
-} from "../../React-components/FlipCard/FlipCard";
+} from "../../React-components/FlipCard/RcFlipCard";
 const Home = () => {
   console.log("HOME.JS COMPONENT RENDERED", componentsChildren);
 
@@ -16,9 +16,12 @@ const Home = () => {
             <div className="components-strip">React Components</div>
             <div className="flex justify-normal gap-5 p-5 ">
               {componentsChildren.map((component: any) => (
-                <Link key={component._id} to={component.path}>
-                  <FlipCard classes="h-36 w-32 cursor-default">
-                    <>
+                <FlipCard
+                  key={component._id}
+                  classes="h-36 w-32 cursor-default"
+                >
+                  <>
+                    <Link to={component.path}>
                       <FrontFace classes="h-36 w-32 text-center">
                         <>
                           <div className="inline-block font-black">
@@ -27,23 +30,22 @@ const Home = () => {
                           <div className="font-medium text-left px-2">
                             {component._label}
                           </div>
-                          <div className=" text-sm text-right">more...</div>
                         </>
                       </FrontFace>
-                      <BackFace classes="h-36 w-32 p-1 overflow-auto">
-                        <div className="overflow-auto h-full">
-                          {component.children.map((demo: any) => (
-                            <Link key={demo._id} to={demo.path}>
-                              <div className=" text-sm text-blue-500 hover:underline cursor-pointer">
-                                {demo._label}
-                              </div>
-                            </Link>
-                          ))}
-                        </div>
-                      </BackFace>
-                    </>
-                  </FlipCard>
-                </Link>
+                    </Link>
+                    <BackFace classes="h-36 w-32 p-1 overflow-auto">
+                      <div className="overflow-auto h-full">
+                        {component.children.map((demo: any) => (
+                          <Link key={demo._id} to={demo.path}>
+                            <div className="text-sm text-blue-500 hover:underline cursor-pointer">
+                              {demo._label}
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    </BackFace>
+                  </>
+                </FlipCard>
               ))}
             </div>
           </div>
