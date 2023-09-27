@@ -1,7 +1,8 @@
 import { Suspense, lazy } from "react";
 import { CiHome, CiSettings } from "react-icons/ci";
-import { PiShapesThin } from "react-icons/pi";
+import { PiShapesThin, PiTableThin, PiListBulletsThin } from "react-icons/pi";
 import { RiContactsLine } from "react-icons/ri";
+import { AiOutlineUnorderedList } from "react-icons/ai";
 
 const Home = lazy(() => import("../components/Home/Home"));
 const Components = lazy(() => import("../components/Components"));
@@ -118,7 +119,7 @@ export const componentsChildren: any = [
   {
     path: "/components/",
     _id: "component-list",
-    _icon: <CiHome />,
+    _icon: <PiListBulletsThin />,
     element: (
       <Suspense fallback="Loading...">
         <ListContent />
@@ -129,7 +130,7 @@ export const componentsChildren: any = [
   {
     path: "/components/table",
     _id: "component-table",
-    _icon: <CiHome />,
+    _icon: <PiTableThin />,
     element: (
       <Suspense fallback="Loading...">
         <TableContent />
