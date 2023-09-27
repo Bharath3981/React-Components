@@ -27,6 +27,7 @@ const Home = () => {
                           <div className="font-medium text-left px-2">
                             {component._label}
                           </div>
+                          <div className=" text-sm text-right">more...</div>
                         </>
                       </FrontFace>
                       <BackFace classes="h-36 w-32 p-1 overflow-auto">
