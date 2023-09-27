@@ -4,7 +4,6 @@ type FlipCardProps = {
   classes?: string;
 };
 const FlipCard = ({ children, classes }: FlipCardProps) => {
-  console.log(children.props);
   return <div className={`flip-card ${classes}`}>{children}</div>;
 };
 type FaceProps = {
