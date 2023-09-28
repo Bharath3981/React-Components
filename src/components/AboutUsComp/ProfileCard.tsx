@@ -4,7 +4,7 @@ const ProfileCard = () => {
   return (
     <div className="panel col-span-full mb-3">
       <div className="relative h-28 p-4  mb-20">
-        <div className="absolute w-full h-full top-0 left-0 will-change-transform backfacevisibility overflow-hidden bg-cover bg-center bg-no-repeat z-0 bg-[url('./sunrise.jpg')]"></div>
+        <div className="absolute w-full h-full top-0 left-0 will-change-transform backfacevisibility overflow-hidden bg-cover bg-center bg-no-repeat z-0 bg-[url('/sunrise.jpg')]"></div>
         <div className="absolute bottom-0 h-40 w-40 translate-y-1/2 inline-block">
           <img
             className="w-full h-full object-cover overflow-hidden rounded-full p-1 block bg-white border border-spacing-1"
