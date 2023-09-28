@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { componentsChildren } from "../../data/Routes";
 import "./Home.css";
 import FlipCard, {

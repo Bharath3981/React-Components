@@ -2,7 +2,6 @@ import { Suspense, lazy } from "react";
 import { CiHome, CiSettings } from "react-icons/ci";
 import { PiShapesThin, PiTableThin, PiListBulletsThin } from "react-icons/pi";
 import { RiContactsLine } from "react-icons/ri";
-import { AiOutlineUnorderedList } from "react-icons/ai";
 
 const Home = lazy(() => import("../components/Home/Home"));
 const Components = lazy(() => import("../components/Components"));

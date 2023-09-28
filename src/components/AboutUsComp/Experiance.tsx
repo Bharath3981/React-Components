@@ -55,7 +55,7 @@ const Experiance = () => {
               <a href="https://www.oracle.com/">Oracle</a>
             </p>
             <p className="text-sm">June 2016 - June 2023 • 7 yrs 1 mos</p>
-            <p className="text-sm mb-2">Hyderaad, INDIA</p>
+            <p className="text-sm mb-2">Hyderabad, INDIA</p>
             <hr className="my-3" />
           </div>
         </div>
@@ -78,7 +78,7 @@ const Experiance = () => {
             <p className="text-sm">
               June 2023 - Present • {calcDate(new Date(), new Date(2023, 6))}
             </p>
-            <p className="text-sm mb-2">Hyderaad, INDIA</p>
+            <p className="text-sm mb-2">Hyderabad, INDIA</p>
           </div>
         </div>
       </div>

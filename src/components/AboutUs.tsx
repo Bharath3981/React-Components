@@ -1,3 +1,4 @@
+import Education from "./AboutUsComp/Education";
 import Experiance from "./AboutUsComp/Experiance";
 import Introduction from "./AboutUsComp/Introduction";
 import ProfileCard from "./AboutUsComp/ProfileCard";
@@ -24,7 +25,7 @@ const AboutUs = () => {
             <div className="inline-block w-full md:w-[34%]">
               <div className="grid gap-3 grid-cols-1 ml-0 md:ml-3">
                 <Experiance />
-                <div className="panel">main Card1</div>
+                <Education />
               </div>
             </div>
           </div>
