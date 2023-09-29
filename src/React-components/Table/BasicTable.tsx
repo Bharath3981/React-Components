@@ -1,8 +1,8 @@
-import { useFetchBasicTableDataQuery } from "../../Slices/Api-slice";
+import { useFetchBasicTableDataQuery } from "../../Slices/TableApiSlice";
 import RcTable from "./RcTable";
 
 const BasicTable = () => {
-  const { data = [], isFetching } = useFetchBasicTableDataQuery();
+  const { data = [], isFetching } = useFetchBasicTableDataQuery(null);
   console.log(data);
   return (
     <div>

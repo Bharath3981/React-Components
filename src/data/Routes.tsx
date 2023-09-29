@@ -6,7 +6,7 @@ import { RiContactsLine } from "react-icons/ri";
 const Home = lazy(() => import("../components/Home/Home"));
 const Components = lazy(() => import("../components/Components"));
 const Settings = lazy(() => import("../components/Settings"));
-const AboutUs = lazy(() => import("../components/AboutUs"));
+const AboutUs = lazy(() => import("../components/AboutUsComp/AboutUs"));
 
 const ListContent = lazy(() => import("../components/Contents/ListContent"));
 const ListSingleSelection = lazy(

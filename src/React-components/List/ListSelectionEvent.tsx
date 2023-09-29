@@ -1,6 +1,6 @@
 import RcList, { RcListOptions } from "./RcList";
 import { baseURL } from "../../Services/Services";
-import { useFetchBasicListQuery } from "../../Slices/Api-slice";
+import { useFetchBasicListQuery } from "../../Slices/ListApiSlice";
 import { useState } from "react";
 
 const ListSelectionEvent = () => {

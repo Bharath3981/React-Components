@@ -1,7 +1,7 @@
 const Education = () => {
   return (
     <div className="panel col-span-full">
-      <div className="w-full font-semibold text-xl p-3 bg-slate-100">
+      <div className="w-full font-semibold text-xl p-3 bg-slate-200">
         Education
       </div>
       <div className="p-3 text-justify">

@@ -1,7 +1,9 @@
-import Education from "./AboutUsComp/Education";
-import Experiance from "./AboutUsComp/Experiance";
-import Introduction from "./AboutUsComp/Introduction";
-import ProfileCard from "./AboutUsComp/ProfileCard";
+import Education from "./Education";
+import Experiance from "./Experiance";
+import Introduction from "./Introduction";
+import ProfileCard from "./ProfileCard";
+import Skills from "./Skills";
+import "./AboutUs.css";
 
 const AboutUs = () => {
   console.log("ABOUTUS.JS COMPONENT RENDERED");
@@ -19,7 +21,7 @@ const AboutUs = () => {
             <div className="inline-block w-full md:w-[66%]">
               <div className="grid gap-3 grid-cols-1 md:grid-cols-2 auto-rows-min">
                 <Introduction />
-                <div className="panel">main Card</div>
+                <Skills />
               </div>
             </div>
             <div className="inline-block w-full md:w-[34%]">

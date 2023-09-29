@@ -1,0 +1,17 @@
+.jet {
+  .skill-badge {
+    @apply bg-[--jet-selected-light] text-[--jet-selected] text-xs font-medium mr-2 px-2.5 py-0.5 rounded border border-[--jet-selected];
+  }
+}
+
+.amazon {
+  .skill-badge {
+    @apply bg-[--amazon-selected-light] text-[--amazon-selected] text-xs font-medium mr-2 px-2.5 py-0.5 rounded border border-[--amazon-selected];
+  }
+}
+
+.flipkart {
+  .skill-badge {
+    @apply bg-[--flipkart-selected-light] text-[--flipkart-selected] text-xs font-medium mr-2 px-2.5 py-0.5 rounded border border-[--flipkart-selected];
+  }
+}

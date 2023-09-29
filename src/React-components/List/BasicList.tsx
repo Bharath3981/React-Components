@@ -1,10 +1,10 @@
 import RcList, { RcListOptions } from "./RcList";
 import { baseURL } from "../../Services/Services";
-import { useFetchBasicListQuery } from "../../Slices/Api-slice";
+import { useFetchBasicListQuery } from "../../Slices/ListApiSlice";
 
 const ListMultipleSelection = () => {
   const options: RcListOptions = {};
-  const { data = [] } = useFetchBasicListQuery();
+  const { data = [] } = useFetchBasicListQuery(null);
 
   return (
     <div>
