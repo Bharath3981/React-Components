@@ -20,7 +20,7 @@ const RcTable = ({ data, columns, children, classes }: Props) => {
       <div className={classes + " pl-1"}>
         <table className="min-w-max  w-full box-border bg-white">
           <thead className="overflow-hidden bg-inherit sticky top-0">
-            <tr className="text-left  bg-inherit border">
+            <tr className="text-left  bg-inherit border xv">
               {columns.map((column: any) => (
                 <th
                   className="font-semibold px-3 py-1 overflow-hidden"
