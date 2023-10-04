@@ -1,5 +1,5 @@
 .table-row {
-  @apply border;
+  @apply border-t;
   td,
   th {
     @apply border-r last:border-r-0;
@@ -19,7 +19,7 @@
   }
   /* Row Selected */
   .row-selected {
-    @apply bg-[#e4f1f7] border-[--jet-selected] border-t-[1px] mb-[-1px] last:border-b-[1px];
+    @apply bg-[#e4f1f7] border-[--jet-selected] border-y mb-[-1px] last:border-t;
   }
 }
 
