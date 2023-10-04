@@ -1,3 +1,4 @@
+import useArray from "../../hooks/useArray";
 import "./RcTable.css";
 
 declare module "react" {
@@ -11,6 +12,11 @@ type RcTableOptions = {
   gridlines?: boolean;
   selectionMode?: "single" | "multiple" | undefined;
   selected?: Array<string | number>;
+  onSelected?: (
+    event: React.MouseEvent<HTMLElement>,
+    row: any,
+    selectedRows: Array<number | string>
+  ) => void;
 };
 
 type Props = {
@@ -21,14 +27,51 @@ type Props = {
   classes?: string;
 };
 const RcTable = ({ data, columns, children, classes, options }: Props) => {
-  const { gridlines } = options;
+  const {
+    gridlines = false,
+    selectionMode = undefined,
+    selected = [],
+    onSelected = function () {},
+  } = options;
+  const { array, addUniqueItem, updateItem, clearArray } = useArray(selected);
+  const getSelectedClass = (index: number | string) => {
+    let rowSelectedClass = "";
+    if (selectionMode === "single" || selectionMode === "multiple") {
+      if (array.some((item) => item === index)) {
+        rowSelectedClass = " row-selected ";
+      }
+    }
+    return rowSelectedClass;
+  };
+
+  const attachHandler = (
+    e: React.MouseEvent<HTMLElement>,
+    index: number | string,
+    listItem: any
+  ) => {
+    if (
+      (selectionMode === "single" || selectionMode === "multiple") &&
+      !e.ctrlKey
+    ) {
+      clearArray();
+      updateItem(0, index);
+      let currentSelection = [...array];
+      currentSelection = [index];
+      onSelected(e, listItem, currentSelection);
+    } else if (selectionMode === "multiple" && e.ctrlKey) {
+      addUniqueItem(index);
+      let currentSelection = [...array];
+      currentSelection.push(index);
+      onSelected(e, listItem, currentSelection);
+    }
+  };
   return (
     <>
       <div className={classes + " auto-hide-scrollbar"}>
         <table className="min-w-max  w-full bg-white mr-3">
           <thead className="overflow-hidden bg-inherit sticky top-0 ">
             <tr
-              className={`text-left bg-inherit border-b shadow-sm ${
+              className={`row text-left bg-inherit border-b shadow-sm ${
                 gridlines ? "table-row" : ""
               }`}
             >
@@ -48,8 +91,13 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
               obj.key = index;
               return (
                 <tr
+                  onClick={(e: React.MouseEvent<HTMLElement>) =>
+                    attachHandler(e, index, tableItem)
+                  }
                   key={tableItem.id}
-                  className={`${gridlines ? "table-row" : ""}`}
+                  className={`row-hover ${
+                    gridlines ? "table-row" : ""
+                  } ${getSelectedClass(index)}`}
                 >
                   {children.props.render(obj)}
                 </tr>

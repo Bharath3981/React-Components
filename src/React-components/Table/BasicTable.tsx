@@ -3,7 +3,7 @@ import RcTable from "./RcTable";
 
 const BasicTable = () => {
   const { data = [], isSuccess } = useFetchBasicTableDataQuery(null);
-  const options = { gridlines: true };
+  const options = { gridlines: true, selectionMode: "single" };
   const columns = [
     {
       label: "Department Id",

@@ -1,7 +1,46 @@
 .table-row {
-  @apply border-b;
+  @apply border;
   td,
   th {
     @apply border-r last:border-r-0;
+  }
+}
+
+.row {
+  @apply border-transparent border-y-[1px] mb-[-1px];
+}
+
+.jet {
+  /* list row default style */
+
+  /* Row hover */
+  .row-hover {
+    @apply hover:bg-gray-200;
+  }
+  /* Row Selected */
+  .row-selected {
+    @apply bg-[#e4f1f7] border-[--jet-selected] border-t-[1px] mb-[-1px] last:border-b-[1px];
+  }
+}
+
+.amazon {
+  /* Row hover */
+  .row-hover {
+    @apply hover:bg-gray-200;
+  }
+  /* Row Selected */
+  .row-selected {
+    @apply bg-[--amazon-selected-light] border-[--amazon-selected] mb-[-1px] border-y-[1px];
+  }
+}
+
+.flipkart {
+  /* Row hover */
+  .row-hover {
+    @apply hover:bg-gray-200 hover:cursor-pointer;
+  }
+  /* Row Selected */
+  .row-selected {
+    @apply bg-[#dae5f7] border-[--flipkart-selected] mb-[-1px] border-y-[1px];
   }
 }
