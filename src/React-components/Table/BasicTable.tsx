@@ -3,7 +3,7 @@ import RcTable from "./RcTable";
 
 const BasicTable = () => {
   const { data = [], isSuccess } = useFetchBasicTableDataQuery(null);
-  const options = {};
+  const options = { gridlines: true };
   const columns = [
     {
       label: "Department Id",
@@ -36,10 +36,10 @@ const BasicTable = () => {
       <div className="text-gray-400 text-sm">RcTable Basic table</div>
       <span>A table displays data items in a tabular format.</span>
       <span>Simple Table with Javascript Array data.</span>
-      <div className="my-2 overflow-auto">
+      <div className="">
         {isSuccess && (
           <RcTable
-            classes="h-96 border"
+            classes="h-96"
             data={data}
             columns={columns}
             options={options}
@@ -47,12 +47,12 @@ const BasicTable = () => {
             <template
               render={(row: any) => (
                 <>
-                  <td className="px-3 py-2">{row.DepartmentId}</td>
-                  <td className="px-3 py-2">{row.DepartmentName}</td>
-                  <td className="px-3 py-2">{row.Type}</td>
-                  <td className="px-3 py-2">{row.ManagerId}</td>
-                  <td className="px-3 py-2">{row.StartDate}</td>
-                  <td className="px-3 py-2">{row.Rating}</td>
+                  <td className="px-3 py-1">{row.DepartmentId}</td>
+                  <td className="px-3 py-1">{row.DepartmentName}</td>
+                  <td className="px-3 py-1">{row.Type}</td>
+                  <td className="px-3 py-1">{row.ManagerId}</td>
+                  <td className="px-3 py-1">{row.StartDate}</td>
+                  <td className="px-3 py-1">{row.Rating}</td>
                 </>
               )}
             ></template>

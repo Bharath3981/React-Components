@@ -28,17 +28,21 @@
   .panel {
     @apply bg-white border-[#e3e3e2] border rounded-md overflow-auto;
   }
+  .auto-hide-scrollbar {
+    @apply pl-1 h-96 border overflow-hidden hover:overflow-auto pr-[6px] hover:pr-0;
+  }
 
   /* width */
   ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
     background: white;
   }
 
   /* Track */
   ::-webkit-scrollbar-track {
-    border-radius: 5px;
+    border-radius: 6px;
+    background: rgb(230, 228, 228);
   }
 
   /* Handle */

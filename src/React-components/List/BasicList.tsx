@@ -12,7 +12,7 @@ const ListMultipleSelection = () => {
       <div className="text-gray-400 text-sm">RcList Basic list</div>
       <span>A list view displays data items as a list or a grid.</span>
       <span>This demo shows as basic list</span>
-      <div className="p-3 my-2 border h-96 overflow-auto">
+      <div className="auto-hide-scrollbar">
         {
           <RcList data={data} options={options}>
             <template

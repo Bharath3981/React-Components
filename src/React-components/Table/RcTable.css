@@ -1,0 +1,7 @@
+.table-row {
+  @apply border-b;
+  td,
+  th {
+    @apply border-r last:border-r-0;
+  }
+}
