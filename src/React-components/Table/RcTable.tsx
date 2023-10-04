@@ -20,16 +20,21 @@ type Props = {
   options: RcTableOptions;
   classes?: string;
 };
-const RcTable = ({ data, columns, children, classes }: Props) => {
+const RcTable = ({ data, columns, children, classes, options }: Props) => {
+  const { gridlines } = options;
   return (
     <>
       <div className={classes + " auto-hide-scrollbar"}>
         <table className="min-w-max  w-full bg-white mr-3">
           <thead className="overflow-hidden bg-inherit sticky top-0 ">
-            <tr className="text-left table-row  bg-inherit border-b shadow-md">
+            <tr
+              className={`text-left bg-inherit border-b shadow-sm ${
+                gridlines ? "table-row" : ""
+              }`}
+            >
               {columns.map((column: any) => (
                 <th
-                  className="font-semibold px-3 py-1 overflow-hidden"
+                  className="font-semibold px-3 py-2 overflow-hidden"
                   key={column.field}
                 >
                   {column.label}
@@ -42,11 +47,12 @@ const RcTable = ({ data, columns, children, classes }: Props) => {
               let obj = { ...tableItem };
               obj.key = index;
               return (
-                <>
-                  <tr key={tableItem.id} className="table-row">
-                    {children.props.render(obj)}
-                  </tr>
-                </>
+                <tr
+                  key={tableItem.id}
+                  className={`${gridlines ? "table-row" : ""}`}
+                >
+                  {children.props.render(obj)}
+                </tr>
               );
             })}
           </tbody>
