@@ -1,13 +1,15 @@
-.table-row {
+.body-row {
   @apply border-t;
-  td,
-  th {
+  td {
     @apply border-r last:border-r-0;
   }
 }
 
-.row {
-  @apply border-transparent border-y-[1px] mb-[-1px];
+.head-row {
+  @apply border-transparent border-b-[1px] mb-[-1px] text-left bg-inherit shadow-sm;
+  th {
+    @apply border-r border-t-0 last:border-r-0;
+  }
 }
 
 .jet {

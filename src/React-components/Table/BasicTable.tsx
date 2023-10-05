@@ -1,9 +1,24 @@
+import { useState } from "react";
 import { useFetchBasicTableDataQuery } from "../../Slices/TableApiSlice";
 import RcTable from "./RcTable";
 
 const BasicTable = () => {
   const { data = [], isSuccess } = useFetchBasicTableDataQuery(null);
-  const options = { gridlines: true, selectionMode: "multiple" };
+  const [selectedRows, setSelectedRows] = useState<Array<string | number>>([]);
+  const onSelected = (
+    event: React.MouseEvent<HTMLElement>,
+    row: any,
+    selectedRows: Array<number | string>
+  ) => {
+    setSelectedRows([...selectedRows]);
+  };
+  const options = {
+    keyAttribute: "DepartmentId",
+    gridlines: true,
+    selectionMode: "multiple",
+    selected: [],
+    onSelected: onSelected,
+  };
   const columns = [
     {
       label: "Department Id",
@@ -36,6 +51,7 @@ const BasicTable = () => {
       <div className="text-gray-400 text-sm">RcTable Basic table</div>
       <span>A table displays data items in a tabular format.</span>
       <span>Simple Table with Javascript Array data.</span>
+      <div>Selected rows: {JSON.stringify(selectedRows)}</div>
       <div className="">
         {isSuccess && (
           <RcTable

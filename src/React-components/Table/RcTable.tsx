@@ -9,6 +9,7 @@ declare module "react" {
 }
 
 type RcTableOptions = {
+  keyAttribute: string;
   gridlines?: boolean;
   selectionMode?: "single" | "multiple" | undefined;
   selected?: Array<string | number>;
@@ -28,6 +29,7 @@ type Props = {
 };
 const RcTable = ({ data, columns, children, classes, options }: Props) => {
   const {
+    keyAttribute,
     gridlines = false,
     selectionMode = undefined,
     selected = [],
@@ -37,6 +39,7 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
   const getSelectedClass = (index: number | string) => {
     let rowSelectedClass = "";
     if (selectionMode === "single" || selectionMode === "multiple") {
+      //console.log(array);
       if (array.some((item) => item === index)) {
         rowSelectedClass = " row-selected ";
       }
@@ -44,24 +47,24 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
     return rowSelectedClass;
   };
 
-  const attachHandler = (
-    e: React.MouseEvent<HTMLElement>,
-    index: number | string,
-    listItem: any
-  ) => {
+  const attachHandler = (e: React.MouseEvent<HTMLElement>, listItem: any) => {
     if (
       (selectionMode === "single" || selectionMode === "multiple") &&
       !e.ctrlKey
     ) {
       clearArray();
-      updateItem(0, index);
+      updateItem(0, listItem[keyAttribute]);
+      setTimeout(() => {
+        console.log(array, listItem[keyAttribute]);
+      }, 1000);
+
       let currentSelection = [...array];
-      currentSelection = [index];
+      currentSelection = [listItem[keyAttribute]];
       onSelected(e, listItem, currentSelection);
     } else if (selectionMode === "multiple" && e.ctrlKey) {
-      addUniqueItem(index);
+      addUniqueItem(listItem[keyAttribute]);
       let currentSelection = [...array];
-      currentSelection.push(index);
+      currentSelection.push(listItem[keyAttribute]);
       onSelected(e, listItem, currentSelection);
     }
   };
@@ -69,12 +72,8 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
     <>
       <div className={classes + " auto-hide-scrollbar"}>
         <table className="min-w-max  w-full bg-white mr-3">
-          <thead className="overflow-hidden bg-inherit sticky top-0 ">
-            <tr
-              className={`row text-left bg-inherit border-b shadow-sm ${
-                gridlines ? "table-row" : ""
-              }`}
-            >
+          <thead className="overflow-hidden bg-inherit sticky top-0 mt-2">
+            <tr className={`head-row ${gridlines ? "table-row" : ""}`}>
               {columns.map((column: any) => (
                 <th
                   className="font-semibold px-3 py-2 overflow-hidden"
@@ -92,12 +91,12 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
               return (
                 <tr
                   onClick={(e: React.MouseEvent<HTMLElement>) =>
-                    attachHandler(e, index, tableItem)
+                    attachHandler(e, tableItem)
                   }
-                  key={tableItem.id}
+                  key={tableItem[keyAttribute]}
                   className={`row-hover ${
-                    gridlines ? "table-row" : ""
-                  } ${getSelectedClass(index)}`}
+                    gridlines ? "body-row" : ""
+                  } ${getSelectedClass(tableItem[keyAttribute])}`}
                 >
                   {children.props.render(obj)}
                 </tr>

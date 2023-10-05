@@ -19,7 +19,7 @@ const ListSelectionEvent = () => {
     selected: [],
     onSelected: onSelected,
   };
-  const { data = [] } = useFetchBasicListQuery();
+  const { data = [] } = useFetchBasicListQuery(null);
 
   return (
     <div>
