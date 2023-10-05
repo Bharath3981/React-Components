@@ -1,3 +1,4 @@
+import { useState } from "react";
 import useArray from "../../hooks/useArray";
 import "./RcTable.css";
 
@@ -27,6 +28,7 @@ type Props = {
   options: RcTableOptions;
   classes?: string;
 };
+let dummyArray: any = [];
 const RcTable = ({ data, columns, children, classes, options }: Props) => {
   const {
     keyAttribute,
@@ -35,12 +37,14 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
     selected = [],
     onSelected = function () {},
   } = options;
-  const { array, addUniqueItem, updateItem, clearArray } = useArray(selected);
+  //const { array, addUniqueItem, updateItem, clearArray } = useArray(selected);
+
+  const [[], setSelectedRows] = useState(selected);
+
   const getSelectedClass = (index: number | string) => {
     let rowSelectedClass = "";
     if (selectionMode === "single" || selectionMode === "multiple") {
-      //console.log(array);
-      if (array.some((item) => item === index)) {
+      if (dummyArray.some((item: any) => item === index)) {
         rowSelectedClass = " row-selected ";
       }
     }
@@ -52,20 +56,30 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
       (selectionMode === "single" || selectionMode === "multiple") &&
       !e.ctrlKey
     ) {
-      clearArray();
-      updateItem(0, listItem[keyAttribute]);
-      setTimeout(() => {
-        console.log(array, listItem[keyAttribute]);
-      }, 1000);
+      //clearArray();
+      dummyArray = new Array();
+      dummyArray = [listItem[keyAttribute]];
+      setSelectedRows(dummyArray);
+      //updateItem(0, listItem[keyAttribute]);
 
-      let currentSelection = [...array];
+      let currentSelection = [...dummyArray];
       currentSelection = [listItem[keyAttribute]];
       onSelected(e, listItem, currentSelection);
     } else if (selectionMode === "multiple" && e.ctrlKey) {
-      addUniqueItem(listItem[keyAttribute]);
-      let currentSelection = [...array];
-      currentSelection.push(listItem[keyAttribute]);
-      onSelected(e, listItem, currentSelection);
+      let tempIndex = 0;
+      if (
+        dummyArray.some((value: any, index: number) => {
+          tempIndex = index;
+          return value === listItem[keyAttribute];
+        })
+      ) {
+        dummyArray.splice(tempIndex, 1);
+      } else {
+        dummyArray.push(listItem[keyAttribute]);
+      }
+      setSelectedRows((prevState) => [...prevState, ...dummyArray]);
+      console.log(dummyArray);
+      onSelected(e, listItem, dummyArray);
     }
   };
   return (

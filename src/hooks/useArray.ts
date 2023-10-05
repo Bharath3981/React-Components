@@ -21,6 +21,7 @@ const useArray = (initialArray: Array<any>) => {
     setArray((prevArray) => {
       const newArray = [...prevArray];
       newArray[index] = newItem;
+      console.log(newArray);
       return newArray;
     });
   };
