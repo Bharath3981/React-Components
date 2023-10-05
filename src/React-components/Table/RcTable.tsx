@@ -1,5 +1,9 @@
 import { useState } from "react";
-import useArray from "../../hooks/useArray";
+import {
+  LiaSortSolid,
+  LiaSortUpSolid,
+  LiaSortDownSolid,
+} from "react-icons/lia";
 import "./RcTable.css";
 
 declare module "react" {
@@ -90,10 +94,20 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
             <tr className={`head-row ${gridlines ? "table-row" : ""}`}>
               {columns.map((column: any) => (
                 <th
-                  className="font-semibold px-3 py-2 overflow-hidden"
+                  className="font-semibold px-3  overflow-hidden"
                   key={column.field}
                 >
-                  {column.label}
+                  <div className="flex">
+                    <div className="py-2">{column.label}</div>
+                    <div className="flex flex-col px-3 py-2 cursor-pointer items-start">
+                      <div className="h-[7px]">
+                        <LiaSortUpSolid />
+                      </div>
+                      <div className="h-[7px]">
+                        <LiaSortDownSolid />
+                      </div>
+                    </div>
+                  </div>
                 </th>
               ))}
             </tr>
