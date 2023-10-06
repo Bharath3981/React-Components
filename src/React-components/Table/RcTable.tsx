@@ -99,13 +99,27 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
     sortableColumn = field;
     sortType = sortOrder;
     let records = [...tableRows];
-    records.sort((a: any, b: any) => {
-      if (sortType) {
-        return a[sortableColumn] - b[sortableColumn];
-      } else {
-        return b[sortableColumn] - a[sortableColumn];
+    function compare(a: any, b: any) {
+      if (a[sortableColumn] < b[sortableColumn]) {
+        return sortType ? -1 : 1;
       }
-    });
+      if (a[sortableColumn] > b[sortableColumn]) {
+        return sortType ? 1 : -1;
+      }
+      return 0;
+    }
+    records.sort(compare);
+    // records.sort((a: any, b: any) => {
+    //   if (sortType) {
+    //     if (a[sortableColumn] < b[sortableColumn]) {
+    //       return -1;
+    //     }
+    //   } else {
+    //     if (a[sortableColumn] > b[sortableColumn]) {
+    //       return 1;
+    //     }
+    //   }
+    // });
     setTableRows(records);
     console.log(sortOrder);
   };
