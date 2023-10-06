@@ -11,6 +11,7 @@ const BasicTable = () => {
     selectedRows: Array<number | string>
   ) => {
     setSelectedRows([...selectedRows]);
+    console.log(event, row);
   };
   const options = {
     keyAttribute: "DepartmentId",
@@ -23,26 +24,32 @@ const BasicTable = () => {
     {
       label: "Department Id",
       field: "DepartmentId",
+      sortable: true,
     },
     {
       label: "Department Name",
       field: "DepartmentName",
+      sortable: true,
     },
     {
       label: "Type",
       field: "Type",
+      sortable: true,
     },
     {
       label: "Manager Id",
       field: "ManagerId",
+      sortable: true,
     },
     {
       label: "Start date",
       field: "StartDate",
+      sortable: true,
     },
     {
       label: "Rating",
       field: "Rating",
+      sortable: true,
     },
   ];
   return (

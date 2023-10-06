@@ -41,8 +41,7 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
     selected = [],
     onSelected = function () {},
   } = options;
-  //const { array, addUniqueItem, updateItem, clearArray } = useArray(selected);
-
+  //dummyArray = selected;
   const [[], setSelectedRows] = useState(selected);
 
   const getSelectedClass = (index: number | string) => {
@@ -60,12 +59,9 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
       (selectionMode === "single" || selectionMode === "multiple") &&
       !e.ctrlKey
     ) {
-      //clearArray();
       dummyArray = new Array();
       dummyArray = [listItem[keyAttribute]];
       setSelectedRows(dummyArray);
-      //updateItem(0, listItem[keyAttribute]);
-
       let currentSelection = [...dummyArray];
       currentSelection = [listItem[keyAttribute]];
       onSelected(e, listItem, currentSelection);
@@ -99,14 +95,16 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
                 >
                   <div className="flex">
                     <div className="py-2">{column.label}</div>
-                    <div className="flex flex-col px-3 py-2 cursor-pointer items-start">
-                      <div className="h-[7px]">
-                        <LiaSortUpSolid />
+                    {column.sortable && (
+                      <div className="column-sort">
+                        <div className="h-[7px]">
+                          <LiaSortUpSolid />
+                        </div>
+                        <div className="h-[7px]">
+                          <LiaSortDownSolid />
+                        </div>
                       </div>
-                      <div className="h-[7px]">
-                        <LiaSortDownSolid />
-                      </div>
-                    </div>
+                    )}
                   </div>
                 </th>
               ))}
