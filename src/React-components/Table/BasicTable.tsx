@@ -45,6 +45,7 @@ const BasicTable = () => {
       label: "Start date",
       field: "StartDate",
       sortable: true,
+      frozen: "right",
     },
     {
       label: "Rating",

@@ -16,7 +16,7 @@ declare module "react" {
 type RcTableOptions = {
   keyAttribute: string;
   gridlines?: boolean;
-  selectionMode?: "single" | "multiple" | undefined;
+  selectionMode?: "single" | "multiple" | string;
   selected?: Array<string | number>;
   onSelected?: (
     event: React.MouseEvent<HTMLElement>,
@@ -131,7 +131,13 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
             <tr className={`head-row ${gridlines ? "table-row" : ""}`}>
               {columns.map((column: any) => (
                 <th
-                  className="font-semibold px-3  overflow-hidden"
+                  className={`font-semibold px-3 overflow-hidden bg-inherit  ${
+                    column.frozen && column.frozen === "right"
+                      ? " sticky right-0 "
+                      : column.frozen === "left"
+                      ? "sticky left-0 "
+                      : ""
+                  }`}
                   key={column.field}
                 >
                   <div className="flex">
@@ -176,7 +182,8 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
                   key={tableItem[keyAttribute]}
                   className={`row-hover ${
                     gridlines ? "body-row" : ""
-                  } ${getSelectedClass(tableItem[keyAttribute])}`}
+                  } ${getSelectedClass(tableItem[keyAttribute])} 
+                  ${"[&>*:nth-child(5)]:sticky [&>*:nth-child(5)]:right-0 [&>*:nth-child(5)]:z-10 [&>*:nth-child(5)]:bg-inherit"}`}
                 >
                   {children.props.render(obj)}
                 </tr>
