@@ -33,6 +33,8 @@ type Props = {
   classes?: string;
 };
 let dummyArray: any = [];
+let sortType: boolean = true;
+let sortableColumn: string = "";
 const RcTable = ({ data, columns, children, classes, options }: Props) => {
   const {
     keyAttribute,
@@ -41,8 +43,10 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
     selected = [],
     onSelected = function () {},
   } = options;
-  //dummyArray = selected;
+  //dummyArray = [...selected];
   const [[], setSelectedRows] = useState(selected);
+
+  const [tableRows, setTableRows] = useState(data);
 
   const getSelectedClass = (index: number | string) => {
     let rowSelectedClass = "";
@@ -82,6 +86,29 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
       onSelected(e, listItem, dummyArray);
     }
   };
+
+  /*  Sort functionality  */
+  const sortColumnData = (
+    allowSort: boolean,
+    field: string,
+    sortOrder: boolean
+  ) => {
+    if (!allowSort) {
+      return;
+    }
+    sortableColumn = field;
+    sortType = sortOrder;
+    let records = [...tableRows];
+    records.sort((a: any, b: any) => {
+      if (sortType) {
+        return a[sortableColumn] - b[sortableColumn];
+      } else {
+        return b[sortableColumn] - a[sortableColumn];
+      }
+    });
+    setTableRows(records);
+    console.log(sortOrder);
+  };
   return (
     <>
       <div className={classes + " auto-hide-scrollbar"}>
@@ -96,13 +123,26 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
                   <div className="flex">
                     <div className="py-2">{column.label}</div>
                     {column.sortable && (
-                      <div className="column-sort">
-                        <div className="h-[7px]">
-                          <LiaSortUpSolid />
-                        </div>
-                        <div className="h-[7px]">
-                          <LiaSortDownSolid />
-                        </div>
+                      <div
+                        className="column-sort"
+                        onClick={() =>
+                          sortColumnData(
+                            column.sortable,
+                            column.field,
+                            !sortType
+                          )
+                        }
+                      >
+                        {!(sortableColumn === column.field && sortType) && (
+                          <div className="h-[7px]">
+                            <LiaSortUpSolid />
+                          </div>
+                        )}
+                        {!(sortableColumn === column.field && !sortType) && (
+                          <div className="h-[7px]">
+                            <LiaSortDownSolid />
+                          </div>
+                        )}
                       </div>
                     )}
                   </div>
@@ -111,7 +151,7 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
             </tr>
           </thead>
           <tbody className="overflow-hidden">
-            {data.map((tableItem: any, index: number) => {
+            {tableRows.map((tableItem: any, index: number) => {
               let obj = { ...tableItem };
               obj.key = index;
               return (
