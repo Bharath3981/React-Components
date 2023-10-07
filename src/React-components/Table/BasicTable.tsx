@@ -27,7 +27,7 @@ const BasicTable = () => {
       sortable: true,
     },
     {
-      label: "Department ",
+      label: "Department Name",
       field: "DepartmentName",
       sortable: true,
     },
