@@ -135,7 +135,7 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
                     column.frozen && column.frozen === "right"
                       ? " sticky right-0 "
                       : column.frozen === "left"
-                      ? "sticky left-0 "
+                      ? " sticky left-0 "
                       : ""
                   }`}
                   key={column.field}
@@ -180,10 +180,10 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
                     attachHandler(e, tableItem)
                   }
                   key={tableItem[keyAttribute]}
-                  className={`row-hover ${
+                  className={`row-hover bg-inherit  ${
                     gridlines ? "body-row" : ""
                   } ${getSelectedClass(tableItem[keyAttribute])} 
-                  ${"[&>*:nth-child(5)]:sticky [&>*:nth-child(5)]:right-0 [&>*:nth-child(5)]:z-10 [&>*:nth-child(5)]:bg-inherit"}`}
+                  ${"[&>*:nth-child(5)]:sticky [&>*:nth-child(5)]:right-0 [&>*:nth-child(5)]:bg-white [&>*:nth-child(5)]:border-l-4"}`}
                 >
                   {children.props.render(obj)}
                 </tr>
