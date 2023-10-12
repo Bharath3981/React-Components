@@ -121,7 +121,6 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
     //   }
     // });
     setTableRows(records);
-    console.log(sortOrder);
   };
   return (
     <>
@@ -180,10 +179,10 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
                     attachHandler(e, tableItem)
                   }
                   key={tableItem[keyAttribute]}
-                  className={`row-hover bg-inherit  ${
+                  className={`row-hover bg-inherit overflow-hidden  ${
                     gridlines ? "body-row" : ""
                   } ${getSelectedClass(tableItem[keyAttribute])} 
-                  ${"[&>*:nth-child(5)]:sticky [&>*:nth-child(5)]:right-0 [&>*:nth-child(5)]:bg-white [&>*:nth-child(5)]:border-l-4"}`}
+                  ${"[&>*:nth-child(5)]:sticky [&>*:nth-child(5)]:right-0 [&>*:nth-child(5)]:bg-inherit  "}`}
                 >
                   {children.props.render(obj)}
                 </tr>

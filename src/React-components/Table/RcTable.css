@@ -1,5 +1,5 @@
 .body-row {
-  @apply border-t;
+  @apply border-t bg-white;
   td {
     @apply border-r last:border-r-0;
   }
