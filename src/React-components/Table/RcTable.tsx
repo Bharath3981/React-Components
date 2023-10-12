@@ -126,7 +126,7 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
     <>
       <div className={classes + " auto-hide-scrollbar"}>
         <table className="min-w-max  w-full bg-white mr-3">
-          <thead className="overflow-hidden bg-inherit sticky top-0 mt-2">
+          <thead className="overflow-hidden z-10 bg-inherit sticky top-0 mt-2">
             <tr className={`head-row ${gridlines ? "table-row" : ""}`}>
               {columns.map((column: any) => (
                 <th
