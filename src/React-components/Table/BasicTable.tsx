@@ -58,7 +58,7 @@ const BasicTable = () => {
       <div className="text-2xl font-semibold">Table Component</div>
       <div className="text-gray-400 text-sm">RcTable Basic</div>
       <span>A table displays data items in a tabular format.</span>
-      <span>Simple Table with Javascript Array data.</span>
+      <span>Simple Table with Javascript Array data. Test</span>
       <div>Selected rows: {JSON.stringify(selectedRows)}</div>
       <div className="">
         {isSuccess && (
