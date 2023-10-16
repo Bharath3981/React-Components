@@ -32,6 +32,12 @@
     @apply pl-1 h-96 border overflow-hidden hover:overflow-auto pr-[6px] hover:pr-0;
   }
 
+  @supports (-moz-appearance: none) {
+    .auto-hide-scrollbar {
+      @apply pr-0;
+    }
+  }
+
   /* width */
   ::-webkit-scrollbar {
     width: 6px;
