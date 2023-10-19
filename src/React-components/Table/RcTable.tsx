@@ -130,7 +130,7 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
             <tr className={`head-row ${gridlines ? "table-row" : ""}`}>
               {columns.map((column: any) => (
                 <th
-                  className={`font-semibold px-3 overflow-hidden bg-inherit  ${
+                  className={`font-semibold px-3 overflow-hidden bg-inherit outline outline-gray-200 outline-1  ${
                     column.frozen && column.frozen === "right"
                       ? " sticky right-0 "
                       : column.frozen === "left"
