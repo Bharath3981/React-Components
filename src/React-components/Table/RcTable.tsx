@@ -1,9 +1,5 @@
 import { useState } from "react";
-import {
-  LiaSortSolid,
-  LiaSortUpSolid,
-  LiaSortDownSolid,
-} from "react-icons/lia";
+import { LiaSortUpSolid, LiaSortDownSolid } from "react-icons/lia";
 import "./RcTable.css";
 
 declare module "react" {
