@@ -20,7 +20,7 @@
   }
   .body-row {
     td {
-      box-shadow: -1px 1px 1px #e9ebee;
+      box-shadow: 1px 1px 0 #e9ebee;
     }
   }
 }
