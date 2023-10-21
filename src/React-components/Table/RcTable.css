@@ -12,6 +12,19 @@
   }
 }
 
+@supports (-moz-appearance: none) {
+  .head-row {
+    th {
+      box-shadow: -1px 1px 0 #e9ebee;
+    }
+  }
+  .body-row {
+    td {
+      box-shadow: -1px 1px 1px #e9ebee;
+    }
+  }
+}
+
 .jet {
   /* list row default style */
 
