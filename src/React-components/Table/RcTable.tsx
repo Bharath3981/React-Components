@@ -139,7 +139,7 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
                     <div className="py-2">{column.label}</div>
                     {column.sortable && (
                       <div
-                        className="column-sort"
+                        className="column-sort "
                         onClick={() =>
                           sortColumnData(
                             column.sortable,
