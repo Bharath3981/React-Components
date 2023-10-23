@@ -121,8 +121,8 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
   return (
     <>
       <div className={classes + " auto-hide-scrollbar"}>
-        <table className="min-w-max  w-full bg-white mr-3">
-          <thead className="overflow-hidden z-10 bg-inherit sticky top-0 mt-2">
+        <table className="min-w-max  w-full bg-white mr-3 ">
+          <thead className="overflow-hidden z-10 bg-white sticky top-0 mt-2">
             <tr className={`head-row ${gridlines ? "table-row" : ""}`}>
               {columns.map((column: any) => (
                 <th
@@ -178,7 +178,7 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
                   className={`row-hover bg-inherit overflow-hidden  ${
                     gridlines ? "body-row" : ""
                   } ${getSelectedClass(tableItem[keyAttribute])} 
-                  ${"[&>*:nth-child(5)]:sticky [&>*:nth-child(5)]:right-0 [&>*:nth-child(5)]:bg-inherit  "}`}
+                  ${"frozen-column [&>*:nth-child(5)]:sticky [&>*:nth-child(5)]:right-0 [&>*:nth-child(5)]:bg-inherit  "}`}
                 >
                   {children.props.render(obj)}
                 </tr>

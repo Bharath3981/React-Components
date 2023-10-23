@@ -14,7 +14,11 @@
   body {
     @apply overflow-hidden bg-[#fbf9f8];
   }
-
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
   .transition-effect {
     @apply transition-all ease-in duration-300;
   }
