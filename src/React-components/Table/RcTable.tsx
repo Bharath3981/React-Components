@@ -122,19 +122,10 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
     <>
       <div className={classes + " auto-hide-scrollbar"}>
         <table className="min-w-max  w-full bg-white mr-3 ">
-          <thead className="overflow-hidden z-10 bg-white sticky top-0 mt-2">
-            <tr className={`head-row ${gridlines ? "table-row" : ""}`}>
+          <thead className="overflow-hidden z-10 sticky top-0 bg-inherit  mt-2">
+            <tr className={`head-row ${gridlines ? " table-row " : ""}`}>
               {columns.map((column: any) => (
-                <th
-                  className={`font-semibold px-3 bg-inherit ${
-                    column.frozen && column.frozen === "right"
-                      ? " sticky right-0 "
-                      : column.frozen === "left"
-                      ? " sticky left-0 "
-                      : ""
-                  }`}
-                  key={column.field}
-                >
+                <th className={`font-semibold px-3`} key={column.field}>
                   <div className="flex">
                     <div className="py-2">{column.label}</div>
                     {column.sortable && (
@@ -177,8 +168,7 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
                   key={tableItem[keyAttribute]}
                   className={`row-hover bg-inherit overflow-hidden  ${
                     gridlines ? "body-row" : ""
-                  } ${getSelectedClass(tableItem[keyAttribute])} 
-                  ${"frozen-column [&>*:nth-child(5)]:sticky [&>*:nth-child(5)]:right-0 [&>*:nth-child(5)]:bg-inherit  "}`}
+                  } ${getSelectedClass(tableItem[keyAttribute])}`}
                 >
                   {children.props.render(obj)}
                 </tr>
