@@ -28,7 +28,7 @@ const BasicTable = () => {
     },
     {
       label: "Department Name",
-      field: "DepartmentName",
+      field: "DepartmentName 1",
       sortable: true,
     },
     {
@@ -45,7 +45,6 @@ const BasicTable = () => {
       label: "Start date",
       field: "StartDate",
       sortable: true,
-      frozen: "right",
     },
     {
       label: "Rating",

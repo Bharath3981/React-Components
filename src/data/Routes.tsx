@@ -95,7 +95,7 @@ export const tableComponentPages: any = [
   {
     _id: "tableComponent-1",
     _label: "Basic table",
-    path: "/components/table",
+    path: "/components/table/",
     element: (
       <Suspense fallback="Loading...">
         <BasicTable />
