@@ -8,7 +8,7 @@ const ListGridLines = () => {
   const options: RcListOptions = {
     gridlines: true,
   };
-  const { data = [] } = useFetchBasicListQuery();
+  const { data = [] } = useFetchBasicListQuery(null);
 
   return (
     <div>

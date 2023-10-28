@@ -1,14 +1,24 @@
 import { useState } from "react";
-import { useFetchBasicTableDataQuery } from "../../Slices/TableApiSlice";
-import RcTable from "./RcTable";
+import { useFetchBasicTableDataQuery } from "../../../Slices/TableApiSlice";
+import RcTable from "../RcTable";
 
-const BasicTable = () => {
+const MultipleSelectionTable = () => {
   const { data = [], isSuccess } = useFetchBasicTableDataQuery(null);
-  const [selectedRows] = useState<Array<string | number>>([]);
-
+  const [selectedRows, setSelectedRows] = useState<Array<string | number>>([]);
+  const onSelected = (
+    event: React.MouseEvent<HTMLElement>,
+    row: any,
+    selectedRows: Array<number | string>
+  ) => {
+    setSelectedRows([...selectedRows]);
+    console.log(event, row);
+  };
   const options = {
     keyAttribute: "DepartmentId",
-    gridlines: false,
+    gridlines: true,
+    selectionMode: "multiple",
+    selected: [],
+    onSelected: onSelected,
   };
   const columns = [
     {
@@ -39,7 +49,7 @@ const BasicTable = () => {
   return (
     <div>
       <div className="text-2xl font-semibold">Table Component</div>
-      <div className="text-gray-400 text-sm">RcTable Basic</div>
+      <div className="text-gray-400 text-sm">RcTable Multiple selection</div>
       <span>A table displays data items in a tabular format.</span>
       <span>Simple Table with Javascript Array data.</span>
       <div>Selected rows: {JSON.stringify(selectedRows)}</div>
@@ -80,4 +90,4 @@ const BasicTable = () => {
   );
 };
 
-export default BasicTable;
+export default MultipleSelectionTable;

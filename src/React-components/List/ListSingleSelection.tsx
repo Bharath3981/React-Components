@@ -8,7 +8,7 @@ const ListSingleSelection = () => {
     selectionMode: "single",
     selected: [0],
   };
-  const { data = [] } = useFetchBasicListQuery();
+  const { data = [] } = useFetchBasicListQuery(null);
 
   return (
     <div>

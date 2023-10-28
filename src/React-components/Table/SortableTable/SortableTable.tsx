@@ -1,45 +1,61 @@
 import { useState } from "react";
-import { useFetchBasicTableDataQuery } from "../../Slices/TableApiSlice";
-import RcTable from "./RcTable";
+import { useFetchBasicTableDataQuery } from "../../../Slices/TableApiSlice";
+import RcTable from "../RcTable";
 
-const BasicTable = () => {
+const SortableTable = () => {
   const { data = [], isSuccess } = useFetchBasicTableDataQuery(null);
-  const [selectedRows] = useState<Array<string | number>>([]);
-
+  const [selectedRows, setSelectedRows] = useState<Array<string | number>>([]);
+  const onSelected = (
+    event: React.MouseEvent<HTMLElement>,
+    row: any,
+    selectedRows: Array<number | string>
+  ) => {
+    setSelectedRows([...selectedRows]);
+    console.log(event, row);
+  };
   const options = {
     keyAttribute: "DepartmentId",
-    gridlines: false,
+    gridlines: true,
+    selectionMode: "single",
+    selected: [],
+    onSelected: onSelected,
   };
   const columns = [
     {
       label: "Department Id",
       field: "DepartmentId",
+      sortable: true,
     },
     {
       label: "Department Name",
-      field: "DepartmentName 1",
+      field: "DepartmentName",
+      sortable: true,
     },
     {
       label: "Type",
       field: "Type",
+      sortable: true,
     },
     {
       label: "Manager Id",
       field: "ManagerId",
+      sortable: true,
     },
     {
       label: "Start date",
       field: "StartDate",
+      sortable: true,
     },
     {
       label: "Rating",
       field: "Rating",
+      sortable: true,
     },
   ];
   return (
     <div>
       <div className="text-2xl font-semibold">Table Component</div>
-      <div className="text-gray-400 text-sm">RcTable Basic</div>
+      <div className="text-gray-400 text-sm">RcTable Sort option enabled</div>
       <span>A table displays data items in a tabular format.</span>
       <span>Simple Table with Javascript Array data.</span>
       <div>Selected rows: {JSON.stringify(selectedRows)}</div>
@@ -80,4 +96,4 @@ const BasicTable = () => {
   );
 };
 
-export default BasicTable;
+export default SortableTable;

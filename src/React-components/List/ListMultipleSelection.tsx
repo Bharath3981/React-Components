@@ -8,7 +8,7 @@ const ListMultipleSelection = () => {
     selectionMode: "multiple",
     selected: [0],
   };
-  const { data = [] } = useFetchBasicListQuery();
+  const { data = [] } = useFetchBasicListQuery(null);
 
   return (
     <div>

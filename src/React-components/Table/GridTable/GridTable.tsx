@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { useFetchBasicTableDataQuery } from "../../Slices/TableApiSlice";
-import RcTable from "./RcTable";
+import { useFetchBasicTableDataQuery } from "../../../Slices/TableApiSlice";
+import RcTable from "../RcTable";
 
-const BasicTable = () => {
+const GridTable = () => {
   const { data = [], isSuccess } = useFetchBasicTableDataQuery(null);
   const [selectedRows] = useState<Array<string | number>>([]);
 
   const options = {
     keyAttribute: "DepartmentId",
-    gridlines: false,
+    gridlines: true,
   };
   const columns = [
     {
@@ -39,7 +39,7 @@ const BasicTable = () => {
   return (
     <div>
       <div className="text-2xl font-semibold">Table Component</div>
-      <div className="text-gray-400 text-sm">RcTable Basic</div>
+      <div className="text-gray-400 text-sm">RcTable Grid lines</div>
       <span>A table displays data items in a tabular format.</span>
       <span>Simple Table with Javascript Array data.</span>
       <div>Selected rows: {JSON.stringify(selectedRows)}</div>
@@ -80,4 +80,4 @@ const BasicTable = () => {
   );
 };
 
-export default BasicTable;
+export default GridTable;

@@ -25,8 +25,26 @@ const ListSelectionEvent = lazy(
 const TableContent = lazy(() => import("../components/Contents/TableContent"));
 const BasicList = lazy(() => import("../React-components/List/BasicList"));
 const BasicTable = lazy(() => import("../React-components/Table/BasicTable"));
+const GridTable = lazy(
+  () => import("../React-components/Table/GridTable/GridTable")
+);
+const SingleSelectionTable = lazy(
+  () =>
+    import(
+      "../React-components/Table/SingleSelectionTable/SingleSelectionTable"
+    )
+);
+const MultipleSelectionTable = lazy(
+  () =>
+    import(
+      "../React-components/Table/MultipleSelectionTable/MultipleSelectionTable"
+    )
+);
+const SelectionEvent = lazy(
+  () => import("../React-components/Table/SelectionEvent/SelectionEvent")
+);
 const SortableTable = lazy(
-  () => import("../React-components/Table/SortableTable")
+  () => import("../React-components/Table/SortableTable/SortableTable")
 );
 
 export type componentPageType = {
@@ -104,6 +122,46 @@ export const tableComponentPages: any = [
   },
   {
     _id: "tableComponent-2",
+    _label: "Grid lines",
+    path: "/components/table/gridLinesTable",
+    element: (
+      <Suspense fallback="Loading...">
+        <GridTable />
+      </Suspense>
+    ),
+  },
+  {
+    _id: "tableComponent-3",
+    _label: "Single Selection",
+    path: "/components/table/singleSelection",
+    element: (
+      <Suspense fallback="Loading...">
+        <SingleSelectionTable />
+      </Suspense>
+    ),
+  },
+  {
+    _id: "tableComponent-4",
+    _label: "Multiple Selection",
+    path: "/components/table/multipleSelection",
+    element: (
+      <Suspense fallback="Loading...">
+        <MultipleSelectionTable />
+      </Suspense>
+    ),
+  },
+  {
+    _id: "tableComponent-5",
+    _label: "Selection Event",
+    path: "/components/table/selectionEvent",
+    element: (
+      <Suspense fallback="Loading...">
+        <SelectionEvent />
+      </Suspense>
+    ),
+  },
+  {
+    _id: "tableComponent-6",
     _label: "Sortable table",
     path: "/components/table/sortableTable",
     element: (
