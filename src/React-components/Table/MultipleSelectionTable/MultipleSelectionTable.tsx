@@ -17,7 +17,7 @@ const MultipleSelectionTable = () => {
     keyAttribute: "DepartmentId",
     gridlines: true,
     selectionMode: "multiple",
-    selected: [],
+    selected: [10, 40],
     onSelected: onSelected,
   };
   const columns = [

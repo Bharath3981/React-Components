@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { LiaSortUpSolid, LiaSortDownSolid } from "react-icons/lia";
 import "./RcTable.css";
 
@@ -39,15 +39,23 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
     selected = [],
     onSelected = function () {},
   } = options;
-  //dummyArray = [...selected];
   const [[], setSelectedRows] = useState(selected);
 
   const [tableRows, setTableRows] = useState(data);
-
+  useEffect(() => {
+    dummyArray = [...selected];
+    setSelectedRows(selected);
+  }, []);
   const getSelectedClass = (index: number | string) => {
     let rowSelectedClass = "";
     if (selectionMode === "single" || selectionMode === "multiple") {
-      if (dummyArray.some((item: any) => item === index)) {
+      let tempRows = dummyArray.length === 0 ? selected : dummyArray;
+
+      if (
+        tempRows.some((item: any) => {
+          return item === index;
+        })
+      ) {
         rowSelectedClass = " row-selected ";
       }
     }
@@ -78,7 +86,6 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
         dummyArray.push(listItem[keyAttribute]);
       }
       setSelectedRows((prevState) => [...prevState, ...dummyArray]);
-      console.log(dummyArray);
       onSelected(e, listItem, dummyArray);
     }
   };
@@ -105,17 +112,6 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
       return 0;
     }
     records.sort(compare);
-    // records.sort((a: any, b: any) => {
-    //   if (sortType) {
-    //     if (a[sortableColumn] < b[sortableColumn]) {
-    //       return -1;
-    //     }
-    //   } else {
-    //     if (a[sortableColumn] > b[sortableColumn]) {
-    //       return 1;
-    //     }
-    //   }
-    // });
     setTableRows(records);
   };
   return (
@@ -123,7 +119,7 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
       <div className={classes + " auto-hide-scrollbar"}>
         <table className="min-w-max  w-full bg-white mr-3 ">
           <thead className="overflow-hidden z-10 sticky top-0 bg-inherit  mt-2">
-            <tr className={`head-row ${gridlines ? " table-row " : ""}`}>
+            <tr className={`${gridlines ? " head-row " : ""}`}>
               {columns.map((column: any) => (
                 <th className={`font-semibold px-3`} key={column.field}>
                   <div className="flex">
