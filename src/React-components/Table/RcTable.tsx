@@ -40,12 +40,9 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
     onSelected = function () {},
   } = options;
   const [[], setSelectedRows] = useState(selected);
-
+  console.log(selected);
   const [tableRows, setTableRows] = useState(data);
-  useEffect(() => {
-    dummyArray = [...selected];
-    setSelectedRows(selected);
-  }, []);
+
   const getSelectedClass = (index: number | string) => {
     let rowSelectedClass = "";
     if (selectionMode === "single" || selectionMode === "multiple") {
