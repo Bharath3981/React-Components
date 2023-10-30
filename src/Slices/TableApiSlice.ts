@@ -7,8 +7,14 @@ export const TableApiSlice = BaseApiSlice.injectEndpoints({
         return "RCData/RCTable/BasicTable.json";
       },
     }),
+    fetchActionTableData: build.query({
+      query() {
+        return "RCData/RCTable/ActionTable.json";
+      },
+    }),
   }),
   overrideExisting: true,
 });
 
-export const { useFetchBasicTableDataQuery } = TableApiSlice;
+export const { useFetchBasicTableDataQuery, useFetchActionTableDataQuery } =
+  TableApiSlice;

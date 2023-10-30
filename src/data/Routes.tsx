@@ -46,6 +46,9 @@ const SelectionEvent = lazy(
 const SortableTable = lazy(
   () => import("../React-components/Table/SortableTable/SortableTable")
 );
+const ActionTable = lazy(
+  () => import("../React-components/Table/ActionTable/ActionTable")
+);
 
 export type componentPageType = {
   _id: string;
@@ -167,6 +170,16 @@ export const tableComponentPages: any = [
     element: (
       <Suspense fallback="Loading...">
         <SortableTable />
+      </Suspense>
+    ),
+  },
+  {
+    _id: "tableComponent-7",
+    _label: "Action table",
+    path: "/components/table/actionTable",
+    element: (
+      <Suspense fallback="Loading...">
+        <ActionTable />
       </Suspense>
     ),
   },
