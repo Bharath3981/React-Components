@@ -69,6 +69,7 @@ const ActionTable = () => {
                   <td className="px-3 py-1">
                     <button>
                       <FcCheckmark />
+                      <FcCheckmark />
                     </button>
                   </td>
                 </>
