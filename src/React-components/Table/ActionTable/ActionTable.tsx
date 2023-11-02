@@ -42,6 +42,10 @@ const ActionTable = () => {
       field: "",
     },
   ];
+
+  const approve = (event: Event) => {
+    alert("approved");
+  };
   return (
     <div>
       <div className="text-2xl font-semibold">Table Component</div>
@@ -67,10 +71,20 @@ const ActionTable = () => {
                   <td className="px-3 py-1">{row.Rating}</td>
                   <td className="px-3 py-1">{row.Status}</td>
                   <td className="px-3 py-1">
-                    <button>
-                      <FcCheckmark />
-                      <FcCheckmark />
-                    </button>
+                    <div className="flex">
+                      <button
+                        className="btn"
+                        onClick={(event: any) => approve(event)}
+                      >
+                        <FcCheckmark />
+                      </button>
+                      <button
+                        className="btn"
+                        onClick={(event: any) => approve(event)}
+                      >
+                        <FcCheckmark />
+                      </button>
+                    </div>
                   </td>
                 </>
               )}
