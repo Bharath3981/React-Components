@@ -83,6 +83,7 @@ const ActionTable = () => {
                         onClick={(event: any) => approve(event)}
                       >
                         <FcCheckmark />
+                        <FcCheckmark />
                       </button>
                     </div>
                   </td>
