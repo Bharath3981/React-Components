@@ -38,8 +38,13 @@ const useArray = (initialArray: Array<any>) => {
     setArray([]);
   };
 
+  const setArrayData = (array: any = []) => {
+    setArray(array);
+  };
+
   return {
     array,
+    setArrayData,
     addItem,
     addUniqueItem,
     updateItem,

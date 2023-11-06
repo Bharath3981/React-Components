@@ -65,6 +65,6 @@ body {
     @apply text-[--jet-selected] accent-current h-4 w-4;
   }
   .btn {
-    @apply rounded-md hover:bg-[--jet-selected-light] px-2 pb-[6px] cursor-pointer active:ring-2 ring-[--jet-selected];
+    @apply rounded-md hover:bg-[--jet-selected-light] px-2 py-[3px] cursor-pointer active:ring-2 ring-[--jet-selected];
   }
 }

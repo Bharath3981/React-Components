@@ -1,11 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useFetchActionTableDataQuery } from "../../../Slices/TableApiSlice";
 import RcTable from "../RcTable";
 import { FcCheckmark } from "react-icons/fc";
+import { RiDeleteBinLine } from "react-icons/ri";
+import useArray from "../../../hooks/useArray";
 
 const ActionTable = () => {
-  const { data = [], isSuccess } = useFetchActionTableDataQuery(null);
+  const response = useFetchActionTableDataQuery(null);
+  console.log(response);
+  const { data = [], isSuccess } = response;
   const [selectedRows] = useState<Array<string | number>>([]);
+  let tableRows = [];
+  let { array, removeItem, setArrayData } = useArray(data);
 
   const options = {
     keyAttribute: "EmployeeId",
@@ -42,7 +48,11 @@ const ActionTable = () => {
       field: "",
     },
   ];
-
+  useEffect(() => {
+    if (response.status === "fulfilled") {
+      setArrayData(data);
+    }
+  }, [data]);
   const approve = (event: Event) => {
     alert("approved");
   };
@@ -57,7 +67,7 @@ const ActionTable = () => {
         {isSuccess && (
           <RcTable
             classes="h-96"
-            data={data}
+            data={array}
             columns={columns}
             options={options}
           >
@@ -79,11 +89,10 @@ const ActionTable = () => {
                         <FcCheckmark />
                       </button>
                       <button
-                        className="btn"
+                        className="btn text-red-600"
                         onClick={(event: any) => approve(event)}
                       >
-                        <FcCheckmark />
-                        <FcCheckmark />
+                        <RiDeleteBinLine />
                       </button>
                     </div>
                   </td>
