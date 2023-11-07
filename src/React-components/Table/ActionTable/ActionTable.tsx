@@ -93,6 +93,8 @@ const ActionTable = () => {
                         onClick={(event: any) => approve(event)}
                       >
                         <RiDeleteBinLine />
+                        <RiDeleteBinLine />
+                        <RiDeleteBinLine />
                       </button>
                     </div>
                   </td>
