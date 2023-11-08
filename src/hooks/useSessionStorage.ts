@@ -6,7 +6,7 @@ const useSessionStorage = (key: string, initialValue: string) => {
   const initial = storedValue ? JSON.parse(storedValue) : initialValue;
 
   // Create a state variable to hold the current value
-  const [value, setValue] = useState<string>(initial);
+  const [value, setValue] = useState<any>(initial);
 
   // Update sessionStorage whenever the value changes
   useEffect(() => {

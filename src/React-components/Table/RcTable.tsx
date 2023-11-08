@@ -23,7 +23,7 @@ type RcTableOptions = {
 
 type Props = {
   children: JSX.Element;
-  data: Array<Object>;
+  data: any;
   columns: Array<Object>;
   options: RcTableOptions;
   classes?: string;
@@ -41,7 +41,8 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
   } = options;
   const [[], setSelectedRows] = useState(selected);
   console.log(selected);
-  const [tableRows, setTableRows] = useState(data);
+  //const [tableRows, setTableRows] = useState(data1);
+  const { rows, setRows } = data;
 
   const getSelectedClass = (index: number | string) => {
     let rowSelectedClass = "";
@@ -98,7 +99,7 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
     }
     sortableColumn = field;
     sortType = sortOrder;
-    let records = [...tableRows];
+    let records = [...data];
     function compare(a: any, b: any) {
       if (a[sortableColumn] < b[sortableColumn]) {
         return sortType ? -1 : 1;
@@ -109,7 +110,7 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
       return 0;
     }
     records.sort(compare);
-    setTableRows(records);
+    setRows(records);
   };
   return (
     <>
@@ -150,7 +151,7 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
             </tr>
           </thead>
           <tbody className="overflow-hidden">
-            {tableRows.map((tableItem: any, index: number) => {
+            {rows.map((tableItem: any, index: number) => {
               let obj = { ...tableItem };
               obj.key = index;
               return (

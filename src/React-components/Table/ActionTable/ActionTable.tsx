@@ -4,14 +4,13 @@ import RcTable from "../RcTable";
 import { FcCheckmark } from "react-icons/fc";
 import { RiDeleteBinLine } from "react-icons/ri";
 import useArray from "../../../hooks/useArray";
+import useSessionStorage from "../../../hooks/useSessionStorage";
 
 const ActionTable = () => {
   const response = useFetchActionTableDataQuery(null);
-  console.log(response);
   const { data = [], isSuccess } = response;
   const [selectedRows] = useState<Array<string | number>>([]);
-  let tableRows = [];
-  let { array, removeItem, setArrayData } = useArray(data);
+  const [rows, setRows] = useSessionStorage("tableRows", data);
 
   const options = {
     keyAttribute: "EmployeeId",
@@ -49,12 +48,16 @@ const ActionTable = () => {
     },
   ];
   useEffect(() => {
-    if (response.status === "fulfilled") {
-      setArrayData(data);
+    if (response.isSuccess) {
+      setRows(data);
     }
   }, [data]);
-  const approve = (event: Event) => {
-    alert("approved");
+  const approve = (event: Event, row: any) => {
+    let temp = [...rows];
+    row.Status = "Approved";
+    temp.splice(row.key, 1, row);
+    setRows(temp);
+    console.log(row.key);
   };
   return (
     <div>
@@ -67,12 +70,12 @@ const ActionTable = () => {
         {isSuccess && (
           <RcTable
             classes="h-96"
-            data={array}
+            data={{ rows, setRows }}
             columns={columns}
             options={options}
           >
             <template
-              render={(row: any) => (
+              render={(row: any, index: number) => (
                 <>
                   <td className="px-3 py-1">{row.FirstName}</td>
                   <td className="px-3 py-1">{row.Revenue}</td>
@@ -84,16 +87,14 @@ const ActionTable = () => {
                     <div className="flex">
                       <button
                         className="btn"
-                        onClick={(event: any) => approve(event)}
+                        onClick={(event: any) => approve(event, row)}
                       >
                         <FcCheckmark />
                       </button>
                       <button
                         className="btn text-red-600"
-                        onClick={(event: any) => approve(event)}
+                        onClick={(event: any) => approve(event, row)}
                       >
-                        <RiDeleteBinLine />
-                        <RiDeleteBinLine />
                         <RiDeleteBinLine />
                       </button>
                     </div>
