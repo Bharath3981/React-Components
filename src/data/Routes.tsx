@@ -2,9 +2,11 @@ import { Suspense, lazy } from "react";
 import { CiHome, CiSettings } from "react-icons/ci";
 import { PiShapesThin, PiTableThin, PiListBulletsThin } from "react-icons/pi";
 import { RiContactsLine } from "react-icons/ri";
+import { MdOutlineDescription } from "react-icons/md";
 
 const Home = lazy(() => import("../components/Home/Home"));
 const Components = lazy(() => import("../components/Components"));
+const ReactTopics = lazy(() => import("../components/ReactTopics"));
 const Settings = lazy(() => import("../components/Settings"));
 const AboutUs = lazy(() => import("../components/AboutUsComp/AboutUs"));
 
@@ -48,6 +50,16 @@ const SortableTable = lazy(
 );
 const ActionTable = lazy(
   () => import("../React-components/Table/ActionTable/ActionTable")
+);
+const EditableTable = lazy(
+  () => import("../React-components/Table/EditableTable/EditableTable")
+);
+
+const UseStateTopic = lazy(
+  () => import("../React-topics/useStateTopic/useStateTopic")
+);
+const UseEffectTopic = lazy(
+  () => import("../React-topics/UseEffectTopic/UseEffectTopic")
 );
 
 export type componentPageType = {
@@ -183,6 +195,16 @@ export const tableComponentPages: any = [
       </Suspense>
     ),
   },
+  {
+    _id: "tableComponent-8",
+    _label: "Editable table",
+    path: "/components/table/editableTable",
+    element: (
+      <Suspense fallback="Loading...">
+        <EditableTable />
+      </Suspense>
+    ),
+  },
 ];
 
 export const componentsChildren: any = [
@@ -212,6 +234,29 @@ export const componentsChildren: any = [
   },
 ];
 
+export const reactTopicsChildren: any = [
+  {
+    _id: "topics-1",
+    _label: "UseState",
+    path: "/topics/",
+    element: (
+      <Suspense fallback="Loading...">
+        <UseStateTopic />
+      </Suspense>
+    ),
+  },
+  {
+    _id: "topics-2",
+    _label: "UseEffect",
+    path: "/topics/useEffect",
+    element: (
+      <Suspense fallback="Loading...">
+        <UseEffectTopic />
+      </Suspense>
+    ),
+  },
+];
+
 const routes = [
   {
     _id: "menu-1",
@@ -238,6 +283,18 @@ const routes = [
   },
   {
     _id: "menu-3",
+    _label: "Topics",
+    _icon: <MdOutlineDescription />,
+    path: "/topics",
+    element: (
+      <Suspense fallback="Loading...">
+        <ReactTopics />
+      </Suspense>
+    ),
+    children: reactTopicsChildren,
+  },
+  {
+    _id: "menu-4",
     _label: "Settings",
     _icon: <CiSettings />,
     path: "/settings",
@@ -248,7 +305,7 @@ const routes = [
     ),
   },
   {
-    _id: "menu-4",
+    _id: "menu-5",
     _label: "About Me",
     _icon: <RiContactsLine />,
     path: "/aboutUs",
