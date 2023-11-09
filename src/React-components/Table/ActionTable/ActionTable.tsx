@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useFetchActionTableDataQuery } from "../../../Slices/TableApiSlice";
 import RcTable from "../RcTable";
-import { FcCheckmark } from "react-icons/fc";
+import { GiCheckMark } from "react-icons/gi";
 import { RiDeleteBinLine } from "react-icons/ri";
 import useArray from "../../../hooks/useArray";
 import useSessionStorage from "../../../hooks/useSessionStorage";
@@ -52,12 +52,17 @@ const ActionTable = () => {
       setRows(data);
     }
   }, [data]);
-  const approve = (event: Event, row: any) => {
+  const approve = (row: any) => {
     let temp = [...rows];
     row.Status = "Approved";
     temp.splice(row.key, 1, row);
     setRows(temp);
-    console.log(row.key);
+  };
+
+  const deleteRow = (row: any) => {
+    let temp = [...rows];
+    temp.splice(row.key, 1);
+    setRows(temp);
   };
   return (
     <div>
@@ -85,15 +90,22 @@ const ActionTable = () => {
                   <td className="px-3 py-1">{row.Status}</td>
                   <td className="px-3 py-1">
                     <div className="flex">
-                      <button
-                        className="btn"
-                        onClick={(event: any) => approve(event, row)}
-                      >
-                        <FcCheckmark />
-                      </button>
+                      {row.Status === "Approved" && (
+                        <button className="btn text-gray-300" disabled>
+                          <GiCheckMark />
+                        </button>
+                      )}
+                      {row.Status === "Pending" && (
+                        <button
+                          className="btn text-green-600"
+                          onClick={() => approve(row)}
+                        >
+                          <GiCheckMark />
+                        </button>
+                      )}
                       <button
                         className="btn text-red-600"
-                        onClick={(event: any) => approve(event, row)}
+                        onClick={() => deleteRow(row)}
                       >
                         <RiDeleteBinLine />
                       </button>

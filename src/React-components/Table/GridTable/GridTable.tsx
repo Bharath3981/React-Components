@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useFetchBasicTableDataQuery } from "../../../Slices/TableApiSlice";
 import RcTable from "../RcTable";
 
 const GridTable = () => {
-  const { data = [], isSuccess } = useFetchBasicTableDataQuery(null);
+  const response = useFetchBasicTableDataQuery(null);
+  const { data = [], isSuccess } = response;
   const [selectedRows] = useState<Array<string | number>>([]);
+  const [rows, setRows] = useState(data);
+  useEffect(() => {
+    if (response.isSuccess) {
+      setRows(data);
+    }
+  }, [data]);
 
   const options = {
     keyAttribute: "DepartmentId",
@@ -47,7 +54,7 @@ const GridTable = () => {
         {isSuccess && (
           <RcTable
             classes="h-96"
-            data={data}
+            data={{ rows, setRows }}
             columns={columns}
             options={options}
           >
