@@ -61,4 +61,7 @@
   .radio-button {
     @apply text-[--flipkart-selected] accent-current h-4 w-4;
   }
+  .btn {
+    @apply rounded-md hover:bg-[--flipkart-selected-light] px-2 py-[3px] cursor-pointer active:ring-2 ring-[--flipkart-selected];
+  }
 }
