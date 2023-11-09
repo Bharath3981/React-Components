@@ -99,7 +99,7 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
     }
     sortableColumn = field;
     sortType = sortOrder;
-    let records = [...data];
+    let records = [...rows];
     function compare(a: any, b: any) {
       if (a[sortableColumn] < b[sortableColumn]) {
         return sortType ? -1 : 1;

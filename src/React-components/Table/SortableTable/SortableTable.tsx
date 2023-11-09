@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useFetchBasicTableDataQuery } from "../../../Slices/TableApiSlice";
 import RcTable from "../RcTable";
 
 const SortableTable = () => {
-  const { data = [], isSuccess } = useFetchBasicTableDataQuery(null);
+  const response = useFetchBasicTableDataQuery(null);
+  const { data = [], isSuccess } = response;
   const [selectedRows, setSelectedRows] = useState<Array<string | number>>([]);
+  const [rows, setRows] = useState(data);
   const onSelected = (
     event: React.MouseEvent<HTMLElement>,
     row: any,
@@ -52,6 +54,11 @@ const SortableTable = () => {
       sortable: true,
     },
   ];
+  useEffect(() => {
+    if (response.isSuccess) {
+      setRows(data);
+    }
+  }, [data]);
   return (
     <div>
       <div className="text-2xl font-semibold">Table Component</div>
@@ -63,7 +70,7 @@ const SortableTable = () => {
         {isSuccess && (
           <RcTable
             classes="h-96"
-            data={data}
+            data={{ rows, setRows }}
             columns={columns}
             options={options}
           >
