@@ -67,4 +67,7 @@ body {
   .btn {
     @apply rounded-md hover:bg-[--jet-selected-light] px-2 py-[3px] cursor-pointer active:ring-2 ring-[--jet-selected];
   }
+  .main-title {
+    @apply font-bold text-3xl text-[--jet-selected];
+  }
 }

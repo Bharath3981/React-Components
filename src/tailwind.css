@@ -65,4 +65,7 @@
   ::-webkit-scrollbar-thumb:hover {
     background: gray;
   }
+  .description {
+    @apply text-xl;
+  }
 }

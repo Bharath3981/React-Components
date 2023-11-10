@@ -8,7 +8,7 @@ type Props = {
 const CodeSnippet = ({
   children,
   language = "jsx",
-  showLineNumbers = false,
+  showLineNumbers = true,
 }: Props) => {
   return (
     <CodeBlock
