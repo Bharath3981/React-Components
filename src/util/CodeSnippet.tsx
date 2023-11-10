@@ -1,18 +1,18 @@
-import { CopyBlock, CodeBlock, dracula } from "react-code-blocks";
+import { CodeBlock, dracula } from "react-code-blocks";
 
 type Props = {
-  code: string;
+  children: string;
   language?: string;
   showLineNumbers?: boolean;
 };
 const CodeSnippet = ({
-  code,
-  language = "tsx",
-  showLineNumbers = true,
+  children,
+  language = "jsx",
+  showLineNumbers = false,
 }: Props) => {
   return (
     <CodeBlock
-      text={code as string}
+      text={children}
       language={language}
       showLineNumbers={showLineNumbers}
       theme={dracula}
