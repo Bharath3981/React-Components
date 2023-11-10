@@ -70,4 +70,7 @@ body {
   .main-title {
     @apply font-bold text-3xl text-[--jet-selected];
   }
+  .sub-title {
+    @apply font-bold text-2xl text-[--jet-selected];
+  }
 }
