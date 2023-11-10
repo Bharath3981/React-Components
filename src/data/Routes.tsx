@@ -285,7 +285,7 @@ const routes = [
     _id: "menu-3",
     _label: "Topics",
     _icon: <MdOutlineDescription />,
-    path: "/topics",
+    path: "/topics/",
     element: (
       <Suspense fallback="Loading...">
         <ReactTopics />
