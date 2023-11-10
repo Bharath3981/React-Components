@@ -22,22 +22,25 @@ const UseStateTopic = () => {
       <CodeSnippet>{`const [state, setState] = useState(initialState);`}</CodeSnippet>
       <p className="description">
         Here's a breakdown of the parameters and the return values:
-        <ul>
-          <li>
-            <b>initialState</b>: This is the initial value of the state.
-          </li>
-          <li>
-            <b>state</b>: This is the current state value.
-          </li>
-          <li>
-            <b>setState</b>: This is the function used to update the state. It
-            can be called with a new value, and when it's called, the component
-            re-renders with the new state.
-          </li>
-        </ul>
       </p>
+      <ul>
+        <li>
+          <b>initialState</b>: This is the initial value of the state.
+        </li>
+        <li>
+          <b>state</b>: This is the current state value.
+        </li>
+        <li>
+          <b>setState</b>: This is the function used to update the state. It can
+          be called with a new value, and when it's called, the component
+          re-renders with the new state.
+        </li>
+      </ul>
       <InfoBlock infoType="info">
-        <p>ome info</p>
+        <p>
+          Keep in mind that the <b>setState</b> function in React is
+          asynchronous.
+        </p>
       </InfoBlock>
       <h1 className="sub-title">Example previous value:</h1>
       <div className="flex">
@@ -77,13 +80,35 @@ const UseStateTopic = () => {
         <button
           onClick={() => {
             setObj((obj) => {
+              console.log("1Updated");
               return { ...obj, place: "Visakhaptnam" };
             });
+            console.log("Updated");
           }}
         >
           Update Object
         </button>
       </div>
+      <InfoBlock infoType="info">
+        <p>
+          {`Here, (array) => [...array, array.length + 1] is your updater function. It takes the pending state and calculates the next state from it.`}
+        </p>
+      </InfoBlock>
+      <br />
+      <h1 className="sub-title">Avoiding recreating the initial state:</h1>
+      <h1 className="text-xl font-bold">Passing the initializer function</h1>
+      <p>
+        This example passes the initializer function, so the createInitialTodos
+        function only runs during initialization. It does not run when component
+        re-renders, such as when you type into the input.
+      </p>
+      <h1 className="text-xl font-bold">Passing the initial state directly</h1>
+      <p>
+        This example does not pass the initializer function, so the
+        createInitialTodos function runs on every render, such as when you type
+        into the input. There is no observable difference in behavior, but this
+        code is less efficient.
+      </p>
     </div>
   );
 };
