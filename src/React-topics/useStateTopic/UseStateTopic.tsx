@@ -107,7 +107,7 @@ const UseStateTopic = () => {
         This example does not pass the initializer function, so the
         createInitialTodos function runs on every render, such as when you type
         into the input. There is no observable difference in behavior, but this
-        code is less efficient.
+        code is less efficient. stst
       </p>
     </div>
   );
