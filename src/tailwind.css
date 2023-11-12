@@ -72,6 +72,6 @@
     @apply border border-gray-600 rounded-sm px-1;
   }
   button {
-    @apply bg-slate-500 text-white border rounded-md p-1;
+    @apply border rounded-md p-1 hover:bg-gray-100 font-medium;
   }
 }

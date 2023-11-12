@@ -64,4 +64,10 @@
   .btn {
     @apply rounded-md hover:bg-[--amazon-selected-light] px-2 py-[3px] cursor-pointer active:ring-2 ring-[--amazon-selected];
   }
+  .main-title {
+    @apply font-bold text-3xl text-[--amazon-selected];
+  }
+  .sub-title {
+    @apply text-2xl text-[--amazon-selected];
+  }
 }
