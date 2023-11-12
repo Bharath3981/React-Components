@@ -3,6 +3,7 @@ import PreviousValueExample from "./PreviousValueExample/PreviousValueExample";
 import ArrayUpdateExample from "./ArrayUpdateExample/ArrayUpdateExample";
 import ObjectUpdateExample from "./ObjectUpdateExample/ObjectUpdateExample";
 import AvoidingRecreatingTheInitialState from "./AvoidingRecreatingTheInitialState/AvoidingRecreatingTheInitialState";
+import ResettingStateWithKey from "./ResettingStateWithKey/ResettingStateWithKey";
 
 const UseStateTopic = () => {
   return (
@@ -12,6 +13,7 @@ const UseStateTopic = () => {
       <ArrayUpdateExample />
       <ObjectUpdateExample />
       <AvoidingRecreatingTheInitialState />
+      <ResettingStateWithKey />
     </div>
   );
 };
