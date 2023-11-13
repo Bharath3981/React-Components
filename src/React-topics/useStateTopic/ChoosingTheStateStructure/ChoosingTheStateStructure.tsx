@@ -1,3 +1,7 @@
+import CodeSnippet from "../../../util/CodeSnippet";
+import InfoBlock from "../../../util/InfoBlock";
+import DeeplyNestedState from "../DeeplyNestedState/DeeplyNestedState";
+
 const ChoosingTheStateStructure = () => {
   return (
     <div className="pb-5">
@@ -65,7 +69,18 @@ const ChoosingTheStateStructure = () => {
         >
           Avoid deeply nested state
         </a>
+        <DeeplyNestedState />
       </p>
+      <InfoBlock>
+        <p>
+          Component props shouldn't use in state initialization like below code.
+        </p>
+      </InfoBlock>
+      <CodeSnippet>
+        {`function Message({ messageColor }) {
+    const [color, setColor] = useState(messageColor);
+}`}
+      </CodeSnippet>
     </div>
   );
 };
