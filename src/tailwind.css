@@ -74,4 +74,7 @@
   button {
     @apply border rounded-md p-1 hover:bg-gray-100 font-medium;
   }
+  a.link {
+    @apply text-blue-600 font-semibold hover:underline;
+  }
 }
