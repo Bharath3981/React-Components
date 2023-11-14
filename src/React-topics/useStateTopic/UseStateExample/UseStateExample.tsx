@@ -33,6 +33,17 @@ const UseStateExample = () => {
           asynchronous.
         </p>
       </InfoBlock>
+      <InfoBlock>
+        <p>
+          When we remove any component from the DOM and it will reset all state
+          variable of the compoent like below coe
+        </p>
+      </InfoBlock>
+      <CodeSnippet>
+        {`<div>
+    {showB && <Counter />}
+</div>`}
+      </CodeSnippet>
     </div>
   );
 };
