@@ -3,7 +3,6 @@ import { useFetchActionTableDataQuery } from "../../../Slices/TableApiSlice";
 import RcTable from "../RcTable";
 import { GiCheckMark } from "react-icons/gi";
 import { RiDeleteBinLine } from "react-icons/ri";
-import useArray from "../../../hooks/useArray";
 import useSessionStorage from "../../../hooks/useSessionStorage";
 
 const ActionTable = () => {
@@ -80,7 +79,7 @@ const ActionTable = () => {
             options={options}
           >
             <template
-              render={(row: any, index: number) => (
+              render={(row: any) => (
                 <>
                   <td className="px-3 py-1">{row.FirstName}</td>
                   <td className="px-3 py-1">{row.Revenue}</td>

@@ -56,7 +56,7 @@ const EditableTable = lazy(
 );
 
 const UseStateTopic = lazy(
-  () => import("../React-topics/useStateTopic/useStateTopic")
+  () => import("../React-topics/useStateTopic/UseStateTopic")
 );
 const UseEffectTopic = lazy(
   () => import("../React-topics/UseEffectTopic/UseEffectTopic")

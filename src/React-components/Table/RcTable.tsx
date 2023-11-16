@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { LiaSortUpSolid, LiaSortDownSolid } from "react-icons/lia";
 import "./RcTable.css";
 

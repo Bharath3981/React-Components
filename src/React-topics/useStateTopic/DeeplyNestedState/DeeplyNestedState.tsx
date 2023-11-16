@@ -21,7 +21,7 @@ function PlaceTree({ id, placesById }: any) {
 }
 
 const DeeplyNestedState = () => {
-  const [plan, setPlan] = useState(InitialTravelPlan);
+  const [plan] = useState(InitialTravelPlan);
   const root = plan[0];
   const planetIds = root.childIds;
   return (

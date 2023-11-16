@@ -79,7 +79,7 @@ const EditableTable = () => {
             options={options}
           >
             <template
-              render={(row: any, index: number) => (
+              render={(row: any) => (
                 <>
                   <td className="px-3 py-1">{row.FirstName}</td>
                   <td className="px-3 py-1">{row.Revenue}</td>
