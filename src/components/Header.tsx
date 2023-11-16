@@ -35,7 +35,8 @@ const Header = () => {
                   <MainMenu mainMenu={routes} defaultClassName="main-menu " />
                 </div>
               </div>
-              {location.pathname.includes("components") && (
+              {(location.pathname.includes("components") ||
+                location.pathname.includes("topics")) && (
                 <div className="-mr-2 flex md:hidden">
                   {/* <!-- Mobile menu button --> */}
                   <button
@@ -56,7 +57,8 @@ const Header = () => {
 
           {/* <!-- Mobile menu, show/hide based on menu state. --> */}
           {document.body.offsetWidth < 768 &&
-            location.pathname.includes("components") && (
+            (location.pathname.includes("components") ||
+              location.pathname.includes("topics")) && (
               <div className="block md:hidden">
                 <div
                   className={
