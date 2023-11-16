@@ -9,11 +9,11 @@ function PlaceTree({ id, placesById }: any) {
       <li className="ml-4">
         {place.title}
         {childIds.length > 0 && (
-          <ol className="ml-4">
+          <ul className="ml-4">
             {childIds.map((childId: any) => (
               <PlaceTree key={childId} id={childId} placesById={placesById} />
             ))}
-          </ol>
+          </ul>
         )}
       </li>
     </>
@@ -27,11 +27,11 @@ const DeeplyNestedState = () => {
   return (
     <div className="pb-5">
       <h2 className="font-bold">Places to visit</h2>
-      <ol className="ml-2">
+      <ul className="ml-2">
         {planetIds.map((id: number) => (
           <PlaceTree key={id} id={id} placesById={plan} />
         ))}
-      </ol>
+      </ul>
     </div>
   );
 };

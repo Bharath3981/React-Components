@@ -69,8 +69,8 @@ const ChoosingTheStateStructure = () => {
         >
           Avoid deeply nested state
         </a>
-        <DeeplyNestedState />
       </p>
+      <DeeplyNestedState />
       <InfoBlock>
         <p>
           Component props shouldn't use in state initialization like below code.

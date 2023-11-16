@@ -1,26 +1,17 @@
-import { useState, useContext, lazy } from "react";
+import { useState, useContext } from "react";
 import routes, { componentPagesType } from "../data/Routes";
 import { useLocation } from "react-router-dom";
 import MainMenu from "./MainMenu";
 import SideBar from "./SideBar";
 import ComponentPagesContext from "../context/ComponentPagesContext";
-import reactTopicsChildren from "../data/Routes";
 
 const Header = () => {
   console.log("HEADER.JS COMPONENT RENDERED");
   let location = useLocation();
   const [showSidebar, setShowSidebar] = useState<boolean>(false);
-  const [loadTopicsMenu, setLoadTopicsMenu] = useState(false);
   const [componentPages] = useContext<Array<componentPagesType>>(
     ComponentPagesContext
   );
-  let reactTopicsChildren: any = null;
-  // if (location.pathname.includes("topics")) {
-  //   import("../data/Routes").then(({ reactTopicsChildren }) => {
-  //     //reactTopicsChildren = reactTopicsChildren;
-  //     console.log(reactTopicsChildren);
-  //   });
-  // }
   return (
     <>
       <header id="app-header" className="header sticky top-0">
@@ -81,12 +72,7 @@ const Header = () => {
                     aria-label="Sidebar"
                   >
                     <div className="side-bar h-screen px-3 py-4 overflow-y-auto">
-                      {location.pathname.includes("components") && (
-                        <SideBar pages={componentPages} />
-                      )}
-                      {location.pathname.includes("topics") && (
-                        <SideBar pages={reactTopicsChildren} />
-                      )}
+                      <SideBar pages={componentPages} />
                     </div>
                   </aside>
                 </div>

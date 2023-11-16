@@ -1,8 +1,15 @@
-import { reactTopicsChildren } from "../data/Routes";
+import { useEffect, useContext } from "react";
+import ComponentPagesContext from "../context/ComponentPagesContext";
+import { componentPagesType, reactTopicsChildren } from "../data/Routes";
 import SideBar from "./SideBar";
 import { Outlet } from "react-router-dom";
 
 const ReactTopics = () => {
+  const data: any = useContext<componentPagesType>(ComponentPagesContext);
+  const setComponentPages = data[1];
+  useEffect(() => {
+    setComponentPages(reactTopicsChildren);
+  }, []);
   return (
     <>
       <div className="flex w-full  h-full overflow-auto">
