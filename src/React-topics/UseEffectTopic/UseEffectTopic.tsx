@@ -37,6 +37,13 @@ const UseEffectTopic = () => {
           <b>cause the Effect to re-run more often than needed.</b>
         </p>
       </InfoBlock>
+      <InfoBlock>
+        <p className="description">
+          If your Effect is doing something visual (for example, positioning a
+          tooltip), and the delay is noticeable (for example, it flickers),
+          replace useEffect with <b>useLayoutEffect</b>.
+        </p>
+      </InfoBlock>
     </div>
   );
 };
