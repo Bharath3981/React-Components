@@ -1,5 +1,6 @@
 import CodeSnippet from "../../util/CodeSnippet";
 import InfoBlock from "../../util/InfoBlock";
+import RemoveUnnecessaryObject from "./RemoveUnnecessaryObject/RemoveUnnecessaryObject";
 
 const UseEffectTopic = () => {
   return (
@@ -30,13 +31,7 @@ const UseEffectTopic = () => {
           <b>you probably don’t need an Effect.</b>
         </p>
       </InfoBlock>
-      <InfoBlock>
-        <p className="description">
-          If some of your dependencies are objects or functions defined inside
-          the component, there is a risk that they will{" "}
-          <b>cause the Effect to re-run more often than needed.</b>
-        </p>
-      </InfoBlock>
+      <RemoveUnnecessaryObject />
       <InfoBlock>
         <p className="description">
           If your Effect is doing something visual (for example, positioning a
