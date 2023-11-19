@@ -61,6 +61,12 @@ const UseStateTopic = lazy(
 const UseEffectTopic = lazy(
   () => import("../React-topics/UseEffectTopic/UseEffectTopic")
 );
+const EscapeHatch = lazy(
+  () => import("../React-topics/EscapeHatch/EscapeHatch")
+);
+const UseRefTopic = lazy(
+  () => import("../React-topics/UseRefTopic/UseRefTopic")
+);
 
 export type componentPageType = {
   _id: string;
@@ -252,6 +258,26 @@ export const reactTopicsChildren: any = [
     element: (
       <Suspense fallback="Loading...">
         <UseEffectTopic />
+      </Suspense>
+    ),
+  },
+  {
+    _id: "topics-3",
+    _label: "Escape Hatch",
+    path: "/topics/escapeHatch",
+    element: (
+      <Suspense fallback="Loading...">
+        <EscapeHatch />
+      </Suspense>
+    ),
+  },
+  {
+    _id: "topics-3",
+    _label: "UseRef",
+    path: "/topics/useRef",
+    element: (
+      <Suspense fallback="Loading...">
+        <UseRefTopic />
       </Suspense>
     ),
   },
