@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 const PreviousValueExample = () => {
   const [name, setName] = useState("");
@@ -10,7 +10,7 @@ const PreviousValueExample = () => {
         <label>Name: </label>
         <input
           type="text"
-          onChange={(event: any) => {
+          onChange={(event) => {
             setName((name) => {
               setPreviousName(() => name);
               return event.target.value;

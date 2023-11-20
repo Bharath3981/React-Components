@@ -4,6 +4,9 @@ import InfoBlock from "../../../util/InfoBlock";
 const RemoveUnnecessaryObject = () => {
   return (
     <div>
+      <h1 className="sub-title">
+        Removing unnecessary objects and function dependencies
+      </h1>
       <InfoBlock>
         <p className="description">
           If some of your dependencies are objects or functions defined inside
@@ -18,11 +21,38 @@ function ChatRoom({ roomId }) {
     serverUrl: serverUrl,
     roomId: roomId
   };
+  function createOptions() { // 🚩 This function is created from scratch on every re-render
+    return {
+      serverUrl: serverUrl,
+      roomId: roomId
+    };
+  }
   useEffect(() => {
     const connection = createConnection(options); // It's used inside the Effect
     connection.connect();
     return () => connection.disconnect();
-  }, [options]); // 🚩 As a result, these dependencies are always different on a re-render`}</CodeSnippet>
+  }, [options, createOptions]); // 🚩 As a result, these dependencies are always different on a re-render`}</CodeSnippet>
+      <p className="description">
+        Avoid using an object created during rendering as a dependency. Instead,
+        create the object inside the Effect like below code.
+      </p>
+      <CodeSnippet>
+        {`useEffect(() => {
+          function createOptions() {
+            return {
+              serverUrl: serverUrl,
+              roomId: roomId
+            };
+          }
+    const options = {
+      serverUrl: serverUrl,
+      roomId: roomId
+    };
+    const connection = createConnection(options);
+    connection.connect();
+    return () => connection.disconnect();
+  }, [roomId, createOptions]);`}
+      </CodeSnippet>
     </div>
   );
 };

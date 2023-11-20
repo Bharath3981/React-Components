@@ -14,27 +14,30 @@ const UseStateExample = () => {
       <p className="description">
         Here's a breakdown of the parameters and the return values:
       </p>
-      <ul>
-        <li>
-          <b>initialState</b>: This is the initial value of the state.
-        </li>
-        <li>
-          <b>state</b>: This is the current state value.
-        </li>
-        <li>
-          <b>setState</b>: This is the function used to update the state. It can
-          be called with a new value, and when it's called, the component
-          re-renders with the new state.
-        </li>
-      </ul>
+      <p className="description">
+        <ul>
+          <li>
+            <b>initialState</b>: This is the initial value of the state.
+          </li>
+          <li>
+            <b>state</b>: This is the current state value.
+          </li>
+          <li>
+            <b>setState</b>: This is the function used to update the state. It
+            can be called with a new value, and when it's called, the component
+            re-renders with the new state.
+          </li>
+        </ul>
+      </p>
+
       <InfoBlock infoType="info">
-        <p>
+        <p className="description">
           Keep in mind that the <b>setState</b> function in React is
           asynchronous.
         </p>
       </InfoBlock>
       <InfoBlock>
-        <p>
+        <p className="description">
           When we remove any component from the DOM and it will reset all state
           variable of the compoent like below coe
         </p>

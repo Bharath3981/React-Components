@@ -25,7 +25,7 @@ const ObjectUpdateExample = () => {
         </button>
       </div>
       <InfoBlock infoType="info">
-        <p>
+        <p className="description">
           {`Here, (array) => [...array, array.length + 1] is your updater function. It takes the pending state and calculates the next state from it.`}
         </p>
       </InfoBlock>
