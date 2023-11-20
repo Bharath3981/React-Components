@@ -1,4 +1,6 @@
+import { PiInfoFill } from "react-icons/pi";
 import CodeSnippet from "../../util/CodeSnippet";
+import InfoBlock from "../../util/InfoBlock";
 
 const UseRefTopic = () => {
   return (
@@ -9,6 +11,12 @@ const UseRefTopic = () => {
         that’s not needed for rendering.
       </p>
       <CodeSnippet>{`const ref = useRef(initialValue)`}</CodeSnippet>
+      <InfoBlock>
+        <p className="description">
+          Call <code>useRef</code> at the top level of your component to declare
+          a ref.
+        </p>
+      </InfoBlock>
     </div>
   );
 };
