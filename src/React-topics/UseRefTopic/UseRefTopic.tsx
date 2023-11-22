@@ -8,7 +8,7 @@ const UseRefTopic = () => {
       <h1 className="main-title">useRef</h1>
       <p className="description">
         <code>useRef</code> is a React Hook that lets you reference a value
-        that’s not needed for rendering. Test
+        that’s not needed for rendering.
       </p>
       <CodeSnippet>{`const ref = useRef(initialValue)`}</CodeSnippet>
       <InfoBlock>
