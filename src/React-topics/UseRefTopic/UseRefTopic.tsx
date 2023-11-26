@@ -14,7 +14,7 @@ const UseRefTopic = () => {
       <InfoBlock>
         <p className="description">
           Call <code>useRef</code> at the top level of your component to declare
-          a 
+          a ref.
         </p>
       </InfoBlock>
     </div>
