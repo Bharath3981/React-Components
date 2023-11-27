@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { useState } from "react";
 
 const PreviousValueExample = () => {
   const [name, setName] = useState("");

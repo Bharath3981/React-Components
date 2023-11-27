@@ -14,7 +14,9 @@ const ResettingStateWithKey = () => {
         You’ll often encounter the key attribute when rendering lists. However,
         it also serves another purpose.
       </p>
-      <p>You can reset component's state by passing different key.</p>
+      <p className="description">
+        You can reset component's state by passing different key.
+      </p>
       <InfoBlock>
         <p className="description">
           React uses keys to reconcile the components efficiently when the data

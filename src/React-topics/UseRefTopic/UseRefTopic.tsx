@@ -1,6 +1,7 @@
-import { PiInfoFill } from "react-icons/pi";
 import CodeSnippet from "../../util/CodeSnippet";
 import InfoBlock from "../../util/InfoBlock";
+import RefCurrentUpdate from "./RefCurrentUpdate/RefCurrentUpdate";
+import UserRefExample from "./UserRefExample/UserRefExample";
 
 const UseRefTopic = () => {
   return (
@@ -17,6 +18,15 @@ const UseRefTopic = () => {
           a ref.
         </p>
       </InfoBlock>
+      <InfoBlock>
+        <p className="description">
+          When you change the ref.current property, React does not re-render
+          your component. React is not aware of when you change it because a ref
+          is a plain JavaScript object.
+        </p>
+      </InfoBlock>
+      <UserRefExample />
+      <RefCurrentUpdate />
     </div>
   );
 };

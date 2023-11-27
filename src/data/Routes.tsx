@@ -67,6 +67,9 @@ const EscapeHatch = lazy(
 const UseRefTopic = lazy(
   () => import("../React-topics/UseRefTopic/UseRefTopic")
 );
+const PureComponents = lazy(
+  () => import("../React-topics/PureComponents/PureComponents")
+);
 
 export type componentPageType = {
   _id: string;
@@ -130,7 +133,7 @@ export const listComponentPages: componentPagesType = [
   },
 ];
 
-export const tableComponentPages: any = [
+export const tableComponentPages = [
   {
     _id: "tableComponent-1",
     _label: "Basic table",
@@ -213,7 +216,7 @@ export const tableComponentPages: any = [
   },
 ];
 
-export const componentsChildren: any = [
+export const componentsChildren = [
   {
     path: "/components/",
     _id: "component-list",
@@ -240,7 +243,7 @@ export const componentsChildren: any = [
   },
 ];
 
-export const reactTopicsChildren: any = [
+export const reactTopicsChildren = [
   {
     _id: "topics-1",
     _label: "UseState",
@@ -272,12 +275,22 @@ export const reactTopicsChildren: any = [
     ),
   },
   {
-    _id: "topics-3",
+    _id: "topics-4",
     _label: "UseRef",
     path: "/topics/useRef",
     element: (
       <Suspense fallback="Loading...">
         <UseRefTopic />
+      </Suspense>
+    ),
+  },
+  {
+    _id: "topics-5",
+    _label: "PureComponents",
+    path: "/topics/pureComponents",
+    element: (
+      <Suspense fallback="Loading...">
+        <PureComponents />
       </Suspense>
     ),
   },

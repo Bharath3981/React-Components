@@ -7,7 +7,7 @@ import ComponentPagesContext from "../context/ComponentPagesContext";
 
 const Header = () => {
   console.log("HEADER.JS COMPONENT RENDERED");
-  let location = useLocation();
+  const location = useLocation();
   const [showSidebar, setShowSidebar] = useState<boolean>(false);
   const [componentPages] = useContext<Array<componentPagesType>>(
     ComponentPagesContext

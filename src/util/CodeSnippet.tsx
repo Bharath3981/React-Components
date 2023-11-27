@@ -11,12 +11,14 @@ const CodeSnippet = ({
   showLineNumbers = true,
 }: Props) => {
   return (
-    <CodeBlock
-      text={children}
-      language={language}
-      showLineNumbers={showLineNumbers}
-      theme={dracula}
-    />
+    <div className="pt-3">
+      <CodeBlock
+        text={children}
+        language={language}
+        showLineNumbers={showLineNumbers}
+        theme={dracula}
+      />
+    </div>
   );
 };
 
