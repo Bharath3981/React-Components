@@ -14,20 +14,13 @@ const UseStateExample = () => {
       <p className="description">
         Here's a breakdown of the parameters and the return values:
       </p>
+      <div></div>
       <p className="description">
-        <ul>
-          <li>
-            <b>initialState</b>: This is the initial value of the state.
-          </li>
-          <li>
-            <b>state</b>: This is the current state value.
-          </li>
-          <li>
-            <b>setState</b>: This is the function used to update the state. It
-            can be called with a new value, and when it's called, the component
-            re-renders with the new state.
-          </li>
-        </ul>
+        <b>initialState</b>: This is the initial value of the state. <br />
+        <b>state</b>: This is the current state value. <br />
+        <b>setState</b>: This is the function used to update the state. It can
+        be called with a new value, and when it's called, the component
+        re-renders with the new state.
       </p>
 
       <InfoBlock infoType="info">

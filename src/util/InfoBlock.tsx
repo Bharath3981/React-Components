@@ -14,7 +14,7 @@ const InfoBlock = ({ children, infoType = "info" }: Props) => {
       )}
       {infoType === "warning" && (
         <>
-          <div className="border p-2 rounded-md border-orange-700 border-l-4 flex text-orange-700">
+          <div className="border p-2 rounded-md border-orange-400 border-l-4 flex text-orange-400">
             {children}
           </div>
         </>

@@ -1,6 +1,9 @@
 import CodeSnippet from "../../util/CodeSnippet";
 import InfoBlock from "../../util/InfoBlock";
+import AvoidRecreatingRefContent from "./AvoidRecreatingRefContent/AvoidRecreatingRefContent";
+import ManipulatingDOMWithRef from "./ManipulatingDOMWithRef/ManipulatingDOMWithRef";
 import RefCurrentUpdate from "./RefCurrentUpdate/RefCurrentUpdate";
+import RefToCustomComponents from "./RefToCustomComponents/RefToCustomComponents";
 import UserRefExample from "./UserRefExample/UserRefExample";
 
 const UseRefTopic = () => {
@@ -27,6 +30,9 @@ const UseRefTopic = () => {
       </InfoBlock>
       <UserRefExample />
       <RefCurrentUpdate />
+      <ManipulatingDOMWithRef />
+      <AvoidRecreatingRefContent />
+      <RefToCustomComponents />
     </div>
   );
 };

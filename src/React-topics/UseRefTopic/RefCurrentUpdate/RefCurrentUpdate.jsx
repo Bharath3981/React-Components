@@ -1,5 +1,6 @@
 import InfoBlock from "../../../util/InfoBlock";
 import { useRef, useState } from "react";
+import CodeSnippet from "../../../util/CodeSnippet";
 
 const RefCurrentUpdate = () => {
   const refValue = useRef(0);
@@ -35,6 +36,21 @@ const RefCurrentUpdate = () => {
           should return exactly the same JSX.
         </p>
       </InfoBlock>
+      <CodeSnippet>
+        {`function MyComponent() {
+  // ...
+  useEffect(() => {
+    // ✅ You can read or write refs in effects
+    myRef.current = 123;
+  });
+  // ...
+  function handleClick() {
+    // ✅ You can read or write refs in event handlers
+    doSomething(myOtherRef.current);
+  }
+  // ...
+}`}
+      </CodeSnippet>
     </div>
   );
 };
