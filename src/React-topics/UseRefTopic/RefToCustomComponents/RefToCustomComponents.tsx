@@ -7,7 +7,9 @@ const RefToCustomComponents = () => {
   }
   return (
     <div className="pb-5">
-      <h1 className="sub-title">I can’t get a ref to a custom component </h1>
+      <h1 className="sub-title">
+        I can’t get a ref to a custom component test{" "}
+      </h1>
       <MyInput value={value} onChange={onChangeEvent} />
     </div>
   );
