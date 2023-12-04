@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 
 const RefToCustomComponents = () => {
   const [value, setValue] = useState<string>("Test");
@@ -7,7 +7,7 @@ const RefToCustomComponents = () => {
   }
   return (
     <div className="pb-5">
-      <h1 className="sub-title">I can’t get a ref to a custom component1</h1>
+      <h1 className="sub-title">I can’t get a ref to a custom component</h1>
       <MyInput value={value} onChange={onChangeEvent} />
     </div>
   );
