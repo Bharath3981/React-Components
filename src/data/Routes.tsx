@@ -67,6 +67,9 @@ const EscapeHatch = lazy(
 const UseRefTopic = lazy(
   () => import("../React-topics/UseRefTopic/UseRefTopic")
 );
+const ForwardRefTopic = lazy(
+  () => import("../React-topics/ForwardRef/ForwardRefTopic")
+);
 const PureComponents = lazy(
   () => import("../React-topics/PureComponents/PureComponents")
 );
@@ -286,6 +289,16 @@ export const reactTopicsChildren = [
   },
   {
     _id: "topics-5",
+    _label: "ForwardRef",
+    path: "/topics/forwardRef",
+    element: (
+      <Suspense fallback="Loading...">
+        <ForwardRefTopic />
+      </Suspense>
+    ),
+  },
+  {
+    _id: "topics-6",
     _label: "PureComponents",
     path: "/topics/pureComponents",
     element: (
