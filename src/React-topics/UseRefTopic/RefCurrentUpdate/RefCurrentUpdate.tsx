@@ -18,7 +18,7 @@ const RefCurrentUpdate = () => {
         Ref value:{" "}
         <input
           type="text"
-          onChange={(e) => {
+          onChange={(e: any) => {
             refValue.current = e.target.value;
           }}
         />{" "}
@@ -26,7 +26,10 @@ const RefCurrentUpdate = () => {
       </div>
       <div>
         State value:{" "}
-        <input type="text" onChange={(e) => setStateValue(e.target.value)} />{" "}
+        <input
+          type="text"
+          onChange={(e: any) => setStateValue(e.target.value)}
+        />{" "}
         {stateValue}
       </div>
       <InfoBlock infoType="warning">
