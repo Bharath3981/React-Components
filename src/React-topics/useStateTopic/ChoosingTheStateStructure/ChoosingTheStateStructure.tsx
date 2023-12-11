@@ -15,7 +15,7 @@ const ChoosingTheStateStructure = () => {
           target="_blank"
           href="https://react.dev/learn/choosing-the-state-structure#group-related-state"
         >
-          Group related state
+          Group related
         </a>
       </p>
 
