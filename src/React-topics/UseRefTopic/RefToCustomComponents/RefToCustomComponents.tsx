@@ -9,7 +9,7 @@ const RefToCustomComponents = () => {
   }
   return (
     <div className="pb-5">
-      <h1 className="sub-title">I can’t get a ref to a custom component 12</h1>
+      <h1 className="sub-title">I can’t get a ref to a custom component</h1>
       <MyInput value={value} ref={inputRef} onChange={onChangeEvent} />
       <span>Value: {inputRef.current?.value}</span>
     </div>
