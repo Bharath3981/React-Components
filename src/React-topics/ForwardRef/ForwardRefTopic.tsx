@@ -1,3 +1,5 @@
+import ForwardRefAcceptsRender from "./ForwardRefAcceptsRender/ForwardRefAcceptsRender";
+
 const ForwardRefTopic = () => {
   return (
     <div className="pb-5">
@@ -6,6 +8,7 @@ const ForwardRefTopic = () => {
         <code>forwardRef</code> lets your component expose a DOM node to parent
         component with a ref.
       </p>
+      <ForwardRefAcceptsRender />
     </div>
   );
 };
