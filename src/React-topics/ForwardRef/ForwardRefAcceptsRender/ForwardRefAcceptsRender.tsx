@@ -1,12 +1,13 @@
-import { forwardRef } from "react";
+import { forwardRef, useRef } from "react";
 import CodeSnippet from "../../../util/CodeSnippet";
 
 const ForwardRefAcceptsRender = () => {
+  const myRef = useRef();
   return (
     <div>
       <h1 className="sub-title">
         <code>forwardRef(render)</code>
-        <MyInput />
+        <MyInput one={123} ref={myRef} />
       </h1>
       <CodeSnippet>{`const MyInput = forwardRef(function MyInput(props, ref) {
   console.log(props, ref);
@@ -30,12 +31,14 @@ const ForwardRefAcceptsRender = () => {
     </div>
   );
 };
-
-const MyInput = forwardRef(function MyInput(props, ref) {
+type myInputProps = {
+  one: number;
+};
+const MyInput = forwardRef(function MyInput(props: myInputProps, ref: any) {
   console.log(props, ref);
   return (
     <label>
-      {props.label}
+      {props.one}
       <input ref={ref} />
     </label>
   );
