@@ -73,6 +73,9 @@ const ForwardRefTopic = lazy(
 const PureComponents = lazy(
   () => import("../React-topics/PureComponents/PureComponents")
 );
+const UseImperativeHandleTopic = lazy(
+  () => import("../React-topics/UseImperativeHandle/UseImperativeHandleTopic")
+);
 
 export type componentPageType = {
   _id: string;
@@ -304,6 +307,16 @@ export const reactTopicsChildren = [
     element: (
       <Suspense fallback="Loading...">
         <PureComponents />
+      </Suspense>
+    ),
+  },
+  {
+    _id: "topics-7",
+    _label: "UseImperativeHandle",
+    path: "/topics/useImperativeHandle",
+    element: (
+      <Suspense fallback="Loading...">
+        <UseImperativeHandleTopic />
       </Suspense>
     ),
   },
