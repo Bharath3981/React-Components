@@ -26,7 +26,7 @@ const ForwardRefAcceptsRender = () => {
         component. The ref can be an object or a function. If the parent
         component has not passed a <code>ref</code>, it will be null. You should
         either pass the <code>ref</code> you receive to another component, or
-        test pass it to <code>useImperativeHandle</code>.
+        pass it to <code>useImperativeHandle</code>.
       </p>
     </div>
   );
