@@ -5,8 +5,8 @@ const UseImperativeHandleTopic = () => {
     <div className="pb-5">
       <h1 className="main-title">UseImperativeHandle</h1>
       <p className="description">
-        <code>forwardRef</code> lets your component expose a DOM node to parent
-        component with a ref.
+        <code>useImperativeHandle</code> is a React Hook that lets you customize te
+        the handle exposed as a ref.
       </p>
     </div>
   );
