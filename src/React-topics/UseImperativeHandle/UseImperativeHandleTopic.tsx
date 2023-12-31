@@ -4,7 +4,7 @@ const UseImperativeHandleTopic = () => {
       <h1 className="main-title">UseImperativeHandle</h1>
       <p className="description">
         <code>useImperativeHandle</code> is a React Hook that lets you customize
-        the handle exposed as a ref.
+        the handle exposed as a ref. Test
       </p>
     </div>
   );
