@@ -26,4 +26,3 @@ const MyInput = forwardRef(({ value, onChange }: MyInputType, ref) => {
 });
 
 export default RefToCustomComponents;
-sdf;
