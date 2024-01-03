@@ -1,7 +1,7 @@
 import { forwardRef, useRef, useImperativeHandle } from "react";
 import CodeSnippet from "../../../util/CodeSnippet";
 
-const MyInput = forwardRef(function MyInput(props: any, ref) {
+const MyInput = forwardRef(function MyInput(props: any, ref: any) {
   useImperativeHandle(
     ref,
     () => {
