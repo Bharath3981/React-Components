@@ -11,6 +11,7 @@ const MyInput = forwardRef(function MyInput(props: any, ref) {
         },
         scrollIntoView() {
           ref?.current.scrollIntoView();
+          ste;
         },
       };
     },
