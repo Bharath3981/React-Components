@@ -34,19 +34,20 @@ const AcceptRef = () => {
       <MyInput type="text" placeholder="Enter some text" ref={ref} />{" "}
       <button onClick={() => focusTextBox()}>Focus</button>
       <CodeSnippet>{`const MyInput = forwardRef(function MyInput(props: any, ref) {
+        const myInput: any = useRef(null);
         useImperativeHandle(
           ref, () => {
             return {
               focus() {
-                ref?.current.focus();
+                myInput.current.focus();
               },
               scrollIntoView() {
-                ref?.current.scrollIntoView();
+                myInput.current.scrollIntoView();
               },
             };
           },
           []);
-        return <input {...props} ref={ref} />;
+        return <input {...props} ref={myInput} />;
       });`}</CodeSnippet>
       <p className="description">
         Now, if the parent component gets a ref to MyInput, it will be able to
