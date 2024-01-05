@@ -1,5 +1,3 @@
-import React from "react";
-
 const UseReducerTopic = () => {
   return (
     <div className="pb-5">
