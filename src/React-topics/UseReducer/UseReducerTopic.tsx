@@ -35,6 +35,7 @@ const UseReducerTopic = () => {
         <code>useReducer</code> is a React Hook that lets you add a reducer to
         your component.
       </p>
+      <h1 className="sub-title">useReducer example:</h1>
     </div>
   );
 };

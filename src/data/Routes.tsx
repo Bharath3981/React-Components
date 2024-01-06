@@ -76,6 +76,9 @@ const PureComponents = lazy(
 const UseImperativeHandleTopic = lazy(
   () => import("../React-topics/UseImperativeHandle/UseImperativeHandleTopic")
 );
+const UseReducerTopic = lazy(
+  () => import("../React-topics/UseReducer/UseReducerTopic")
+);
 
 export type componentPageType = {
   _id: string;
@@ -317,6 +320,16 @@ export const reactTopicsChildren = [
     element: (
       <Suspense fallback="Loading...">
         <UseImperativeHandleTopic />
+      </Suspense>
+    ),
+  },
+  {
+    _id: "topics-8",
+    _label: "UseReducer",
+    path: "/topics/useReducer",
+    element: (
+      <Suspense fallback="Loading...">
+        <UseReducerTopic />
       </Suspense>
     ),
   },
