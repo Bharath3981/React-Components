@@ -1,7 +1,7 @@
 import { useReducer } from "react";
 
 function reducer(state: any, action: any) {
-  switch (action) {
+  switch (action.type) {
     case "increaseAge":
       return {
         age: state.age + 1,
@@ -15,9 +15,10 @@ function reducer(state: any, action: any) {
       };
       break;
     case "updateName":
+      console.log(state, action);
       return {
         age: state.age,
-        name: state.name,
+        name: action.name,
       };
       break;
   }
@@ -36,6 +37,20 @@ const UseReducerTopic = () => {
         your component.
       </p>
       <h1 className="sub-title">useReducer example:</h1>
+      <div>
+        Age: {state.age}{" "}
+        <button onClick={() => dispatch({ type: "increaseAge" })}>++</button>{" "}
+        <button onClick={() => dispatch({ type: "decreaseAge" })}>--</button>{" "}
+      </div>
+      <div>
+        Name: {state.name}{" "}
+        <input
+          type="text"
+          onChange={(e) =>
+            dispatch({ type: "updateName", name: e.target.value })
+          }
+        />
+      </div>
     </div>
   );
 };
