@@ -1,4 +1,5 @@
 import { useReducer } from "react";
+import CodeSnippet from "../../util/CodeSnippet";
 
 function reducer(state: any, action: any) {
   switch (action.type) {
@@ -50,6 +51,25 @@ const UseReducerTopic = () => {
             dispatch({ type: "updateName", name: e.target.value })
           }
         />
+      </div>
+      <CodeSnippet>{`import { useReducer } from 'react';
+
+      function reducer(state, action) {
+        // ...
+      }
+      
+      function MyComponent() {
+        const [state, dispatch] = useReducer(reducer, { age: 42 });
+        // ...`}</CodeSnippet>
+      <div className="pt-2">
+        <p className="description">
+          <code>
+            <b>reducer:</b>
+          </code>{" "}
+          The reducer function that specifies how the state gets updated. It
+          must be pure, should take the state and action as arguments, and
+          should return the next state. State and action can be of any types.
+        </p>
       </div>
     </div>
   );

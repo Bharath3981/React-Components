@@ -70,4 +70,7 @@
   .sub-title {
     @apply text-2xl text-[--amazon-selected];
   }
+  .side-title {
+    @apply text-xl text-[--amazon-selected];
+  }
 }

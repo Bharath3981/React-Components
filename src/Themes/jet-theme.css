@@ -73,4 +73,7 @@ body {
   .sub-title {
     @apply text-2xl text-[--jet-selected];
   }
+  .side-title {
+    @apply text-xl text-[--jet-selected];
+  }
 }
