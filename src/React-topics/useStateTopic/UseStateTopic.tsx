@@ -5,11 +5,13 @@ import ObjectUpdateExample from "./ObjectUpdateExample/ObjectUpdateExample";
 import AvoidingRecreatingTheInitialState from "./AvoidingRecreatingTheInitialState/AvoidingRecreatingTheInitialState";
 import ResettingStateWithKey from "./ResettingStateWithKey/ResettingStateWithKey";
 import ChoosingTheStateStructure from "./ChoosingTheStateStructure/ChoosingTheStateStructure";
+import GettingPreviousState from "./GettingPreviousState/GettingPreviousState";
 
 const UseStateTopic = () => {
   return (
     <div>
       <UseStateExample />
+      <GettingPreviousState />
       <PreviousValueExample />
       <ArrayUpdateExample />
       <ObjectUpdateExample />

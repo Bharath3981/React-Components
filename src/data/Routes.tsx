@@ -79,6 +79,9 @@ const UseImperativeHandleTopic = lazy(
 const UseReducerTopic = lazy(
   () => import("../React-topics/UseReducer/UseReducerTopic")
 );
+const BatchesStateUpdate = lazy(
+  () => import("../React-topics/BatchesStateUpdate/BatchesStateUpdate")
+);
 
 export type componentPageType = {
   _id: string;
@@ -330,6 +333,16 @@ export const reactTopicsChildren = [
     element: (
       <Suspense fallback="Loading...">
         <UseReducerTopic />
+      </Suspense>
+    ),
+  },
+  {
+    _id: "topics-9",
+    _label: "BatchesStateUpdate",
+    path: "/topics/batchesStateUpdate",
+    element: (
+      <Suspense fallback="Loading...">
+        <BatchesStateUpdate />
       </Suspense>
     ),
   },

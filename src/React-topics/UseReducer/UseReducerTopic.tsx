@@ -1,3 +1,4 @@
+import GettingPreviousState from "../useStateTopic/GettingPreviousState/GettingPreviousState";
 import DispatchFunction from "./DispatchFunction/DispatchFunction";
 import UseReducerExample from "./UseReducerExample/UseReducerExample";
 
@@ -11,6 +12,7 @@ const UseReducerTopic = () => {
       </p>
       <UseReducerExample />
       <DispatchFunction />
+      <GettingPreviousState />
     </div>
   );
 };
