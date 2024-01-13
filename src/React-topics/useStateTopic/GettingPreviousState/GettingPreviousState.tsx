@@ -19,7 +19,7 @@ const GettingPreviousState = () => {
           Calling the dispatch function does not change state in the running
           code:
         </p>
-        <CodeSnippet>{`function handleClick() {
+        <CodeSnippet>{`function handleClick() {113
   console.log(state.age);  // 42
 
   dispatch({ type: 'incremented_age' }); // Request a re-render with 43
