@@ -15,10 +15,8 @@ const ObjectUpdateExample = () => {
         <button
           onClick={() => {
             setObj((obj) => {
-              console.log("1Updated");
               return { ...obj, place: "Visakhaptnam" };
             });
-            console.log("Updated");
           }}
         >
           Update Object

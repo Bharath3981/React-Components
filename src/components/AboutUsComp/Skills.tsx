@@ -2,7 +2,6 @@ import { useFetchSkillsQuery } from "../../Slices/AboutApiSlice";
 
 const Skills = () => {
   const { data = [], isSuccess } = useFetchSkillsQuery(null);
-  console.log(data);
   return (
     <div className="panel col-span-full">
       <div className="w-full font-semibold text-xl p-3 bg-slate-200">

@@ -7,7 +7,6 @@ function createInitialState(username: string) {
       id: i,
       text: username + "'s task #" + (i + 1),
     });
-    console.log(initialTodos);
   }
   return {
     draft: "",

@@ -4,9 +4,7 @@ import CodeSnippet from "../../../util/CodeSnippet";
 const GettingPreviousState = () => {
   const [value, setValue] = useState(5);
   const updateValue = () => {
-    console.log("Initial value: ", value);
     setValue((v) => v + 1);
-    console.log("New value: ", value);
   };
 
   return (

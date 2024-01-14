@@ -6,7 +6,6 @@ type Props = {
   pages: componentPagesType;
 };
 const Components = () => {
-  console.log("COMPONENTS.JS COMPONENT RENDERED 12");
   return (
     <>
       <Outlet />

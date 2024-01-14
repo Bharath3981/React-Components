@@ -6,7 +6,6 @@ import routes from "./data/Routes";
 import { Provider } from "react-redux";
 import { RcStore } from "./Store/RcStore";
 
-console.log("INDEX.JS COMPONENT RENDERED");
 const router = createHashRouter([
   {
     path: "/",

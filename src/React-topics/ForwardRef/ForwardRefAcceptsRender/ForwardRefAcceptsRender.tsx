@@ -11,7 +11,6 @@ const ForwardRefAcceptsRender = () => {
         <MyInput one={123} ref={myRef} />
       </h1>
       <CodeSnippet>{`const MyInput = forwardRef(function MyInput(props, ref) {
-  console.log(props, ref);
   return (
     <label>
       {props.label}
@@ -36,7 +35,6 @@ type myInputProps = {
   one: number;
 };
 const MyInput = forwardRef(function MyInput(props: myInputProps, ref: any) {
-  console.log(props, ref);
   const [value, setValue] = useState(5);
   return (
     <label>

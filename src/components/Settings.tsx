@@ -6,7 +6,6 @@ const Settings = () => {
   const setThemeValue = (value: string) => {
     setTheme(value);
   };
-  console.log("SETTINGS.JS COMPONENT RENDERED");
   return (
     <>
       <div className="content-layout w-full h-full">

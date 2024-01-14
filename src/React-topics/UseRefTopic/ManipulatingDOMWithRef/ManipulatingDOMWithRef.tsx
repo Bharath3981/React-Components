@@ -4,7 +4,6 @@ const ManipulatingDOMWithRef = () => {
   function handleClick() {
     if (inputRef.current) {
       inputRef.current.focus();
-      console.log(inputRef.current.value);
     }
   }
   return (

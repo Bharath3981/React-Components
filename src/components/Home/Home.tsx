@@ -6,8 +6,6 @@ import FlipCard, {
   BackFace,
 } from "../../React-components/FlipCard/RcFlipCard";
 const Home = () => {
-  console.log("HOME.JS COMPONENT RENDERED", componentsChildren);
-
   return (
     <div className="h-[calc(100vh_-_108px)] md:h-[calc(100vh_-_96px)]">
       <div className="content-layout w-full h-full">

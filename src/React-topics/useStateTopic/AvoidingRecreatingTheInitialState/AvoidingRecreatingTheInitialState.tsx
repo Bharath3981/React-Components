@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 function createInitialTodos() {
-  console.log("Initial function called");
   const initialTodos = [];
   for (let i = 0; i < 50; i++) {
     initialTodos.push({

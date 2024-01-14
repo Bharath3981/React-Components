@@ -40,7 +40,6 @@ const RcTable = ({ data, columns, children, classes, options }: Props) => {
     onSelected = function () {},
   } = options;
   const [[], setSelectedRows] = useState(selected);
-  console.log(selected);
   //const [tableRows, setTableRows] = useState(data1);
   const { rows, setRows } = data;
 

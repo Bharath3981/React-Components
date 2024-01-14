@@ -13,7 +13,6 @@ const SelectionEvent = () => {
     selectedRows: Array<number | string>
   ) => {
     setSelectedRows([...selectedRows]);
-    console.log(event, row);
   };
   const options = {
     keyAttribute: "DepartmentId",

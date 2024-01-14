@@ -6,7 +6,6 @@ import SideBar from "./SideBar";
 import ComponentPagesContext from "../context/ComponentPagesContext";
 
 const Header = () => {
-  console.log("HEADER.JS COMPONENT RENDERED");
   const location = useLocation();
   const [showSidebar, setShowSidebar] = useState<boolean>(false);
   const [componentPages] = useContext<Array<componentPagesType>>(

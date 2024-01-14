@@ -8,7 +8,6 @@ const useArray = (initialArray: Array<any>) => {
   };
 
   const addUniqueItem = (item: any) => {
-    console.log(array);
     if (array.some((value: any) => value === item)) {
       let index = array.findIndex((value: any) => value === item);
       removeItem(index);
@@ -21,7 +20,6 @@ const useArray = (initialArray: Array<any>) => {
     setArray((prevArray) => {
       const newArray = [...prevArray];
       newArray[index] = newItem;
-      console.log(newArray);
       return newArray;
     });
   };

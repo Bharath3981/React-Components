@@ -9,7 +9,6 @@ import useSessionStorage from "./hooks/useSessionStorage";
 import ComponentPagesContext from "./context/ComponentPagesContext";
 
 function App() {
-  console.log("APP.JS COMPONENT RENDERED");
   const [theme, setTheme] = useSessionStorage("theme", "jet");
   const [componentPages, setComponentPages] =
     useState<componentPagesType>(listComponentPages);

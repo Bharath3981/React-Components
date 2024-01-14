@@ -5,7 +5,6 @@ const RefToCustomComponents = () => {
   const inputRef = useRef<any>(null);
   function onChangeEvent(e: React.ChangeEvent<HTMLElement>) {
     setValue((e.target as HTMLInputElement).value);
-    console.log(inputRef.current);
   }
   return (
     <div className="pb-5">

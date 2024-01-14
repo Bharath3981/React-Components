@@ -17,7 +17,6 @@ function reducer(state: any, action: any) {
       };
       break;
     case "updateName":
-      console.log(state, action);
       return {
         age: state.age,
         name: action.name,

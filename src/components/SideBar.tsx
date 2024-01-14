@@ -5,7 +5,6 @@ type Props = {
   pages: componentPagesType;
 };
 const SideBar = ({ pages }: Props) => {
-  console.log("SIDEBAR.JS COMPONENT RENDERED: ");
   return (
     <>
       <div

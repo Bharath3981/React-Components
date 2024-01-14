@@ -6,12 +6,11 @@ import { useState } from "react";
 const ListSelectionEvent = () => {
   const [selectedRows, setSelectedRows] = useState<Array<string | number>>([]);
   const onSelected = (
-    event: React.MouseEvent<HTMLElement>,
+    event: any,
     row: any,
     selectedRows: Array<number | string>
   ) => {
     setSelectedRows([...selectedRows]);
-    console.log(event, row, selectedRows);
   };
   const options: RcListOptions = {
     gridlines: true,

@@ -6,8 +6,6 @@ import Skills from "./Skills";
 import "./AboutUs.css";
 
 const AboutUs = () => {
-  console.log("ABOUTUS.JS COMPONENT RENDERED");
-
   return (
     <>
       <iframe id="ifmcontentstoprint" className="h-0 w-0 absolute"></iframe>

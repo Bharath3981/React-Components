@@ -8,12 +8,11 @@ const MultipleSelectionTable = () => {
   const [selectedRows, setSelectedRows] = useState<Array<string | number>>([]);
   const [rows, setRows] = useState(data);
   const onSelected = (
-    event: React.MouseEvent<HTMLElement>,
+    event: any,
     row: any,
     selectedRows: Array<number | string>
   ) => {
     setSelectedRows([...selectedRows]);
-    console.log(event, row);
   };
   const options = {
     keyAttribute: "DepartmentId",
