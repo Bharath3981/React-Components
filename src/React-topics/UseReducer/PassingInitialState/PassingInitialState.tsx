@@ -61,7 +61,7 @@ const PassingInitialState = () => {
         Add
       </button>
       <ul>
-        {state.todos.map((item) => (
+        {state.todos.map((item: any) => (
           <li key={item.id}>{item.text}</li>
         ))}
       </ul>
