@@ -30,7 +30,7 @@ const Header = () => {
                   React Components
                 </span>
                 <span className="pl-2 text-xs font-thin">
-                  Last Updated on: {}
+                  Last Updated on: 14-Jan-2024
                 </span>
               </div>
               <div className="hidden md:block">

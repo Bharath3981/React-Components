@@ -1,5 +1,7 @@
 import GettingPreviousState from "../useStateTopic/GettingPreviousState/GettingPreviousState";
 import DispatchFunction from "./DispatchFunction/DispatchFunction";
+import PassingInitialState from "./PassingInitialState/PassingInitialState";
+import PassingInitializerFunction from "./PassingInitializerFunction/PassingInitializerFunction";
 import UseReducerExample from "./UseReducerExample/UseReducerExample";
 
 const UseReducerTopic = () => {
@@ -13,6 +15,8 @@ const UseReducerTopic = () => {
       <UseReducerExample />
       <DispatchFunction />
       <GettingPreviousState />
+      <PassingInitialState />
+      <PassingInitializerFunction />
     </div>
   );
 };
