@@ -2,7 +2,7 @@ import { forwardRef, useRef, useState } from "react";
 import CodeSnippet from "../../../util/CodeSnippet";
 
 const ForwardRefAcceptsRender = () => {
-  const myRef = useRef();
+  const myRef: any = useRef();
   return (
     <div>
       <h1 className="sub-title">
@@ -41,7 +41,7 @@ const MyInput = forwardRef(function MyInput(props: myInputProps, ref: any) {
   return (
     <label>
       <input
-        onChange={(e) => setValue(e.target.value)}
+        onChange={(e: any) => setValue(e.target.value)}
         value={value}
         ref={ref}
       />

@@ -20,7 +20,7 @@ const MyInput = forwardRef(function MyInput(props: any, ref: any) {
   return <input {...props} ref={myInput} />;
 });
 const AcceptRef = () => {
-  const ref = useRef(null);
+  const ref: any = useRef(null);
   console.log(ref);
 
   const focusTextBox = () => {

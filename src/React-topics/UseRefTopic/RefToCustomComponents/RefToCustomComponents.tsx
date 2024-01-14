@@ -21,7 +21,7 @@ type MyInputType = {
   onChange: React.ChangeEventHandler<HTMLInputElement>;
 };
 
-const MyInput = forwardRef(({ value, onChange }: MyInputType, ref) => {
+const MyInput = forwardRef(({ value, onChange }: MyInputType, ref: any) => {
   return <input value={value} onChange={onChange} ref={ref} />;
 });
 

@@ -29,6 +29,9 @@ const Header = () => {
                 <span className="pl-3 text-2xl uppercase">
                   React Components
                 </span>
+                <span className="pl-2 text-xs font-thin">
+                  Last Updated on: {}
+                </span>
               </div>
               <div className="hidden md:block">
                 <div className="ml-4 h-16 items-end flex md:ml-6">

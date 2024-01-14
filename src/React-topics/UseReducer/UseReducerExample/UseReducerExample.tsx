@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import { useReducer } from "react";
 import CodeSnippet from "../../../util/CodeSnippet";
 import InfoBlock from "../../../util/InfoBlock";
 
@@ -27,7 +27,7 @@ function reducer(state: any, action: any) {
 }
 
 const UseReducerExample = () => {
-  const [state, dispatch] = useReducer(reducer, {
+  const [state, dispatch]: any = useReducer(reducer, {
     age: 5,
     name: "Bharath Baisetty",
   });
