@@ -36,6 +36,7 @@ type myInputProps = {
 };
 const MyInput = forwardRef(function MyInput(props: myInputProps, ref: any) {
   const [value, setValue] = useState(5);
+  console.log(props);
   return (
     <label>
       <input

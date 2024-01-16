@@ -11,6 +11,7 @@ const ListSelectionEvent = () => {
     selectedRows: Array<number | string>
   ) => {
     setSelectedRows([...selectedRows]);
+    console.log(event, row);
   };
   const options: RcListOptions = {
     gridlines: true,
