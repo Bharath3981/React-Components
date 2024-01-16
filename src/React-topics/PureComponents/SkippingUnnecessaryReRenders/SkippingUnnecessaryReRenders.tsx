@@ -1,10 +1,13 @@
 import { memo, useState } from "react";
+import InfoBlock from "../../../util/InfoBlock";
 
-const arePropsAreUpdated = function (oldProps: any, newProps: any) {
+const arePropsEqual = function (oldProps: any, newProps: any) {
   console.log(oldProps, newProps);
   if (oldProps.name === newProps.name) {
+    console.log("NOT UPDATED");
     return true;
   } else {
+    console.log("UPDATED");
     return false;
   }
 };
@@ -17,7 +20,7 @@ const Greeting = memo(function Greeting({ name }: any) {
       {name}!
     </h3>
   );
-}, arePropsAreUpdated);
+}, arePropsEqual);
 
 const SkippingUnnecessaryReRenders = () => {
   const [name, setName] = useState("");
@@ -42,6 +45,13 @@ const SkippingUnnecessaryReRenders = () => {
         <input value={address} onChange={(e) => setAddress(e.target.value)} />
       </label>
       <Greeting name={name} />
+      <InfoBlock>
+        <p className="description">
+          Generally, passing some props to child component but you don't want to
+          re-render the child compnen for every prop updates at that time you
+          should have one own comaprisition function in <code>Memo</code>
+        </p>
+      </InfoBlock>
     </div>
   );
 };
