@@ -82,6 +82,9 @@ const UseReducerTopic = lazy(
 const BatchesStateUpdate = lazy(
   () => import("../React-topics/BatchesStateUpdate/BatchesStateUpdate")
 );
+const UseMemoTopic = lazy(
+  () => import("../React-topics/UseMemoTopic/UseMemoTopic")
+);
 
 export type componentPageType = {
   _id: string;
@@ -343,6 +346,16 @@ export const reactTopicsChildren = [
     element: (
       <Suspense fallback="Loading...">
         <BatchesStateUpdate />
+      </Suspense>
+    ),
+  },
+  {
+    _id: "topics-10",
+    _label: "UseMemo",
+    path: "/topics/UseMemo",
+    element: (
+      <Suspense fallback="Loading...">
+        <UseMemoTopic />
       </Suspense>
     ),
   },
