@@ -1,5 +1,14 @@
 import { memo, useState } from "react";
 
+const arePropsAreUpdated = function (oldProps: any, newProps: any) {
+  console.log(oldProps, newProps);
+  if (oldProps.name === newProps.name) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
 const Greeting = memo(function Greeting({ name }: any) {
   console.log("Greeting was rendered at", new Date().toLocaleTimeString());
   return (
@@ -8,7 +17,7 @@ const Greeting = memo(function Greeting({ name }: any) {
       {name}!
     </h3>
   );
-});
+}, arePropsAreUpdated);
 
 const SkippingUnnecessaryReRenders = () => {
   const [name, setName] = useState("");
