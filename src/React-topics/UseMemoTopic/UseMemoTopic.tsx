@@ -1,9 +1,11 @@
-import React from "react";
+import SkippingRecalcualation from "./SkippingRecalcualtaion/SkippingRecalcualtaion";
+import UseMemoDescription from "./UseMemoDescription/UseMemoDescription";
 
 const UseMemoTopic = () => {
   return (
     <div className="pb-5">
-      <h1 className="main-title">UseMemo</h1>
+      <UseMemoDescription />
+      <SkippingRecalcualation />
     </div>
   );
 };
