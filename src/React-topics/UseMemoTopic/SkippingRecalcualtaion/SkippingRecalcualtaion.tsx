@@ -28,7 +28,7 @@ export default function SkippingRecalcualation() {
       </h1>
       <div className="pb-2">
         <button onClick={() => setTodoStatus("active")}>Active</button>{" "}
-        <button onClick={() => setTodoStatus("completed")}>Completed</button>
+        <button onClick={() => setTodoStatus("completed")}>Completed123</button>
       </div>
       <div>
         <input type="checkbox" onChange={(e) => setDarkMode((val) => !val)} />{" "}
