@@ -85,6 +85,9 @@ const BatchesStateUpdate = lazy(
 const UseMemoTopic = lazy(
   () => import("../React-topics/UseMemoTopic/UseMemoTopic")
 );
+const UseCallBackTopic = lazy(
+  () => import("../React-topics/UseCallBackTopic/UseCallBackTopic")
+);
 
 export type componentPageType = {
   _id: string;
@@ -356,6 +359,16 @@ export const reactTopicsChildren = [
     element: (
       <Suspense fallback="Loading...">
         <UseMemoTopic />
+      </Suspense>
+    ),
+  },
+  {
+    _id: "topics-11",
+    _label: "UseCallback",
+    path: "/topics/UseCallback",
+    element: (
+      <Suspense fallback="Loading...">
+        <UseCallBackTopic />
       </Suspense>
     ),
   },

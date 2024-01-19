@@ -31,10 +31,7 @@ export default function SkippingRecalcualation() {
         <button onClick={() => setTodoStatus("completed")}>Completed</button>
       </div>
       <div>
-        <input
-          type="checkbox"
-          onChange={(e: any) => setDarkMode((val) => !val)}
-        />{" "}
+        <input type="checkbox" onChange={() => setDarkMode((val) => !val)} />{" "}
         Dark mode
       </div>
       <div className={darkMode ? "bg-slate-800 text-white" : ""}>
