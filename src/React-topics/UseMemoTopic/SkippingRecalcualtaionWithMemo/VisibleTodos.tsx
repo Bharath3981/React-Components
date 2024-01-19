@@ -18,7 +18,11 @@ const generateTodos = (todoStatus: string) => {
 
 const arePropsEqual = function (old: any, newProp: any) {
   console.log(old, newProp);
-  return false;
+  if (old.todoStatus === newProp.todoStatus) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 const VisibleTodos = memo(({ todoStatus }: any) => {
