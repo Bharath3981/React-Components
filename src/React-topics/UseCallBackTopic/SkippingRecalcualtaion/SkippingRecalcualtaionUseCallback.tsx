@@ -37,23 +37,27 @@ export default function SkippingRecalcualtaionUseCallback() {
     },
     [todoStatus]
   );
-  let todos = visibleTodos(todoStatus);
-  console.log(todos);
+  function printTodos() {
+    let todos = visibleTodos(todoStatus);
+    console.log(todos);
+  }
+  //let todos = visibleTodos(todoStatus);
   return (
     <div className="pt-3">
       <h1 className="sub-title">
-        Skipping recalculation with <code>useMemo</code>
+        Skipping recalculation with <code>useMemo</code>123
       </h1>
       <div className="pb-2">
         <button onClick={() => setTodoStatus("active")}>Active</button>{" "}
         <button onClick={() => setTodoStatus("completed")}>Completed</button>
+        <button onClick={() => printTodos()}>Pring todos</button>
       </div>
       <div>
         <input type="checkbox" onChange={() => setDarkMode((val) => !val)} />{" "}
         Dark mode
       </div>
       <div className={darkMode ? "bg-slate-800 text-white" : ""}>
-        <div className="p-2">
+        {/* <div className="p-2">
           {todos.map((todo: any) => (
             <li key={todo.id}>
               {todo.status === "active" ? (
@@ -63,7 +67,7 @@ export default function SkippingRecalcualtaionUseCallback() {
               )}
             </li>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );
