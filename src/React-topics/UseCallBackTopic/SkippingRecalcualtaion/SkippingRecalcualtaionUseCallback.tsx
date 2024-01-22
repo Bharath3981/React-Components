@@ -45,7 +45,7 @@ export default function SkippingRecalcualtaionUseCallback() {
   return (
     <div className="pt-3">
       <h1 className="sub-title">
-        Skipping recalculation with <code>useMemo</code>123
+        Skipping recalculation with <code>useMemo</code>
       </h1>
       <div className="pb-2">
         <button onClick={() => setTodoStatus("active")}>Active</button>{" "}
