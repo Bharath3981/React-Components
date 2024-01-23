@@ -1,4 +1,5 @@
 import { useCallback, useMemo, useState } from "react";
+import PrintTodos from "./PrintTodos";
 
 const generateTodos = (todoStatus: string) => {
   const startTime: number = performance.now();
@@ -20,7 +21,7 @@ export default function SkippingRecalcualtaionUseCallback() {
   const [todoStatus, setTodoStatus] = useState("active");
   const [darkMode, setDarkMode] = useState(false);
   const visibleTodos = useCallback(
-    (todoStatus: string) => {
+    (todoStatus?: string) => {
       const startTime: number = performance.now();
       while (performance.now() - startTime < 500) {
         // Do nothing for 500 ms to emulate extremely slow code
@@ -30,18 +31,14 @@ export default function SkippingRecalcualtaionUseCallback() {
         todos.push({
           id: i,
           text: "Todo " + (i + 1),
-          status: todoStatus,
+          status: todoStatus || "active",
         });
       }
+      console.log(todos);
       return todos;
     },
     [todoStatus]
   );
-  function printTodos() {
-    let todos = visibleTodos(todoStatus);
-    console.log(todos);
-  }
-  //let todos = visibleTodos(todoStatus);
   return (
     <div className="pt-3">
       <h1 className="sub-title">
@@ -50,24 +47,15 @@ export default function SkippingRecalcualtaionUseCallback() {
       <div className="pb-2">
         <button onClick={() => setTodoStatus("active")}>Active</button>{" "}
         <button onClick={() => setTodoStatus("completed")}>Completed</button>
-        <button onClick={() => printTodos()}>Pring todos</button>
       </div>
       <div>
         <input type="checkbox" onChange={() => setDarkMode((val) => !val)} />{" "}
         Dark mode
       </div>
       <div className={darkMode ? "bg-slate-800 text-white" : ""}>
-        {/* <div className="p-2">
-          {todos.map((todo: any) => (
-            <li key={todo.id}>
-              {todo.status === "active" ? (
-                <span>{todo.text}</span>
-              ) : (
-                <span className="line-through">{todo.text}</span>
-              )}
-            </li>
-          ))}
-        </div> */}
+        <div className="p-2">
+          <PrintTodos todos={visibleTodos} />
+        </div>
       </div>
     </div>
   );
