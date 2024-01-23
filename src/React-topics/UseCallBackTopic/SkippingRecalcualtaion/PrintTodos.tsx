@@ -1,10 +1,20 @@
-import React, { memo } from "react";
+import { useState, useEffect } from "react";
 
-const PrintTodos = memo(({ todos }: any) => {
+const PrintTodos = ({ todos1 }: any) => {
+  const [todos, setTodos] = useState([]);
+  useEffect(() => {
+    setTodos(todos1());
+  }, [todos1]);
   return (
     <div>
-      <button onClick={todos}>Print todos</button>
-      {todos().map((todo: any) => (
+      <button
+        onClick={() => {
+          console.log(todos1());
+        }}
+      >
+        Print todos
+      </button>
+      {todos.map((todo: any) => (
         <li key={todo.id}>
           {todo.status === "active" ? (
             <span>{todo.text}</span>
@@ -15,6 +25,6 @@ const PrintTodos = memo(({ todos }: any) => {
       ))}
     </div>
   );
-});
+};
 
 export default PrintTodos;
