@@ -1,22 +1,6 @@
 import { useCallback, useState } from "react";
 import PrintTodos from "./PrintTodos";
 
-const generateTodos = (todoStatus?: string) => {
-  const startTime: number = performance.now();
-  while (performance.now() - startTime < 500) {
-    // Do nothing for 500 ms to emulate extremely slow code
-  }
-  const todos = [];
-  for (let i = 0; i < 50; i++) {
-    todos.push({
-      id: i,
-      text: "Todo " + (i + 1),
-      status: todoStatus || "active",
-    });
-  }
-  return todos;
-};
-
 export default function SkippingRecalcualtaionUseCallback() {
   const [todoStatus, setTodoStatus] = useState("active");
   const [darkMode, setDarkMode] = useState(false);
