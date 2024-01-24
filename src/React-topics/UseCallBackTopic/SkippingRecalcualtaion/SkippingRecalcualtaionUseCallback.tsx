@@ -54,7 +54,7 @@ export default function SkippingRecalcualtaionUseCallback() {
       </div>
       <div className={darkMode ? "bg-slate-800 text-white" : ""}>
         <div className="p-2">
-          <PrintTodos todos1={visibleTodos} />
+          <PrintTodos todos={visibleTodos} />
         </div>
       </div>
     </div>
