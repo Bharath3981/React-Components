@@ -12,7 +12,7 @@ const PreviousValueExample = () => {
           type="text"
           onChange={(event) => {
             setName((name) => {
-              setPreviousName(() => name);
+              setPreviousName(name);
               return event.target.value;
             });
           }}
