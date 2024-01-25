@@ -88,6 +88,9 @@ const UseMemoTopic = lazy(
 const UseCallBackTopic = lazy(
   () => import("../React-topics/UseCallBackTopic/UseCallBackTopic")
 );
+const UseContextTopic = lazy(
+  () => import("../React-topics/UseContextTopic/UseContextTopic")
+);
 
 export type componentPageType = {
   _id: string;
@@ -369,6 +372,16 @@ export const reactTopicsChildren = [
     element: (
       <Suspense fallback="Loading...">
         <UseCallBackTopic />
+      </Suspense>
+    ),
+  },
+  {
+    _id: "topics-12",
+    _label: "UseContext",
+    path: "/topics/UseContext",
+    element: (
+      <Suspense fallback="Loading...">
+        <UseContextTopic />
       </Suspense>
     ),
   },

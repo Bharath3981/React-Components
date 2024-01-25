@@ -9,7 +9,11 @@ import RefCurrentUpdate from "./RefCurrentUpdate/RefCurrentUpdate";
 const UseRefTopic = () => {
   return (
     <div className="pb-5">
-      <h1 className="main-title">useRef</h1>
+      <h1 className="main-title">
+        <a href="https://react.dev/reference/react/useRef" target="_blank">
+          useRef
+        </a>
+      </h1>
       <p className="description">
         <code>useRef</code> is a React Hook that lets you reference a value
         that’s not needed for rendering.
