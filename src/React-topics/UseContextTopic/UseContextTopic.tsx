@@ -1,5 +1,3 @@
-import React from "react";
-
 const UseContextTopic = () => {
   return (
     <div className="pb-5">
