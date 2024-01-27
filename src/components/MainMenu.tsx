@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { MdArrowDropDown } from "react-icons/md";
 
 interface mainMenuObjType {
   _id: string;
@@ -23,6 +24,16 @@ const MainMenu = ({
         <NavLink
           to={menu.path}
           key={menu._id}
+          onMouseEnter={() => {
+            (
+              document.getElementById(menu._submenuId) as HTMLDivElement
+            ).style.display = "block";
+          }}
+          onMouseLeave={() => {
+            (
+              document.getElementById(menu._submenuId) as HTMLDivElement
+            ).style.display = "none";
+          }}
           className={
             defaultClassName +
             ((isActive: boolean) => (isActive ? "active" : ""))
@@ -30,8 +41,12 @@ const MainMenu = ({
         >
           <span className="">{menu._icon}</span>
           <span className="pl-1 hidden md:block">{menu._label}</span>
+          {menu._hasSubmenu && <MdArrowDropDown />}
           {menu._hasSubmenu && (
-            <div className="top-8 rounded-md border p-2 bg-inherit shadow-md bg-slate-200  absolute min-w-[160px] ">
+            <div
+              id={menu._submenuId}
+              className="hidden top-8 rounded-md border p-2 bg-inherit shadow-md bg-slate-200  absolute min-w-[160px] "
+            >
               <a href="#" className="block">
                 Link 123
               </a>

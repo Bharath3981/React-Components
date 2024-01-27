@@ -417,6 +417,7 @@ const routes = [
     _icon: <MdOutlineDescription />,
     path: "/topics/",
     _hasSubmenu: true,
+    _submenuId: "topicsSubmentu",
     element: (
       <Suspense fallback="Loading...">
         <ReactTopics />
