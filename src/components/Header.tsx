@@ -33,8 +33,11 @@ const Header = () => {
                 </span>
               </div>
               <div className="hidden md:block">
-                <div className="ml-4 h-16 items-end flex md:ml-6">
-                  <MainMenu mainMenu={routes} defaultClassName="main-menu " />
+                <div className="ml-4 h-16 items-end flex md:ml-6 ">
+                  <MainMenu
+                    mainMenu={routes}
+                    defaultClassName="main-menu relative inline-block"
+                  />
                 </div>
               </div>
               {(location.pathname.includes("components") ||

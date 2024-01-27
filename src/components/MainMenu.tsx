@@ -30,6 +30,19 @@ const MainMenu = ({
         >
           <span className="">{menu._icon}</span>
           <span className="pl-1 hidden md:block">{menu._label}</span>
+          {menu._hasSubmenu && (
+            <div className="top-8 rounded-md border p-2 bg-inherit shadow-md bg-slate-200  absolute min-w-[160px] ">
+              <a href="#" className="block">
+                Link 123
+              </a>
+              <a href="#" className="block">
+                Link 2
+              </a>
+              <a href="#" className="block">
+                Link 3
+              </a>
+            </div>
+          )}
         </NavLink>
       ))}
     </>

@@ -416,11 +416,22 @@ const routes = [
     _label: "Topics",
     _icon: <MdOutlineDescription />,
     path: "/topics/",
+    _hasSubmenu: true,
     element: (
       <Suspense fallback="Loading...">
         <ReactTopics />
       </Suspense>
     ),
+    _submenus: [
+      {
+        _id: "menu-3-submenu-1",
+        _label: "Menu-1",
+      },
+      {
+        _id: "menu-3-submenu-2",
+        _label: "Menu-2",
+      },
+    ],
     children: reactTopicsChildren,
   },
   {
