@@ -18,6 +18,15 @@ const MainMenu = ({
   mainMenu,
   defaultClassName = "main-menu ",
 }: mainMenuProps) => {
+  const showSubmenu = (submenuId: string) => {
+    (document.getElementById(submenuId) as HTMLDivElement).style.display =
+      "block";
+  };
+
+  const hideSubmenu = (submenuId: string) => {
+    (document.getElementById(submenuId) as HTMLDivElement).style.display =
+      "none";
+  };
   return (
     <>
       {mainMenu.map((menu: any) => (
@@ -25,14 +34,14 @@ const MainMenu = ({
           to={menu.path}
           key={menu._id}
           onMouseEnter={() => {
-            (
-              document.getElementById(menu._submenuId) as HTMLDivElement
-            ).style.display = "block";
+            if (menu._hasSubmenu) {
+              showSubmenu(menu._submenuId);
+            }
           }}
           onMouseLeave={() => {
-            (
-              document.getElementById(menu._submenuId) as HTMLDivElement
-            ).style.display = "none";
+            if (menu._hasSubmenu) {
+              hideSubmenu(menu._submenuId);
+            }
           }}
           className={
             defaultClassName +
