@@ -50,22 +50,22 @@ const MainMenu = ({
         >
           <span className="">{menu._icon}</span>
           <span className="pl-1 hidden md:block">{menu._label}</span>
-          {menu._hasSubmenu && <MdArrowDropDown />}
           {menu._hasSubmenu && (
-            <div
+            <span className="sm:hidden md:block">
+              <MdArrowDropDown />
+            </span>
+          )}
+          {menu._hasSubmenu && (
+            <ul
               id={menu._submenuId}
-              className="hidden top-8 rounded-md border p-2 bg-inherit shadow-md bg-slate-200  absolute min-w-[160px] "
+              className="z-50 hidden top-9 rounded-md border p-2 bg-white shadow-md absolute min-w-[150px] "
             >
-              <a href="#" className="block">
-                Link 123
-              </a>
-              <a href="#" className="block">
-                Link 2
-              </a>
-              <a href="#" className="block">
-                Link 3
-              </a>
-            </div>
+              {menu._submenus.map((submenu: any) => (
+                <li key={submenu._id} className="block py-1 px-2">
+                  {submenu._label}
+                </li>
+              ))}
+            </ul>
           )}
         </NavLink>
       ))}

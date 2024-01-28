@@ -403,7 +403,7 @@ const routes = [
     _id: "menu-2",
     _label: "Components",
     _icon: <PiShapesThin />,
-    path: "components",
+    path: "/components",
     element: (
       <Suspense fallback="Loading...">
         <Components />
@@ -415,7 +415,7 @@ const routes = [
     _id: "menu-3",
     _label: "Topics",
     _icon: <MdOutlineDescription />,
-    path: "/topics/",
+    path: "topics",
     _hasSubmenu: true,
     _submenuId: "topicsSubmentu",
     element: (
@@ -426,11 +426,20 @@ const routes = [
     _submenus: [
       {
         _id: "menu-3-submenu-1",
-        _label: "Menu-1",
+        _label: "React",
+        _value: "topics",
       },
       {
         _id: "menu-3-submenu-2",
-        _label: "Menu-2",
+        _label: "Redux",
+      },
+      {
+        _id: "menu-3-submenu-3",
+        _label: "JavaScript",
+      },
+      {
+        _id: "menu-3-submenu-4",
+        _label: "Interview",
       },
     ],
     children: reactTopicsChildren,
