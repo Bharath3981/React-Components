@@ -4,7 +4,6 @@ import { Outlet } from "react-router-dom";
 
 type Props = {
   pages: componentPagesType;
-  test;
 };
 const Components = () => {
   return (
