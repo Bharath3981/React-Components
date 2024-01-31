@@ -23,6 +23,7 @@ export const Component = ({ pages }: Props) => {
         <div className="w-full h-[calc(100vh_-_108px)] md:h-[calc(100vh_-_66px)]  overflow-auto">
           <div className="content-layout w-full">
             <div className="panel h-auto p-3">
+              test
               <Outlet />
             </div>
           </div>
