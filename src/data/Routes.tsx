@@ -1,8 +1,10 @@
 import { Suspense, lazy } from "react";
 import { CiHome, CiSettings } from "react-icons/ci";
 import { PiShapesThin, PiTableThin, PiListBulletsThin } from "react-icons/pi";
-import { RiContactsLine } from "react-icons/ri";
+import { RiContactsLine, RiJavascriptLine } from "react-icons/ri";
 import { MdOutlineDescription } from "react-icons/md";
+import JavaScriptTopics from "../components/JavaScriptTopics";
+import ArrayMethodsTopic from "../JS-topics/ArrayMethods/ArrayMethodsTopic";
 
 const Home = lazy(() => import("../components/Home/Home"));
 const Components = lazy(() => import("../components/Components"));
@@ -387,11 +389,25 @@ export const reactTopicsChildren = [
   },
 ];
 
+export const javaScriptTopicsChildren = [
+  {
+    _id: "topics-1",
+    _label: "Array methods",
+    path: "/javascript/",
+    element: (
+      <Suspense fallback="Loading...">
+        <ArrayMethodsTopic />
+      </Suspense>
+    ),
+  },
+];
+
 const routes = [
   {
     _id: "menu-1",
     _label: "Home",
     _icon: <CiHome />,
+    _render: true,
     path: "/",
     element: (
       <Suspense fallback="Loading...">
@@ -404,6 +420,7 @@ const routes = [
     _label: "Components",
     _icon: <PiShapesThin />,
     path: "/components",
+    _render: true,
     element: (
       <Suspense fallback="Loading...">
         <Components />
@@ -414,6 +431,7 @@ const routes = [
   {
     _id: "menu-3",
     _label: "Topics",
+    _render: true,
     _icon: <MdOutlineDescription />,
     path: "topics",
     _hasSubmenu: true,
@@ -427,26 +445,43 @@ const routes = [
       {
         _id: "menu-3-submenu-1",
         _label: "React",
-        _value: "topics",
+        path: "javascript",
       },
       {
         _id: "menu-3-submenu-2",
         _label: "Redux",
+        path: "javascript",
       },
       {
         _id: "menu-3-submenu-3",
         _label: "JavaScript",
+        path: "javascript",
       },
       {
         _id: "menu-3-submenu-4",
         _label: "Interview",
+        path: "javascript",
       },
     ],
     children: reactTopicsChildren,
   },
   {
-    _id: "menu-4",
+    _id: "menu-5",
+    _label: "Javascript",
+    _render: false,
+    _icon: <RiJavascriptLine />,
+    path: "javascript",
+    element: (
+      <Suspense fallback="Loading...">
+        <JavaScriptTopics />
+      </Suspense>
+    ),
+    children: javaScriptTopicsChildren,
+  },
+  {
+    _id: "menu-6",
     _label: "Settings",
+    _render: true,
     _icon: <CiSettings />,
     path: "/settings",
     element: (
@@ -456,8 +491,9 @@ const routes = [
     ),
   },
   {
-    _id: "menu-5",
+    _id: "menu-7",
     _label: "About Me",
+    _render: true,
     _icon: <RiContactsLine />,
     path: "/aboutUs",
     element: (

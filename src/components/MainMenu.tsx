@@ -5,6 +5,7 @@ interface mainMenuObjType {
   _id: string;
   _label: string;
   _icon: JSX.Element;
+  _render: boolean;
   path: string;
   element: JSX.Element;
   children?: Array<{}>;
@@ -30,44 +31,48 @@ const MainMenu = ({
   return (
     <>
       {mainMenu.map((menu: any) => (
-        <NavLink
-          to={menu.path}
-          key={menu._id}
-          onMouseEnter={() => {
-            if (menu._hasSubmenu) {
-              showSubmenu(menu._submenuId);
-            }
-          }}
-          onMouseLeave={() => {
-            if (menu._hasSubmenu) {
-              hideSubmenu(menu._submenuId);
-            }
-          }}
-          className={
-            defaultClassName +
-            ((isActive: boolean) => (isActive ? "active" : ""))
-          }
-        >
-          <span className="">{menu._icon}</span>
-          <span className="pl-1 hidden md:block">{menu._label}</span>
-          {menu._hasSubmenu && (
-            <span className="sm:hidden md:block">
-              <MdArrowDropDown />
-            </span>
-          )}
-          {menu._hasSubmenu && (
-            <ul
-              id={menu._submenuId}
-              className="z-50 hidden top-9 rounded-md border p-2 bg-white shadow-md absolute min-w-[150px] "
+        <div key={menu._id}>
+          {menu._render && (
+            <NavLink
+              to={menu.path}
+              key={menu._id}
+              onMouseEnter={() => {
+                if (menu._hasSubmenu) {
+                  showSubmenu(menu._submenuId);
+                }
+              }}
+              onMouseLeave={() => {
+                if (menu._hasSubmenu) {
+                  hideSubmenu(menu._submenuId);
+                }
+              }}
+              className={
+                defaultClassName +
+                ((isActive: boolean) => (isActive ? "active" : ""))
+              }
             >
-              {menu._submenus.map((submenu: any) => (
-                <li key={submenu._id} className="block py-1 px-2">
-                  {submenu._label}
-                </li>
-              ))}
-            </ul>
+              <span className="">{menu._icon}</span>
+              <span className="pl-1 hidden md:block">{menu._label}</span>
+              {menu._hasSubmenu && (
+                <span className="sm:hidden md:block">
+                  <MdArrowDropDown />
+                </span>
+              )}
+              {menu._hasSubmenu && (
+                <ul
+                  id={menu._submenuId}
+                  className="z-50 hidden top-9 rounded-md border p-2 bg-white shadow-md absolute min-w-[150px] "
+                >
+                  {menu._submenus.map((submenu: any) => (
+                    <li key={submenu._id} className="block py-1 px-2">
+                      <NavLink to={submenu.path}>{submenu._label}</NavLink>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </NavLink>
           )}
-        </NavLink>
+        </div>
       ))}
     </>
   );
