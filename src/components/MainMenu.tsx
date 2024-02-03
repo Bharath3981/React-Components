@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { MdArrowDropDown } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 interface mainMenuObjType {
   _id: string;
@@ -19,6 +20,7 @@ const MainMenu = ({
   mainMenu,
   defaultClassName = "main-menu ",
 }: mainMenuProps) => {
+  const navigate = useNavigate();
   const showSubmenu = (submenuId: string) => {
     (document.getElementById(submenuId) as HTMLDivElement).style.display =
       "block";
@@ -27,6 +29,10 @@ const MainMenu = ({
   const hideSubmenu = (submenuId: string) => {
     (document.getElementById(submenuId) as HTMLDivElement).style.display =
       "none";
+  };
+  const goTo = (path: string) => {
+    console.log(path);
+    navigate("/javascript");
   };
   return (
     <>
@@ -65,7 +71,9 @@ const MainMenu = ({
                 >
                   {menu._submenus.map((submenu: any) => (
                     <li key={submenu._id} className="block py-1 px-2">
-                      <NavLink to={submenu.path}>{submenu._label}</NavLink>
+                      <span onClick={() => goTo(submenu.path)}>
+                        {submenu._label}
+                      </span>
                     </li>
                   ))}
                 </ul>

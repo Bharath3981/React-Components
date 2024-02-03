@@ -455,7 +455,7 @@ const routes = [
       {
         _id: "menu-3-submenu-3",
         _label: "JavaScript",
-        path: "javascript",
+        path: "/javascript",
       },
       {
         _id: "menu-3-submenu-4",

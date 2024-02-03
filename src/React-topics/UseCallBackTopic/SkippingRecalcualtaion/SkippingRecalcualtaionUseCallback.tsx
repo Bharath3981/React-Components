@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import PrintTodos from "./PrintTodos";
 
 export default function SkippingRecalcualtaionUseCallback() {
@@ -23,6 +23,9 @@ export default function SkippingRecalcualtaionUseCallback() {
     },
     [todoStatus]
   );
+  useEffect(() => {
+    console.log("New method");
+  }, [visibleTodos]);
   return (
     <div className="pt-3">
       <h1 className="sub-title">
