@@ -1,14 +1,20 @@
-import { ErrorBoundary } from "react-error-boundary";
-import fallbackScreen from "./fallbackScreen";
 import useOnlineStatus from "../../../hooks/useOnlineStatus";
+import ErrorBoundary from "../ErrorBoundary";
+import FallbackScreen from "./fallbackScreen";
 
 const ErrorAtOffline = () => {
   const isOnline = useOnlineStatus();
+  console.log(isOnline);
+  if (!isOnline) {
+    throw new Error("You are offline.");
+  }
   return (
     <div>
       <div className="sub-title">Throw error when offline</div>
-      <ErrorBoundary fallback={<p>⚠️Something went wrong</p>}>
-        <div>Online: {isOnline}</div>
+      <ErrorBoundary fallback={<FallbackScreen />}>
+        <FallbackScreen />
+        <FallbackScreen />
+        <div>Online: {isOnline ? <span>✅</span> : <span>❌</span>}</div>
       </ErrorBoundary>
     </div>
   );

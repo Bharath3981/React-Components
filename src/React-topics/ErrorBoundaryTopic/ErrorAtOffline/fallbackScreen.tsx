@@ -1,13 +1,13 @@
 import InfoBlock from "../../../util/InfoBlock";
 
-const fallbackScreen = () => {
+const FallbackScreen = () => {
   return (
-    <InfoBlock infoType="error">
-      <p className="description">
-        You are offline and your cable got disconnected it seems{" "}
-      </p>
-    </InfoBlock>
+    <div>
+      <InfoBlock infoType="error">
+        <p>You Cable disconnecte 😩</p>
+      </InfoBlock>
+    </div>
   );
 };
 
-export default fallbackScreen;
+export default FallbackScreen;
