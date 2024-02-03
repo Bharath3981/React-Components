@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import RcList, { RcListOptions } from "./RcList";
 import { baseURL } from "../../Services/Services";
 import { useFetchBasicListQuery } from "../../Slices/ListApiSlice";
@@ -5,7 +6,15 @@ import { useFetchBasicListQuery } from "../../Slices/ListApiSlice";
 const ListMultipleSelection = () => {
   const options: RcListOptions = {};
   const { data = [] } = useFetchBasicListQuery(null);
-
+  useEffect(() => {
+    const firstMenu: HTMLAnchorElement | any =
+      document.querySelector("#subMenu a");
+    firstMenu.className = "nav-sub-menu active";
+    console.log(firstMenu);
+    return () => {
+      firstMenu.className = "nav-sub-menu";
+    };
+  }, []);
   return (
     <div>
       <div className="text-2xl font-semibold">List Component</div>

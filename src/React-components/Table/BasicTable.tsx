@@ -11,6 +11,12 @@ const BasicTable = () => {
     if (response.isSuccess) {
       setRows(data);
     }
+    const firstMenu: HTMLAnchorElement | any =
+      document.querySelector("#subMenu a");
+    firstMenu.className = "nav-sub-menu active";
+    return () => {
+      firstMenu.className = "nav-sub-menu";
+    };
   }, [data]);
 
   const options = {

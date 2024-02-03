@@ -30,9 +30,9 @@ const MainMenu = ({
     (document.getElementById(submenuId) as HTMLDivElement).style.display =
       "none";
   };
-  const goTo = (path: string) => {
-    console.log(path);
-    navigate("/javascript");
+  const goTo = (event: React.MouseEvent<HTMLElement>, path: string) => {
+    event.preventDefault();
+    navigate(path);
   };
   return (
     <>
@@ -71,7 +71,11 @@ const MainMenu = ({
                 >
                   {menu._submenus.map((submenu: any) => (
                     <li key={submenu._id} className="block py-1 px-2">
-                      <span onClick={() => goTo(submenu.path)}>
+                      <span
+                        onClick={(event: React.MouseEvent<HTMLElement>) =>
+                          goTo(event, submenu.path)
+                        }
+                      >
                         {submenu._label}
                       </span>
                     </li>
