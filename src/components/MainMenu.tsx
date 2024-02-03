@@ -67,7 +67,7 @@ const MainMenu = ({
               {menu._hasSubmenu && (
                 <ul
                   id={menu._submenuId}
-                  className="z-50 hidden top-9 rounded-md border p-2 bg-white shadow-md absolute min-w-[150px] "
+                  className="z-50 hidden top-8 rounded-md border p-2 bg-white shadow-md absolute min-w-[150px] "
                 >
                   {menu._submenus.map((submenu: any) => (
                     <li key={submenu._id} className="block py-1 px-2">
