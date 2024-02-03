@@ -93,6 +93,9 @@ const UseCallBackTopic = lazy(
 const UseContextTopic = lazy(
   () => import("../React-topics/UseContextTopic/UseContextTopic")
 );
+const ErrorBoundaryTopic = lazy(
+  () => import("../React-topics/ErrorBoundaryTopic/ErrorBoundaryTopic")
+);
 
 export type componentPageType = {
   _id: string;
@@ -384,6 +387,16 @@ export const reactTopicsChildren = [
     element: (
       <Suspense fallback="Loading...">
         <UseContextTopic />
+      </Suspense>
+    ),
+  },
+  {
+    _id: "topics-13",
+    _label: "Error Boundary",
+    path: "/topics/errorBoundary",
+    element: (
+      <Suspense fallback="Loading...">
+        <ErrorBoundaryTopic />
       </Suspense>
     ),
   },
