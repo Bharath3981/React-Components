@@ -402,6 +402,32 @@ export const javaScriptTopicsChildren = [
   },
 ];
 
+export const interviewTopicsChildren = [
+  {
+    _id: "interview-topics-1",
+    _label: "Interview-1",
+    path: "/interview/",
+    element: (
+      <Suspense fallback="Loading...">
+        <ArrayMethodsTopic />
+      </Suspense>
+    ),
+  },
+];
+
+export const reduxTopicsChildren = [
+  {
+    _id: "topics-1",
+    _label: "Array methods",
+    path: "/javascript/",
+    element: (
+      <Suspense fallback="Loading...">
+        <ArrayMethodsTopic />
+      </Suspense>
+    ),
+  },
+];
+
 const routes = [
   {
     _id: "menu-1",
