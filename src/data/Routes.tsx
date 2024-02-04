@@ -95,6 +95,10 @@ const UseContextTopic = lazy(
 const ErrorBoundaryTopic = lazy(
   () => import("../React-topics/ErrorBoundaryTopic/ErrorBoundaryTopic")
 );
+const HigherComponentsTopic = lazy(
+  () => import("../React-topics/HigherComponentsTopic/HigherComponentsTopic")
+);
+
 const ArrayMethodsTopic = lazy(
   () => import("../JS-topics/ArrayMethods/ArrayMethodsTopic")
 );
@@ -402,6 +406,16 @@ export const reactTopicsChildren = [
     element: (
       <Suspense fallback="Loading...">
         <ErrorBoundaryTopic />
+      </Suspense>
+    ),
+  },
+  {
+    _id: "topics-14",
+    _label: "HO Components",
+    path: "/topics/higherOrderComponents",
+    element: (
+      <Suspense fallback="Loading...">
+        <HigherComponentsTopic />
       </Suspense>
     ),
   },

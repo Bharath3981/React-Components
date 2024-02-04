@@ -1,6 +1,7 @@
 "use strict";
 
 export let baseURL = "";
+export const jsonPlaceHolderBaseURL = "https://jsonplaceholder.typicode.com/";
 
 if (import.meta.env.DEV) {
   baseURL =
