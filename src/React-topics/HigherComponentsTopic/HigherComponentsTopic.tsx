@@ -1,16 +1,7 @@
-import { useEffect, useState } from "react";
+import TodoList from "./TodoList";
+import UsersList from "./UsersList";
 
 const HigherComponentsTopic = () => {
-  const [users, setUsers] = useState([]);
-  const getUsers = async () => {
-    const res = await fetch("https://jsonplaceholder.typicode.com/users");
-    return await res.json();
-  };
-  useEffect(() => {
-    getUsers().then((res) => {
-      setUsers(res);
-    });
-  }, []);
   return (
     <div>
       <div className="main-title">Higer order components</div>
@@ -20,10 +11,8 @@ const HigherComponentsTopic = () => {
         function that takes a component as an argument and returns a new
         component that wraps the original component.
       </p>
-      <div className="side-title">Users</div>
-      {users.map((user: any) => (
-        <div key={user.id}>{user.name}</div>
-      ))}
+      <UsersList />
+      <TodoList />
     </div>
   );
 };
