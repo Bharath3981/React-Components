@@ -4,7 +4,6 @@ import { PiShapesThin, PiTableThin, PiListBulletsThin } from "react-icons/pi";
 import { RiContactsLine, RiJavascriptLine } from "react-icons/ri";
 import { MdOutlineDescription } from "react-icons/md";
 import JavaScriptTopics from "../components/JavaScriptTopics";
-import ArrayMethodsTopic from "../JS-topics/ArrayMethods/ArrayMethodsTopic";
 
 const Home = lazy(() => import("../components/Home/Home"));
 const Components = lazy(() => import("../components/Components"));
@@ -95,6 +94,12 @@ const UseContextTopic = lazy(
 );
 const ErrorBoundaryTopic = lazy(
   () => import("../React-topics/ErrorBoundaryTopic/ErrorBoundaryTopic")
+);
+const ArrayMethodsTopic = lazy(
+  () => import("../JS-topics/ArrayMethods/ArrayMethodsTopic")
+);
+const HigherOrderFunctions = lazy(
+  () => import("../JS-topics/HigherOrderFunctions/HigherOrderFunctions")
 );
 
 export type componentPageType = {
@@ -404,12 +409,22 @@ export const reactTopicsChildren = [
 
 export const javaScriptTopicsChildren = [
   {
-    _id: "topics-1",
+    _id: "JS-topics-1",
     _label: "Array methods",
     path: "/javascript/",
     element: (
       <Suspense fallback="Loading...">
         <ArrayMethodsTopic />
+      </Suspense>
+    ),
+  },
+  {
+    _id: "JS-topics-2",
+    _label: "Higher Order fun",
+    path: "/javascript/higherOrderFunctions",
+    element: (
+      <Suspense fallback="Loading...">
+        <HigherOrderFunctions />
       </Suspense>
     ),
   },
