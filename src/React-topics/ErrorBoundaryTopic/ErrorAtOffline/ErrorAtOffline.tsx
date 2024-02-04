@@ -1,6 +1,6 @@
 import useOnlineStatus from "../../../hooks/useOnlineStatus";
 import ErrorBoundary from "../ErrorBoundary";
-import FallbackScreen from "./fallbackScreen";
+import FallbackScreen from "./FallBackScreen";
 
 const ErrorAtOffline = () => {
   const isOnline = useOnlineStatus();
@@ -12,8 +12,6 @@ const ErrorAtOffline = () => {
     <div>
       <div className="sub-title">Throw error when offline</div>
       <ErrorBoundary fallback={<FallbackScreen />}>
-        <FallbackScreen />
-        <FallbackScreen />
         <div>Online: {isOnline ? <span>✅</span> : <span>❌</span>}</div>
       </ErrorBoundary>
     </div>

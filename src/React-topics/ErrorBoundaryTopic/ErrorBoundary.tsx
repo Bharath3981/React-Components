@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 function ErrorBoundary({ fallback, children }: any) {
-  const [hasError, setHasError] = useState(false);
+  const [hasError, setHasError] = useState(true);
   console.log(fallback, children);
   useEffect(() => {
     if (hasError) {

@@ -19,6 +19,13 @@ const InfoBlock = ({ children, infoType = "info" }: Props) => {
           </div>
         </>
       )}
+      {infoType === "error" && (
+        <>
+          <div className="border p-2 rounded-md border-red-400 border-l-4 flex text-red-400">
+            {children}
+          </div>
+        </>
+      )}
     </div>
   );
 };
