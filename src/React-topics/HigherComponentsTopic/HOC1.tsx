@@ -16,8 +16,16 @@ const HOC = (WrappedComponent: any, entity: any) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(`https://jsonplaceholder.typicode.com/${entity}`);
-      const json = await res.json();
+      let json;
+      try {
+        const res = await fetch(
+          `https://jsonplaceholder.typicode.com/${entity}`
+        );
+        json = await res.json();
+      } catch (e) {
+        alert("Some error occured");
+      }
+
       setData(json);
     };
     fetchData();

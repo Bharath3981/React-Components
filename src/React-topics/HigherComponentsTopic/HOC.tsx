@@ -8,10 +8,16 @@ const HOC = (WrappedComponent: any, entity: any) => {
     };
     componentDidMount(): void {
       const fetchData = async () => {
-        const res = await fetch(
-          `https://jsonplaceholder.typicode.com/${entity}`
-        );
-        const json = await res.json();
+        let json;
+        try {
+          const res = await fetch(
+            `https://jsonplaceholder.typicode.com/${entity}`
+          );
+          json = await res.json();
+        } catch (e) {
+          alert("Some error occured");
+        }
+
         this.setState({ ...this.state, data: json });
       };
       fetchData();
