@@ -105,6 +105,9 @@ const ArrayMethodsTopic = lazy(
 const HigherOrderFunctions = lazy(
   () => import("../JS-topics/HigherOrderFunctions/HigherOrderFunctions")
 );
+const DebouncingTopic = lazy(
+  () => import("../JS-topics/DebouncingTopic/DebouncingTopic")
+);
 
 export type componentPageType = {
   _id: string;
@@ -439,6 +442,16 @@ export const javaScriptTopicsChildren = [
     element: (
       <Suspense fallback="Loading...">
         <HigherOrderFunctions />
+      </Suspense>
+    ),
+  },
+  {
+    _id: "JS-topics-3",
+    _label: "Debouncing",
+    path: "/javascript/debouncing",
+    element: (
+      <Suspense fallback="Loading...">
+        <DebouncingTopic />
       </Suspense>
     ),
   },
