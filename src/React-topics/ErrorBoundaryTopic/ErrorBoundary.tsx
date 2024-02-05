@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
+import InfoBlock from "../../util/InfoBlock";
 
-function ErrorBoundary({ fallback, children }: any) {
+function ErrorBoundary({ children }: any) {
   const [hasError] = useState(true);
-  console.log(fallback, children);
+  console.log(children);
   useEffect(() => {
     if (hasError) {
       // Log the error or send it to an error tracking service
@@ -11,7 +12,13 @@ function ErrorBoundary({ fallback, children }: any) {
   }, [hasError]);
 
   if (hasError) {
-    return fallback;
+    return (
+      <div>
+        <InfoBlock infoType="error">
+          <p>Your Cable disconnecte 😩</p>
+        </InfoBlock>
+      </div>
+    );
   }
 
   return children;
