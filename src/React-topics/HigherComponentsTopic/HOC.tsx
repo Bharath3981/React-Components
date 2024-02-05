@@ -19,7 +19,7 @@ const HOC = (WrappedComponent: any, entity: any) => {
 
     render() {
       const { term, data }: any = this.state;
-      const filteredData = data.filter((d) => {
+      const filteredData = data.filter((d: any) => {
         if (entity === "users") {
           const { name } = d;
           return name.indexOf(term) >= 0;

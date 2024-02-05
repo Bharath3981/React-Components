@@ -15,8 +15,8 @@ const HigherOrderDescription = () => {
     }
     return output;
   };
-  //console.log("Area: ", calculate(radius, area));
-  //console.log("Circumference: ", calculate(radius, circumference));
+  console.log("Area: ", calculate(radius, area));
+  console.log("Circumference: ", calculate(radius, circumference));
   return (
     <div>
       <p className="description">
