@@ -1,18 +1,8 @@
-import { useEffect } from "react";
 import ArrayMapTopic from "./ArrayMapTopic/ArrayMapTopic";
 import ArrayFilterTopic from "./ArrayFilterTopic/ArrayFilterTopic";
 import ArrayReduceTopic from "./ArrayReduceTopic/ArrayReduceTopic";
 
 const ArrayMethodsTopic = () => {
-  useEffect(() => {
-    const firstMenu: HTMLAnchorElement | any =
-      document.querySelector("#subMenu a");
-    firstMenu.className = "nav-sub-menu active";
-    console.log(firstMenu);
-    return () => {
-      firstMenu.className = "nav-sub-menu";
-    };
-  }, []);
   return (
     <div className="pb-5">
       <div className="main-title pb-5">Array Methods</div>

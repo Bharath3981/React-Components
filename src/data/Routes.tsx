@@ -4,7 +4,11 @@ import { PiShapesThin, PiTableThin, PiListBulletsThin } from "react-icons/pi";
 import { RiContactsLine, RiJavascriptLine } from "react-icons/ri";
 import { MdOutlineDescription } from "react-icons/md";
 import JavaScriptTopics from "../components/JavaScriptTopics";
-import InterviewTopics from "../components/InterviewTopics";
+import {
+  InterviewTopics,
+  InterviewTopicsChildren,
+} from "../components/InterviewTopics";
+import SumOfArguments from "../Interview-topics/SumOfArguments/SumOfArguments";
 
 const Home = lazy(() => import("../components/Home/Home"));
 const Components = lazy(() => import("../components/Components"));
@@ -474,10 +478,20 @@ export const interviewTopicsChildren = [
   {
     _id: "interview-topics-1",
     _label: "Interview-1",
-    path: "/interview/",
+    path: "/interview",
     element: (
       <Suspense fallback="Loading...">
-        <ArrayMethodsTopic />
+        <InterviewTopicsChildren />
+      </Suspense>
+    ),
+  },
+  {
+    _id: "interview-topics-2",
+    _label: "Interview-2",
+    path: "/interview/SumOfArguments",
+    element: (
+      <Suspense fallback="Loading...">
+        <SumOfArguments />
       </Suspense>
     ),
   },
@@ -487,7 +501,7 @@ export const reduxTopicsChildren = [
   {
     _id: "topics-1",
     _label: "Array methods",
-    path: "/javascript/",
+    path: "/redux/",
     element: (
       <Suspense fallback="Loading...">
         <ArrayMethodsTopic />
