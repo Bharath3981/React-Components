@@ -108,7 +108,9 @@ const HigherOrderFunctions = lazy(
 const DebouncingTopic = lazy(
   () => import("../JS-topics/DebouncingTopic/DebouncingTopic")
 );
-
+const ThrottlingTopic = lazy(
+  () => import("../JS-topics/ThrottlingTopic/ThrottlingTopic")
+);
 export type componentPageType = {
   _id: string;
   _label: string;
@@ -452,6 +454,16 @@ export const javaScriptTopicsChildren = [
     element: (
       <Suspense fallback="Loading...">
         <DebouncingTopic />
+      </Suspense>
+    ),
+  },
+  {
+    _id: "JS-topics-4",
+    _label: "Throttling",
+    path: "/javascript/throttling",
+    element: (
+      <Suspense fallback="Loading...">
+        <ThrottlingTopic />
       </Suspense>
     ),
   },

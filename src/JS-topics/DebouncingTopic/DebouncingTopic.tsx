@@ -43,7 +43,7 @@ const DebouncingTopic = () => {
       setFilteredList(albums.current);
     }
   };
-  const someMagic = (fn: any, d: number) => {
+  const someMagic = (fn: () => void, d: number) => {
     let timer: any = 0;
     return (e: any) => {
       if (timer) {
