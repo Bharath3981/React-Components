@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from "react";
+import CodeSnippet from "../../util/CodeSnippet";
 
 const DebouncingTopic = () => {
   const albums: any = useRef([]);
@@ -22,7 +23,7 @@ const DebouncingTopic = () => {
   }, []);
 
   let timeout: number = 0;
-  const debouncing = (e: any) => {
+  const debouncing = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (timeout) {
       clearTimeout(timeout);
     }
@@ -31,7 +32,7 @@ const DebouncingTopic = () => {
     }, 400);
   };
 
-  const filterAlbums = (e: any) => {
+  const filterAlbums = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e.target.value);
     if (e.target.value) {
       const filteredAlbums = albums.current.filter((album: any) => {
@@ -64,13 +65,44 @@ const DebouncingTopic = () => {
         period of inactivity. It helps prevent excessive function calls
         triggered by rapid events, such as keystrokes or scroll movements.
       </p>
+      <div className="side-title">Debouncing implementation1</div>
+      <CodeSnippet>{`const debouncing = (fn: any, d: number) => {
+    let timer: any = 0;
+    return (e: any) => {
+      if (timer) {
+        clearTimeout(timer);
+      }
+      timer = setTimeout(() => {
+        fn(e);
+      }, d);
+    };
+  };`}</CodeSnippet>
+      <div className="side-title">Debouncing implementation2</div>
+      <CodeSnippet>{`let timeout: number = 0;
+  const debouncing = (e: any) => {
+    if (timeout) {
+      clearTimeout(timeout);
+    }
+    timeout = setTimeout(() => {
+      filterAlbums(e);
+    }, 400);
+  };`}</CodeSnippet>
       <div className="side-title">Albums</div>
-      <input type="text" onChange={(e) => debouncing(e)} placeholder="search" />
-      <input
-        type="text"
-        onChange={(e) => debouncing1(e)}
-        placeholder="search"
-      />
+      <div>
+        <input
+          type="text"
+          onChange={(e) => debouncing1(e)}
+          placeholder="search debouncing 1"
+        />
+      </div>
+      <div>
+        <input
+          className="mt-2"
+          type="text"
+          onChange={(e) => debouncing(e)}
+          placeholder="search debouncing 2"
+        />
+      </div>
       <ul className="border-2 border-black-500 h-80 overflow-auto rounded-md p-2 mt-3">
         {filteredList.map((album: any) => {
           return (
