@@ -4,6 +4,7 @@ import { PiShapesThin, PiTableThin, PiListBulletsThin } from "react-icons/pi";
 import { RiContactsLine, RiJavascriptLine } from "react-icons/ri";
 import { MdOutlineDescription } from "react-icons/md";
 import JavaScriptTopics from "../components/JavaScriptTopics";
+import InterviewTopics from "../components/InterviewTopics";
 
 const Home = lazy(() => import("../components/Home/Home"));
 const Components = lazy(() => import("../components/Components"));
@@ -553,7 +554,7 @@ const routes = [
       {
         _id: "menu-3-submenu-4",
         _label: "Interview",
-        path: "javascript",
+        path: "/interview",
       },
     ],
     children: reactTopicsChildren,
@@ -594,6 +595,19 @@ const routes = [
         <AboutUs />
       </Suspense>
     ),
+  },
+  {
+    _id: "menu-8",
+    _label: "Interview",
+    _render: false,
+    _icon: <RiJavascriptLine />,
+    path: "/interview",
+    element: (
+      <Suspense fallback="Loading...">
+        <InterviewTopics />
+      </Suspense>
+    ),
+    children: interviewTopicsChildren,
   },
 ];
 
