@@ -2,7 +2,7 @@ import { useRef, useEffect, useState } from "react";
 import CodeSnippet from "../../util/CodeSnippet";
 
 const ThrottlingTopic = () => {
-  const albums: any = useRef([]);
+  const albums = useRef<any>([]);
   const [filteredList, setFilteredList] = useState([]);
   useEffect(() => {
     console.log("useEffect called");
@@ -43,8 +43,11 @@ const ThrottlingTopic = () => {
       setFilteredList(albums.current);
     }
   };
-  const someMagic = (fn: () => void, d) => {
-    let flag2 = useRef<boolean>(true);
+  const flag2 = useRef<boolean>(true);
+  const someMagic = (
+    fn: (e: React.ChangeEvent<HTMLInputElement>) => void,
+    d: number
+  ) => {
     return (e: React.ChangeEvent<HTMLInputElement>) => {
       if (flag2.current) {
         fn(e);

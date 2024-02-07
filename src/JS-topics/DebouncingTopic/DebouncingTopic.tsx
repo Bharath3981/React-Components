@@ -43,9 +43,12 @@ const DebouncingTopic = () => {
       setFilteredList(albums.current);
     }
   };
-  const someMagic = (fn: () => void, d: number) => {
+  const someMagic = (
+    fn: (e: React.ChangeEvent<HTMLInputElement>) => void,
+    d: number
+  ) => {
     let timer: any = 0;
-    return (e: any) => {
+    return (e) => {
       if (timer) {
         clearTimeout(timer);
       }
