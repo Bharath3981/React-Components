@@ -15,3 +15,7 @@
     @apply bg-[--flipkart-selected] text-white font-black text-xl px-5;
   }
 }
+
+.interview-questions-strip {
+  @apply text-white font-black text-xl px-5;
+}
