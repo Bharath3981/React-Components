@@ -76,4 +76,7 @@ body {
   .side-title {
     @apply text-xl text-[--jet-selected];
   }
+  .interview-back-button {
+    @apply float-end border border-[--jet-selected] text-[--jet-selected] rounded-md px-2 hover:bg-[--jet-selected] hover:text-white;
+  }
 }

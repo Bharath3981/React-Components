@@ -73,4 +73,7 @@
   .side-title {
     @apply text-xl text-[--amazon-selected];
   }
+  .interview-back-button {
+    @apply float-end border border-[--amazon-selected] text-[--amazon-selected] rounded-md px-2 hover:bg-[--amazon-selected] hover:text-white;
+  }
 }

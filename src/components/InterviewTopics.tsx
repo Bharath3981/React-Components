@@ -1,6 +1,6 @@
 import "./Home/Home.css";
 import { useFetchInterviewQuestionsQuery } from "../Slices/TopicsApiSlice";
-import { Link, Outlet, useLocation, useNavigation } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import { JSInterviewQuestions } from "../data/Routes";
 
 export const InterviewTopics = () => {
@@ -15,7 +15,10 @@ export const InterviewTopics = () => {
         </div>
       )}
       {location.pathname !== "/interview" && (
-        <div className="h-full m-3 p-2 border bg-white overflow-auto">
+        <div className="h-full m-3 p-2 border bg-white overflow-auto align-middle">
+          <Link to="/interview" className="interview-back-button mt-1">
+            Back
+          </Link>
           <Outlet />
         </div>
       )}

@@ -73,4 +73,7 @@
   .side-title {
     @apply text-xl text-[--flipkart-selected];
   }
+  .interview-back-button {
+    @apply float-end border border-[--flipkart-selected] text-[--flipkart-selected] rounded-md px-2 hover:bg-[--flipkart-selected] hover:text-white;
+  }
 }
