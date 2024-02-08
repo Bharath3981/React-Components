@@ -1,17 +1,24 @@
 import "./Home/Home.css";
 import { useFetchInterviewQuestionsQuery } from "../Slices/TopicsApiSlice";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigation } from "react-router-dom";
 import { JSInterviewQuestions } from "../data/Routes";
 
 export const InterviewTopics = () => {
+  const location = useLocation();
+  console.log(location);
   console.log(JSInterviewQuestions);
   return (
     <div className="h-[calc(100vh_-_108px)] md:h-[calc(100vh_-_96px)]">
-      <div className="content-layout w-full h-full">
-        <div className="h-full overflow-auto">
+      {location.pathname === "/interview" && (
+        <div className="content-layout w-full h-full">
           <Outlet />
         </div>
-      </div>
+      )}
+      {location.pathname !== "/interview" && (
+        <div className="h-full m-3 p-2 border bg-white overflow-auto">
+          <Outlet />
+        </div>
+      )}
     </div>
   );
 };
