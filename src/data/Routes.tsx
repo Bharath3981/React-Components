@@ -473,7 +473,19 @@ export const javaScriptTopicsChildren = [
     ),
   },
 ];
-
+export const JSInterviewQuestions = [
+  {
+    id: "jsInterview1",
+    title: "sum(a)(b)...(n)",
+    description: "The sum method should return the some of all parameters.",
+    path: "/interview/jsInterview1",
+    element: (
+      <Suspense fallback="Loading...">
+        <SumOfArguments />
+      </Suspense>
+    ),
+  },
+];
 export const interviewTopicsChildren = [
   {
     _id: "interview-topics-1",
@@ -485,16 +497,7 @@ export const interviewTopicsChildren = [
       </Suspense>
     ),
   },
-  {
-    _id: "interview-topics-2",
-    _label: "Interview-2",
-    path: "/interview/SumOfArguments",
-    element: (
-      <Suspense fallback="Loading...">
-        <SumOfArguments />
-      </Suspense>
-    ),
-  },
+  ...JSInterviewQuestions,
 ];
 
 export const reduxTopicsChildren = [
