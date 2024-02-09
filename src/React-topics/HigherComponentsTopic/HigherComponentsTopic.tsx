@@ -1,6 +1,4 @@
 import InfoBlock from "../../util/InfoBlock";
-import TodoList from "./TodoList";
-import UsersList from "./UsersList";
 
 const HigherComponentsTopic = () => {
   return (
@@ -20,8 +18,8 @@ const HigherComponentsTopic = () => {
           of showing HTML content.
         </p>
       </InfoBlock>
-      <UsersList />
-      <TodoList />
+      {/* <UsersList />
+      <TodoList /> */}
     </div>
   );
 };

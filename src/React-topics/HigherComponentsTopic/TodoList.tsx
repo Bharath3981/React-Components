@@ -1,5 +1,3 @@
-import HOC from "./HOC";
-
 const TodoList = ({ data }: any) => {
   console.log(data);
   return (
@@ -15,4 +13,4 @@ const TodoList = ({ data }: any) => {
   );
 };
 
-export default HOC(TodoList, "todos");
+export default TodoList;
