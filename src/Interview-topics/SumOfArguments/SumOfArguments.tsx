@@ -1,5 +1,3 @@
-import React from "react";
-
 const SumOfArguments = () => {
   return <div className="main-title">sum(a)(b)(c)...(n)</div>;
 };

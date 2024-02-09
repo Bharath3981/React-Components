@@ -48,7 +48,7 @@ const DebouncingTopic = () => {
     d: number
   ) => {
     let timer: any = 0;
-    return (e) => {
+    return (e: any) => {
       if (timer) {
         clearTimeout(timer);
       }

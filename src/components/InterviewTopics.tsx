@@ -27,7 +27,7 @@ export const InterviewTopics = () => {
 };
 
 export const InterviewTopicsChildren = () => {
-  const { data = {}, isSuccess } = useFetchInterviewQuestionsQuery(null);
+  const { data = {} } = useFetchInterviewQuestionsQuery(null);
   console.log(data);
   const topic: any = [];
   return (
