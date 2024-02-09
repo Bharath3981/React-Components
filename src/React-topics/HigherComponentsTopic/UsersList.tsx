@@ -1,3 +1,5 @@
+import HOC from "./HOC";
+
 const UsersList = ({ data }: any) => {
   console.log(data);
   return (
@@ -13,4 +15,4 @@ const UsersList = ({ data }: any) => {
   );
 };
 
-export default UsersList;
+export default HOC(UsersList, "users");
