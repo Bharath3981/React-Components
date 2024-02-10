@@ -8,8 +8,16 @@ import {
   InterviewTopics,
   InterviewTopicsChildren,
 } from "../components/InterviewTopics";
-import SumOfArguments from "../Interview-topics/SumOfArguments/SumOfArguments";
 
+const SumOfArguments = lazy(
+  () => import("../Interview-topics/SumOfArguments/SumOfArguments")
+);
+const ComplexStateManipulation = lazy(
+  () =>
+    import(
+      "../Interview-topics/ReactInterview/ComplexStateManipulation/ComplexStateManipulation"
+    )
+);
 const Home = lazy(() => import("../components/Home/Home"));
 const Components = lazy(() => import("../components/Components"));
 const ReactTopics = lazy(() => import("../components/ReactTopics"));
@@ -486,6 +494,21 @@ export const JSInterviewQuestions = [
     ),
   },
 ];
+
+export const ReactInterviewQuestions = [
+  {
+    id: "reactInterview1",
+    title: "Complex State",
+    description: "The satate has array of objects, binding form with object.",
+    path: "/interview/reactInterview1",
+    element: (
+      <Suspense fallback="Loading...">
+        <ComplexStateManipulation />
+      </Suspense>
+    ),
+  },
+];
+
 export const interviewTopicsChildren = [
   {
     _id: "interview-topics-1",
@@ -498,6 +521,7 @@ export const interviewTopicsChildren = [
     ),
   },
   ...JSInterviewQuestions,
+  ...ReactInterviewQuestions,
 ];
 
 export const reduxTopicsChildren = [

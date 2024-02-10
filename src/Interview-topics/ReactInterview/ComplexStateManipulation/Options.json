@@ -1,0 +1,419 @@
+{
+  "categories": [
+    {
+      "id": 217,
+      "name": "4",
+      "level": "study_country"
+    },
+    {
+      "id": 219,
+      "name": "5",
+      "level": "study_country"
+    },
+    {
+      "id": 85,
+      "name": "88",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 88,
+      "name": "Activation 33",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 75,
+      "name": "Activation Activities",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 17,
+      "name": "CEC/IRB approval",
+      "level": "study_country"
+    },
+    {
+      "id": 1,
+      "name": "Central EC submission",
+      "level": "study_country"
+    },
+    {
+      "id": 184,
+      "name": "Central IRB/IEC documentation",
+      "level": "study_country"
+    },
+    {
+      "id": 14,
+      "name": "CNOM submission",
+      "level": "study_country"
+    },
+    {
+      "id": 101,
+      "name": "Config designer induced PI categry",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 102,
+      "name": "Config induced Country category for Label tests",
+      "level": "study_country"
+    },
+    {
+      "id": 65,
+      "name": "Contract and budgets_Site",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 2,
+      "name": "Contract-prepared documents",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 19,
+      "name": "Contracts",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 188,
+      "name": "Contracts and budgets",
+      "level": "study_country"
+    },
+    {
+      "id": 96,
+      "name": "Contracts and budgets_Country",
+      "level": "study_country"
+    },
+    {
+      "id": 71,
+      "name": "Contracts and Budgets_Country",
+      "level": "study_country"
+    },
+    {
+      "id": 70,
+      "name": "Contracts and Budgets_Site",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 76,
+      "name": "Core",
+      "level": "study"
+    },
+    {
+      "id": 216,
+      "name": "Country Specific Documentation",
+      "level": "study_country"
+    },
+    {
+      "id": 61,
+      "name": "Country specific documentation",
+      "level": "study_country"
+    },
+    {
+      "id": 183,
+      "name": "Country specific documents",
+      "level": "study_country"
+    },
+    {
+      "id": 69,
+      "name": "Country Submission Documentation",
+      "level": "study_country"
+    },
+    {
+      "id": 60,
+      "name": "Country submission documentation",
+      "level": "study_country"
+    },
+    {
+      "id": 3,
+      "name": "Country-prepared documents",
+      "level": "study_country"
+    },
+    {
+      "id": 83,
+      "name": "dg",
+      "level": "study_country"
+    },
+    {
+      "id": 13,
+      "name": "Director of Hospital's submission",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 213,
+      "name": "DirkCountryCategory",
+      "level": "study_country"
+    },
+    {
+      "id": 211,
+      "name": "DirkNewCategory",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 177,
+      "name": "eSign tests",
+      "level": "study"
+    },
+    {
+      "id": 4,
+      "name": "Essential documents",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 186,
+      "name": "Essential site documents",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 73,
+      "name": "Essential TBD",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 174,
+      "name": "g-Category",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 181,
+      "name": "Green light approval",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 27,
+      "name": "HRA submission",
+      "level": "study_country"
+    },
+    {
+      "id": 72,
+      "name": "ICF_Country",
+      "level": "study_country"
+    },
+    {
+      "id": 74,
+      "name": "ICF_Site",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 182,
+      "name": "Import",
+      "level": "study_country"
+    },
+    {
+      "id": 5,
+      "name": "Import submission",
+      "level": "study_country"
+    },
+    {
+      "id": 6,
+      "name": "IP release authorization",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 7,
+      "name": "IRB/IEC submission",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 63,
+      "name": "John",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 20,
+      "name": "LEC/IRB approval",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 87,
+      "name": "nameanythihng",
+      "level": "study_country"
+    },
+    {
+      "id": 220,
+      "name": "NEW",
+      "level": "study_country"
+    },
+    {
+      "id": 95,
+      "name": "NEW CATEGORY",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 12,
+      "name": "NHS submission",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 26,
+      "name": "Other submissions",
+      "level": "study_country"
+    },
+    {
+      "id": 179,
+      "name": "PI Documents",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 68,
+      "name": "Pi prelease start",
+      "level": "study_country"
+    },
+    {
+      "id": 84,
+      "name": "ppty",
+      "level": "study_country"
+    },
+    {
+      "id": 15,
+      "name": "Prepared for site documents",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 16,
+      "name": "RA approval",
+      "level": "study_country"
+    },
+    {
+      "id": 187,
+      "name": "RA study documentation",
+      "level": "study_country"
+    },
+    {
+      "id": 8,
+      "name": "RA study submission",
+      "level": "study_country"
+    },
+    {
+      "id": 18,
+      "name": "Reg docs",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 210,
+      "name": "sal",
+      "level": "study_country"
+    },
+    {
+      "id": 99,
+      "name": "Sal_PI_+Category",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 212,
+      "name": "salcategpry",
+      "level": "study_country"
+    },
+    {
+      "id": 214,
+      "name": "salPICategory",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 98,
+      "name": "SalStudyCategory",
+      "level": "study"
+    },
+    {
+      "id": 97,
+      "name": "SalStudyCountryCategory",
+      "level": "study_country"
+    },
+    {
+      "id": 100,
+      "name": "SalStudyCountryCategory|User tries to SalStudyCoun",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 67,
+      "name": "Site contract start",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 189,
+      "name": "Site documents - MOH only",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 11,
+      "name": "Site governance submission",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 185,
+      "name": "Site IRB/IEC documentation",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 10,
+      "name": "Site RA submission",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 89,
+      "name": "Site specific documentation",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 62,
+      "name": "Site submission documentation",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 9,
+      "name": "Sponsor-prepared documents",
+      "level": "study_country"
+    },
+    {
+      "id": 59,
+      "name": "Study specific documentation",
+      "level": "study"
+    },
+    {
+      "id": 180,
+      "name": "Study specific documents",
+      "level": "study"
+    },
+    {
+      "id": 176,
+      "name": "Super Site Category",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 178,
+      "name": "Susannah's Category",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 215,
+      "name": "susannahStudyCategory",
+      "level": "study"
+    },
+    {
+      "id": 66,
+      "name": "ttttttContract and budgets_Site",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 218,
+      "name": "wwwwww",
+      "level": "study"
+    },
+    {
+      "id": 175,
+      "name": "Z-Category",
+      "level": "principal_investigator"
+    },
+    {
+      "id": 64,
+      "name": "{constructor.constructor(10525760)}",
+      "level": "study_country"
+    },
+    {
+      "id": 86,
+      "name": "{constructor.constructor(8910660)}",
+      "level": "study"
+    },
+    {
+      "id": 77,
+      "name": "{constructor.constructor(9901960)}",
+      "level": "study_country"
+    }
+  ]
+}
