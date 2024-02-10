@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 type MutliSelecBoxProps = {
   list: any[];
@@ -13,13 +13,19 @@ const RcMultiSelectBox = ({
   setList,
 }: MutliSelecBoxProps) => {
   const [show, setShow] = useState(false);
-  console.log(list);
+  const selectionResult: any = useRef({});
+  const selection = (selectedItem: any) => {
+    if (selectionResult.current[selectedItem.id]) {
+      delete selectionResult.current[selectedItem.id];
+    } else {
+      selectionResult.current[selectedItem.id] = true;
+    }
+    console.log(selectionResult.current);
+  };
   const onChecked = (e: React.ChangeEvent, index: number) => {
-    list[index][list[index].id] = true;
-    console.log(list[index][list[index].id]);
+    selection(list[index]);
     setList((prevState: any) => {
       const tempObj = { ...prevState[index] };
-      console.log(tempObj);
       tempObj[tempObj.id] = !tempObj[tempObj.id];
       const tempArray = [...prevState];
       tempArray.splice(index, 1, tempObj);
@@ -51,6 +57,7 @@ const RcMultiSelectBox = ({
                   <input
                     className="mr-2"
                     type="checkbox"
+                    checked={item[item.id]}
                     onChange={(e: any) => onChecked(e, index)}
                   />
                   {`${item.name} (${item.level})`}
