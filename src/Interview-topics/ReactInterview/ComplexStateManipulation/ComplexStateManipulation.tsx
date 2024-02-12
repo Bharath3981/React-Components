@@ -33,7 +33,7 @@ const ComplexStateManipulation = () => {
       <div className="pt-3">
         <button onClick={() => postData()}>Post data</button>
         <RcMultiSelectBox
-          startingText={"No options selected123"}
+          startingText={"No options selected"}
           list={list}
           setList={setList}
           doneClickEvent={doneClickEvent}
