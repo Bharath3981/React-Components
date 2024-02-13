@@ -10,7 +10,7 @@ const ComplexStateManipulation = () => {
   const postData = async () => {
     let postdata = {
       id: 123,
-      first_name: "Adithya123",
+      first_name: "Adithya",
       last_name: "Baisetty",
       gender: "male",
       married: false,
