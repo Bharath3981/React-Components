@@ -14,7 +14,7 @@ const ComplexStateManipulation = () => {
       last_name: "Baisetty",
       gender: "male",
       married: false,
-      mobile_no: "998902648rr",
+      mobile_no: "998902648",
       pincode: 565654,
     };
     const req = await fetch(
