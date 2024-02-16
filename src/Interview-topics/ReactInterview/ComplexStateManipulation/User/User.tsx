@@ -19,7 +19,36 @@ const User = () => {
   return (
     <div>
       <div className="sub-title">users info</div>
-      <div className="flex"></div>
+      <table>
+        <thead>
+          <tr>
+            <td>S.No</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Gender</td>
+            <td>Married</td>
+            <td>Mobile No</td>
+            <td>City</td>
+            <td>Pincode</td>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map((user: any) => {
+            return (
+              <tr key={user.id}>
+                <td>{user.id}</td>
+                <td>{user.last_name}</td>
+                <td>{user.first_name}</td>
+                <td>{user.gender}</td>
+                <td>{user.married}</td>
+                <td>{user.mobile_no}</td>
+                <td>{user.city}</td>
+                <td>{user.pincode}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   );
 };
