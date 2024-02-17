@@ -18,7 +18,7 @@ const User = () => {
   }, []);
   return (
     <div>
-      <div className="sub-title">users info ads</div>
+      <div className="sub-title">users info</div>
       <table>
         <thead>
           <tr>
