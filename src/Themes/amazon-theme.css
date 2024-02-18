@@ -76,4 +76,24 @@
   .interview-back-button {
     @apply float-end border border-[--amazon-selected] text-[--amazon-selected] rounded-md px-2 hover:bg-[--amazon-selected] hover:text-white;
   }
+  .custom-table {
+    @apply border w-full;
+    thead {
+      @apply bg-[--amazon-selected] font-bold;
+      tr {
+        @apply h-8 text-center font-bold text-white;
+        td {
+          @apply border-[--amazon-selected];
+        }
+      }
+    }
+    tbody {
+      tr {
+        @apply h-8 text-center hover:bg-[--amazon-selected-light];
+        td {
+          @apply border;
+        }
+      }
+    }
+  }
 }

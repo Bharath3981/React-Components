@@ -76,4 +76,24 @@
   .interview-back-button {
     @apply float-end border border-[--flipkart-selected] text-[--flipkart-selected] rounded-md px-2 hover:bg-[--flipkart-selected] hover:text-white;
   }
+  .custom-table {
+    @apply border w-full;
+    thead {
+      @apply bg-[--flipkart-selected] font-bold;
+      tr {
+        @apply h-8 text-center font-bold text-white;
+        td {
+          @apply border-[--flipkart-selected];
+        }
+      }
+    }
+    tbody {
+      tr {
+        @apply h-8 text-center hover:bg-[--flipkart-selected-light];
+        td {
+          @apply border;
+        }
+      }
+    }
+  }
 }
