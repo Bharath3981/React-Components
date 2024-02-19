@@ -71,7 +71,7 @@ const User = () => {
                 <td>{user.city}</td>
                 <td>{user.pincode}</td>
                 <td>
-                  <div className="flex justify-center">
+                  <div className="flex justify-center 123">
                     <button
                       className="border-none"
                       onClick={() => setEditableId(user.id)}
