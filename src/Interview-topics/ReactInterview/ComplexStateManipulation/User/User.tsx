@@ -58,7 +58,7 @@ const User = () => {
                     <div>
                       <input
                         type="text"
-                        className="w-20dsf"
+                        className="w-20"
                         value={user.first_name}
                       />
                     </div>
