@@ -8,9 +8,16 @@ import {
   InterviewTopics,
   InterviewTopicsChildren,
 } from "../components/InterviewTopics";
+import RomanNumber from "../Interview-topics/JSInterview/RomanNumber/RomanNumber";
 
 const SumOfArguments = lazy(
-  () => import("../Interview-topics/SumOfArguments/SumOfArguments")
+  () => import("../Interview-topics/JSInterview/SumOfArguments/SumOfArguments")
+);
+const BinaryRepresentation = lazy(
+  () =>
+    import(
+      "../Interview-topics/JSInterview/BinaryRepresentation/BinaryRepresentation"
+    )
 );
 const ComplexStateManipulation = lazy(
   () =>
@@ -490,6 +497,28 @@ export const JSInterviewQuestions = [
     element: (
       <Suspense fallback="Loading...">
         <SumOfArguments />
+      </Suspense>
+    ),
+  },
+  {
+    id: "jsInterview2",
+    title: "Binary Representation",
+    description: "How many 1 bits are in it's binary representation. ",
+    path: "/interview/jsInterview2",
+    element: (
+      <Suspense fallback="Loading...">
+        <BinaryRepresentation />
+      </Suspense>
+    ),
+  },
+  {
+    id: "jsInterview3",
+    title: "Roman Number",
+    description: "Convert number to roman number ",
+    path: "/interview/jsInterview3",
+    element: (
+      <Suspense fallback="Loading...">
+        <RomanNumber />
       </Suspense>
     ),
   },
