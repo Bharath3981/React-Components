@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 const RomanNumber = () => {
   const [number, setNumber] = useState("");
   const romanNumber = useRef("");
-  const romanNumerals: Array[] = [
+  const romanNumerals: Array<{ value: number; numeral: string }> = [
     { value: 1000, numeral: "M" },
     { value: 900, numeral: "CM" },
     { value: 500, numeral: "D" },
@@ -18,7 +18,8 @@ const RomanNumber = () => {
     { value: 4, numeral: "IV" },
     { value: 1, numeral: "I" },
   ];
-  function toRoman(num) {
+
+  function toRoman(num: number): string {
     if (isNaN(num)) {
       return "";
     }
@@ -32,11 +33,10 @@ const RomanNumber = () => {
     return romanNumeral;
   }
 
-  const numberChange = (number: any) => {
+  const numberChange = (number: string) => {
     setNumber(number);
-    romanNumber.current = toRoman(number);
+    romanNumber.current = toRoman(Number(number));
   };
-
   return (
     <>
       <div className="main-title">Roman Representation</div>

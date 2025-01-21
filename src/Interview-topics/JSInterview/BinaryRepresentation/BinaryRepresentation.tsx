@@ -2,15 +2,19 @@ import { useRef, useState } from "react";
 
 const BinaryRepresentation = () => {
   const [number, setNumber] = useState("");
-  let binaryNumber: any = useRef(0);
-  const convertToBinary = (number) => {
+  const binaryNumber = useRef<string>("0");
+  interface ConvertToBinary {
+    (number: string): string;
+  }
+
+  const convertToBinary: ConvertToBinary = (number) => {
     return Number(number).toString(2);
   };
-  const numberChange = (e: any) => {
+  const numberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNumber(e.target.value);
     binaryNumber.current = convertToBinary(number);
-    let binaryArr = binaryNumber.current.split("");
-    let positionArray = [];
+    const binaryArr = binaryNumber.current.split("");
+    const positionArray: number[] = [];
     binaryArr.forEach((value, index) => {
       if (value === "1") {
         positionArray.push(index + 1);
