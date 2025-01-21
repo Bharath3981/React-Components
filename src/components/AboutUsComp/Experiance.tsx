@@ -1,18 +1,13 @@
 const Experiance = () => {
-  function calcDate(date1: Date, date2: Date) {
-    var diff = Math.floor(date1.getTime() - date2.getTime());
-    var day = 1000 * 60 * 60 * 24;
+  //Calculate the differenct between two dates
+  const calcDate = (date1: Date, date2: Date) => {
+    const diffTime = Math.abs(date2.getTime() - date1.getTime());
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    return `${Math.floor(diffDays / 365)} yrs ${Math.floor(
+      (diffDays % 365) / 30
+    )} mos`;
+  };
 
-    var days = Math.floor(diff / day);
-    var months = Math.floor(days / 31);
-    var years = Math.floor(months / 12);
-
-    var message = "";
-    message += years + " yrs ";
-    message += months + " mos";
-
-    return message;
-  }
   return (
     <div className="panel col-span-full">
       <div className="w-full font-semibold text-xl p-3 bg-slate-200">
