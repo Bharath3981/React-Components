@@ -10,7 +10,7 @@ import {
 } from "../components/InterviewTopics";
 import RomanNumber from "../Interview-topics/JSInterview/RomanNumber/RomanNumber";
 const CallApplyBind = lazy(
-  () => import("../Interview-topics/JSInterview/CallApplyBind/callApplyBind")
+  () => import("../Interview-topics/JSInterview/CallApplyBind/CallApplyBind")
 );
 const SumOfArguments = lazy(
   () => import("../Interview-topics/JSInterview/SumOfArguments/SumOfArguments")

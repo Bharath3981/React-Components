@@ -1,10 +1,10 @@
 import React, { useRef, useState } from "react";
 
 type MutliSelecBoxProps = {
-  list: any[];
+  list: { id: string; name: string; level: string; [key: string]: string | number | boolean }[];
   startingText?: string;
-  doneClickEvent?: (p: any) => void;
-  setList?: any;
+  doneClickEvent?: (p: { id: string; name: string; level: string; [key: string]: string | number | boolean }) => void;
+  setList?: React.Dispatch<React.SetStateAction<{ id: string; name: string; level: string; [key: string]: string | number | boolean }[]>>;
   apply_to_non_categorized_artifacts?: boolean;
 };
 const RcMultiSelectBox = ({
@@ -14,8 +14,8 @@ const RcMultiSelectBox = ({
 }: MutliSelecBoxProps) => {
   const [show, setShow] = useState(false);
   const [text, setText] = useState(startingText);
-  const selectionResult: any = useRef({});
-  const selection = (selectedItem: any) => {
+  const selectionResult = useRef<{ [key: string]: boolean }>({});
+  const selection = (selectedItem: { id: string; name: string; level: string; [key: string]: any }) => {
     if (selectionResult.current[selectedItem.id]) {
       delete selectionResult.current[selectedItem.id];
     } else {
@@ -26,9 +26,9 @@ const RcMultiSelectBox = ({
     );
     console.log(selectionResult.current);
   };
-  const onChecked = (e: React.ChangeEvent, index: number) => {
+  const onChecked = (index: number) => {
     selection(list[index]);
-    setList((prevState: any) => {
+    setList && setList((prevState: { id: string; name: string; level: string; [key: string]: any }[]) => {
       const tempObj = { ...prevState[index] };
       tempObj[tempObj.id] = !tempObj[tempObj.id];
       const tempArray = [...prevState];
@@ -56,14 +56,14 @@ const RcMultiSelectBox = ({
             <button className="">Done</button>
           </div>
           <ul className="p-3 overflow-x-hidden overflow-y-auto h-60">
-            {list.map((item: any, index: number) => {
+            {list.map((item: { id: string; name: string; level: string; [key: string]: string | number | boolean }, index: number) => {
               return (
                 <li key={item.id}>
                   <input
                     className="mr-2"
                     type="checkbox"
-                    checked={item[item.id]}
-                    onChange={(e: any) => onChecked(e, index)}
+                    checked={!!item[item.id]}
+                    onChange={() => onChecked( index)}
                   />
                   {`${item.name} (${item.level})`}
                 </li>
