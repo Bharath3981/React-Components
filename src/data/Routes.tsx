@@ -9,7 +9,9 @@ import {
   InterviewTopicsChildren,
 } from "../components/InterviewTopics";
 import RomanNumber from "../Interview-topics/JSInterview/RomanNumber/RomanNumber";
-
+const CallApplyBind = lazy(
+  () => import("../Interview-topics/JSInterview/CallApplyBind/callApplyBind")
+);
 const SumOfArguments = lazy(
   () => import("../Interview-topics/JSInterview/SumOfArguments/SumOfArguments")
 );
@@ -519,6 +521,17 @@ export const JSInterviewQuestions = [
     element: (
       <Suspense fallback="Loading...">
         <RomanNumber />
+      </Suspense>
+    ),
+  },
+  {
+    id: "jsInterview4",
+    title: "Call Apply Bind Example",
+    description: "Implement call, apply and bind methods.",
+    path: "/interview/callApplyBindExample",
+    element: (
+      <Suspense fallback="Loading...">
+        <CallApplyBind />
       </Suspense>
     ),
   },
