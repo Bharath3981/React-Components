@@ -66,7 +66,7 @@ const BasicTable = () => {
           >
             <template
               render={(row: any) => (
-                <>
+                <>{console.log(row)}
                   <td className="px-3 py-1">{row.DepartmentId}</td>
                   <td className="px-3 py-1">{row.DepartmentName}</td>
                   <td className="px-3 py-1">{row.Type}</td>
